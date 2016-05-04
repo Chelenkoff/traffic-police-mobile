@@ -22,6 +22,7 @@ namespace TrafficPolice.UI.WP.Views
         public LoginView()
         {
             InitializeComponent();
+
         }
     }
 }
