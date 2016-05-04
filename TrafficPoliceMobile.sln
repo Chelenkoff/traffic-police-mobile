@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficPolice.Core", "TrafficPolice.Core\TrafficPolice.Core.csproj", "{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficPolice.UI.WP", "TrafficPolice.UI.WP\TrafficPolice.UI.WP.csproj", "{0238F247-E372-41CF-A70E-AB7FBDAC80EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}.Debug|ARM.Build.0 = Debug|Any CPU
+		{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}.Debug|x86.Build.0 = Debug|Any CPU
+		{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}.Release|ARM.ActiveCfg = Release|Any CPU
+		{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}.Release|ARM.Build.0 = Release|Any CPU
+		{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}.Release|x86.ActiveCfg = Release|Any CPU
+		{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}.Release|x86.Build.0 = Release|Any CPU
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Debug|ARM.ActiveCfg = Debug|ARM
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Debug|ARM.Build.0 = Debug|ARM
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Debug|ARM.Deploy.0 = Debug|ARM
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Debug|x86.ActiveCfg = Debug|x86
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Debug|x86.Build.0 = Debug|x86
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Debug|x86.Deploy.0 = Debug|x86
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Release|ARM.ActiveCfg = Release|ARM
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Release|ARM.Build.0 = Release|ARM
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Release|ARM.Deploy.0 = Release|ARM
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Release|x86.ActiveCfg = Release|x86
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Release|x86.Build.0 = Release|x86
+		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
