@@ -12,7 +12,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True" Loaded="MvxPhonePage_Loaded">
+    shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -29,9 +29,13 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock x:Name="textBlock" Text="{Binding WelcomeMessage}" HorizontalAlignment="Left" Margin="98,79,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="55" Width="180" FontSize="26"/>
-            <Button x:Name="btnShowName" Content="Button" HorizontalAlignment="Left" Margin="98,369,0,0" VerticalAlignment="Top" Height="130" Width="255" Command="{Binding HiCommand}"/>
-            <TextBlock x:Name="txtBlockPersonName" HorizontalAlignment="Left" Margin="48,284,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="355"/>
+            <Button x:Name="btnLogin" Content="Вход" HorizontalAlignment="Left" Margin="10,509,0,0" VerticalAlignment="Top" Height="88" Width="436" Command="{Binding LoginCommand}" FontSize="40"/>
+            <TextBlock Text="Служебен номер" TextAlignment="Center"  HorizontalAlignment="Center" Margin="10,9,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" FontSize="40"/>
+            <TextBox x:Name="txtBoxUserId" Text="{Binding UserId, Mode=TwoWay}" HorizontalAlignment="Left" Height="72" Margin="10,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436"/>
+            <TextBlock Text="Парола" TextAlignment="Center"  HorizontalAlignment="Center" Margin="10,146,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" FontSize="40"/>
+            <TextBox x:Name="txtBoxPass" Text="{Binding Password, Mode=TwoWay}" HorizontalAlignment="Left" Height="72" Margin="10,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436"/>
+            <TextBlock x:Name="textBlock" Text="{Binding WarningMessage}" HorizontalAlignment="Left" Margin="10,329,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="85" Width="436"/>
+            <TextBlock x:Name="textBlock_Copy" Text="{Binding WarningType}" HorizontalAlignment="Left" Margin="10,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="436" FontSize="25" Foreground="Red"/>
 
         </Grid>
     </Grid>

@@ -15,6 +15,7 @@ namespace TrafficPolice.UI.WP.Views
 {
     public partial class LoginView : MvxPhonePage
     {
+        Service1Client client = new Service1Client();
         public new LoginViewModel ViewModel
         {
             get { return (LoginViewModel)base.ViewModel; }
@@ -22,26 +23,20 @@ namespace TrafficPolice.UI.WP.Views
         }
         public LoginView()
         {
-            
+            client = new Service1Client();
+            //client.GetUserByIdAndPassCompleted += client_GetUserByIdAndPassCompleted;
             InitializeComponent();
-            
-
         }
 
-        private void MvxPhonePage_Loaded(object sender, RoutedEventArgs e)
-        {
-            Service1Client client = new Service1Client();
-            client.GetDriverOwnerByIdAsync("9403122826");
-            client.GetDriverOwnerByIdCompleted += client_GetDriverOwnerByIdCompleted;
-        }
 
-        void client_GetDriverOwnerByIdCompleted(object sender, GetDriverOwnerByIdCompletedEventArgs e)
-        {
-            if (e.Error == null)
-            {
-                MessageBox.Show(e.Result.FirstName);
-            }
-        }
+
+        //void client_GetUserByIdAndPassCompleted(object sender, GetUserByIdAndPassCompletedEventArgs e)
+        //{
+        //    if (e.Error == null)
+        //    {
+        //        MessageBox.Show(e.Result.FirstName);
+        //    }
+        //}
 
 
     }
