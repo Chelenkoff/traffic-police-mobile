@@ -9,6 +9,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MvvmCross.WindowsPhone.Views;
 using TrafficPolice.Core.ViewModels;
+using TrafficPolice.Core.ServiceReference1;
 
 namespace TrafficPolice.UI.WP.Views
 {
@@ -21,8 +22,27 @@ namespace TrafficPolice.UI.WP.Views
         }
         public LoginView()
         {
+            
             InitializeComponent();
+            
 
         }
+
+        private void MvxPhonePage_Loaded(object sender, RoutedEventArgs e)
+        {
+            Service1Client client = new Service1Client();
+            client.GetDriverOwnerByIdAsync("9403122826");
+            client.GetDriverOwnerByIdCompleted += client_GetDriverOwnerByIdCompleted;
+        }
+
+        void client_GetDriverOwnerByIdCompleted(object sender, GetDriverOwnerByIdCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                MessageBox.Show(e.Result.FirstName);
+            }
+        }
+
+
     }
 }

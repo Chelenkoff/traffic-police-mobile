@@ -4,10 +4,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficPolice.Core", "TrafficPolice.Core\TrafficPolice.Core.csproj", "{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0A09BCD2-5B1A-4820-B2C5-1B496958D87C} = {0A09BCD2-5B1A-4820-B2C5-1B496958D87C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficPolice.UI.WP", "TrafficPolice.UI.WP\TrafficPolice.UI.WP.csproj", "{0238F247-E372-41CF-A70E-AB7FBDAC80EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFDBService", "..\..\TrafficPoliceDesktopApp MVVM\WCFDBService\WCFDBService.csproj", "{5C10C1BC-728C-4628-8BE0-6EB2C2395367}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFRestMobile", "WCFRestMobile\WCFRestMobile.csproj", "{0A09BCD2-5B1A-4820-B2C5-1B496958D87C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficPoliceDesktopApp", "..\..\TrafficPoliceDesktopApp MVVM\TrafficPoliceDesktopApp\TrafficPoliceDesktopApp.csproj", "{2642BE9A-E4E0-4716-8B9E-837C63038988}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,18 +54,30 @@ Global
 		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Release|x86.ActiveCfg = Release|x86
 		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Release|x86.Build.0 = Release|x86
 		{0238F247-E372-41CF-A70E-AB7FBDAC80EC}.Release|x86.Deploy.0 = Release|x86
-		{5C10C1BC-728C-4628-8BE0-6EB2C2395367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C10C1BC-728C-4628-8BE0-6EB2C2395367}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C10C1BC-728C-4628-8BE0-6EB2C2395367}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{5C10C1BC-728C-4628-8BE0-6EB2C2395367}.Debug|ARM.Build.0 = Debug|Any CPU
-		{5C10C1BC-728C-4628-8BE0-6EB2C2395367}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5C10C1BC-728C-4628-8BE0-6EB2C2395367}.Debug|x86.Build.0 = Debug|Any CPU
-		{5C10C1BC-728C-4628-8BE0-6EB2C2395367}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C10C1BC-728C-4628-8BE0-6EB2C2395367}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C10C1BC-728C-4628-8BE0-6EB2C2395367}.Release|ARM.ActiveCfg = Release|Any CPU
-		{5C10C1BC-728C-4628-8BE0-6EB2C2395367}.Release|ARM.Build.0 = Release|Any CPU
-		{5C10C1BC-728C-4628-8BE0-6EB2C2395367}.Release|x86.ActiveCfg = Release|Any CPU
-		{5C10C1BC-728C-4628-8BE0-6EB2C2395367}.Release|x86.Build.0 = Release|Any CPU
+		{0A09BCD2-5B1A-4820-B2C5-1B496958D87C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A09BCD2-5B1A-4820-B2C5-1B496958D87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A09BCD2-5B1A-4820-B2C5-1B496958D87C}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{0A09BCD2-5B1A-4820-B2C5-1B496958D87C}.Debug|ARM.Build.0 = Debug|Any CPU
+		{0A09BCD2-5B1A-4820-B2C5-1B496958D87C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0A09BCD2-5B1A-4820-B2C5-1B496958D87C}.Debug|x86.Build.0 = Debug|Any CPU
+		{0A09BCD2-5B1A-4820-B2C5-1B496958D87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A09BCD2-5B1A-4820-B2C5-1B496958D87C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A09BCD2-5B1A-4820-B2C5-1B496958D87C}.Release|ARM.ActiveCfg = Release|Any CPU
+		{0A09BCD2-5B1A-4820-B2C5-1B496958D87C}.Release|ARM.Build.0 = Release|Any CPU
+		{0A09BCD2-5B1A-4820-B2C5-1B496958D87C}.Release|x86.ActiveCfg = Release|Any CPU
+		{0A09BCD2-5B1A-4820-B2C5-1B496958D87C}.Release|x86.Build.0 = Release|Any CPU
+		{2642BE9A-E4E0-4716-8B9E-837C63038988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2642BE9A-E4E0-4716-8B9E-837C63038988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2642BE9A-E4E0-4716-8B9E-837C63038988}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{2642BE9A-E4E0-4716-8B9E-837C63038988}.Debug|ARM.Build.0 = Debug|Any CPU
+		{2642BE9A-E4E0-4716-8B9E-837C63038988}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2642BE9A-E4E0-4716-8B9E-837C63038988}.Debug|x86.Build.0 = Debug|Any CPU
+		{2642BE9A-E4E0-4716-8B9E-837C63038988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2642BE9A-E4E0-4716-8B9E-837C63038988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2642BE9A-E4E0-4716-8B9E-837C63038988}.Release|ARM.ActiveCfg = Release|Any CPU
+		{2642BE9A-E4E0-4716-8B9E-837C63038988}.Release|ARM.Build.0 = Release|Any CPU
+		{2642BE9A-E4E0-4716-8B9E-837C63038988}.Release|x86.ActiveCfg = Release|Any CPU
+		{2642BE9A-E4E0-4716-8B9E-837C63038988}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
