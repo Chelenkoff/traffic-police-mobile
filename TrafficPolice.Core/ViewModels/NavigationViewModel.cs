@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using TrafficPolice.Core.Utilities;
 
 namespace TrafficPolice.Core.ViewModels
 {
@@ -14,6 +16,7 @@ namespace TrafficPolice.Core.ViewModels
             DriverOwnerChildVM = new DriverOwnerChildViewModel();
             RegistrationChildVM = new RegistrationChildViewModel();
             PenaltyChildVM = new PenaltyChildViewModel();
+            WelcomeMessage = "asdadsad";
         }
 
         public override void Start()
@@ -21,6 +24,20 @@ namespace TrafficPolice.Core.ViewModels
            base.Start();
         }
 
+        private string _welcomeMessage;
+        public string WelcomeMessage
+        {
+            get { return _welcomeMessage; }
+            set { _welcomeMessage = value; RaisePropertyChanged(() => WelcomeMessage); }
+        }
+
+        public ICommand Logout
+        {
+            get
+            {
+                return new MvxCommand(() => Close(this));
+            }
+        }
 
 
         private DriverOwnerChildViewModel _driverOwnerChildVM;

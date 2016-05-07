@@ -159,6 +159,8 @@
     </Content>
     <Content Include="Assets\WideLogo.png" />
     <Content Include="Resources\Images\Icons\appbar.delete.png" />
+    <Content Include="Resources\Images\Icons\logout_icon.png" />
+    <Content Include="Resources\Images\navigation_background.jpg" />
     <Resource Include="Resources\Images\mvr.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -173,6 +175,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="BindableApplicationBar, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BindableApplicationBar.1.1.0.0\lib\wp8\BindableApplicationBar.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
     <Reference Include="MvvmCross.Binding, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmCross.Binding.4.1.4\lib\wp8\MvvmCross.Binding.dll</HintPath>

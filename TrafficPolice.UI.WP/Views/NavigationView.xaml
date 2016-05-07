@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="clr-namespace:MvvmCross.WindowsPhone.Views;assembly=MvvmCross.WindowsPhone"
+    xmlns:bar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -14,19 +15,45 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
 
-    <!--LayoutRoot contains the root grid where all other page content is placed-->
+
+
+    <bar:Bindable.ApplicationBar>
+        <bar:BindableApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <bar:BindableApplicationBarButton
+            Text="Изход"
+            IconUri="{Binding IconUri, FallbackValue=/Resources/Images/Icons/logout_icon.png}"
+            IsEnabled="True"
+            Command="{Binding Logout}"/>
+        </bar:BindableApplicationBar>
+   </bar:Bindable.ApplicationBar>
+
+            <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot">
-        <phone:Panorama Title="my application">
+
+        <phone:Panorama Title="{Binding WelcomeMessage}">
+            <!--Designing Panorama Tite template.-->
+            <phone:Panorama.TitleTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="{Binding}" FontSize="40" Margin="180,61,10,-11" />
+                    </Grid>
+                </DataTemplate>
+            </phone:Panorama.TitleTemplate>
+
+            <!--Assigns a background image to the Panorama control.-->
+            <phone:Panorama.Background>
+                <ImageBrush ImageSource="/Resources/Images/navigation_background.jpg"/>
+            </phone:Panorama.Background>
 
             <!--Panorama item one-->
-            <phone:PanoramaItem Header="Registration" DataContext="{Binding RegistrationChildVM}">
+            <phone:PanoramaItem  Header="Registration"  DataContext="{Binding RegistrationChildVM}">
                 <Grid>
                     <TextBlock Text="{Binding Bar}" FontSize="40"></TextBlock>
                 </Grid>
             </phone:PanoramaItem>
 
             <!--Panorama item two-->
-            <phone:PanoramaItem Header="DROwner" DataContext="{Binding DriverOwnerChildVM}">
+            <phone:PanoramaItem Header="DROwner"  DataContext="{Binding DriverOwnerChildVM}">
                 <Grid>
                     <TextBlock Text="{Binding Foo}" FontSize="40"></TextBlock>
                 </Grid>
