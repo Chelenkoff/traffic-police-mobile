@@ -47,7 +47,11 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Utilities\DelegateCommand.cs" />
+    <Compile Include="ViewModels\DriverOwnerChildViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\NavigationViewModel.cs" />
+    <Compile Include="ViewModels\PenaltyChildViewModel.cs" />
+    <Compile Include="ViewModels\RegistrationChildViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />

@@ -38,6 +38,7 @@ namespace TrafficPolice.Core.ViewModels
                 if (dbResponseValidation(User))
                 {
                     WarningMessage = "Логнах се";
+                    ShowViewModel<NavigationViewModel>();
                 }
                 stopLoading();
 
