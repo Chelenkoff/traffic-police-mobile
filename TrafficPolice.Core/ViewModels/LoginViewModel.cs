@@ -59,6 +59,9 @@ namespace TrafficPolice.Core.ViewModels
         private void login()
         {
             clearInfoMessage();
+
+            if (!uiPassAndIdValidation(Password, UserId)) return;
+
             startLoading();
             client.GetUserByIdAndPassAsync(UserId, Password);
         }
@@ -95,6 +98,26 @@ namespace TrafficPolice.Core.ViewModels
             }
             else return true;
 
+        }
+
+        private bool uiPassAndIdValidation(string pass, string id)
+        {
+            //Null or whitespaces
+            if (String.IsNullOrWhiteSpace(pass) || String.IsNullOrWhiteSpace(id))
+            {
+                WarningType = "Внимание";
+                WarningMessage = "Не са въведени необходимите данни!";
+                return false;
+            }
+            //Digit check
+            else if (!IsDigitsOnly(id))
+            {
+                WarningType = "Внимание";
+                WarningMessage = "Некоректен формат на 'Служебен номер'! \nМоже да съдържа само цифри!";
+                return false;
+            }
+
+            else return true;
         }
 
         //Password property
@@ -145,6 +168,30 @@ namespace TrafficPolice.Core.ViewModels
             }
         }
 
+        //IsLoginAvailable property
+        private bool _isLoginAvailable;
+        public bool IsLoginAvailable
+        {
+            get { return _isLoginAvailable; }
+            set
+            {
+                _isLoginAvailable = value;
+                RaisePropertyChanged(() => IsLoginAvailable);
+            }
+        }
+
+        //IsClearAvailable property
+        private bool _isClearAvailable;
+        public bool IsClearAvailable
+        {
+            get { return _isClearAvailable; }
+            set
+            {
+                _isClearAvailable = value;
+                RaisePropertyChanged(() => IsClearAvailable);
+            }
+        }
+
         //Password property
         private User _user;
         public User User
@@ -174,11 +221,15 @@ namespace TrafficPolice.Core.ViewModels
         private void startLoading()
         {
             IsProgressRingVisible = true;
+            IsLoginAvailable = false;
+            IsClearAvailable = false;
 
         }
         private void stopLoading()
         {
             IsProgressRingVisible = false;
+            IsLoginAvailable = true;
+            IsClearAvailable = true;
 
         }
 
@@ -186,6 +237,17 @@ namespace TrafficPolice.Core.ViewModels
         {
             WarningType = string.Empty;
             WarningMessage = string.Empty;
+        }
+
+        bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
         }
 
     }

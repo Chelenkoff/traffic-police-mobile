@@ -39,17 +39,17 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button x:Name="btnLogin" Content="Вход" HorizontalAlignment="Left" Margin="10,502,0,0" VerticalAlignment="Top" Height="88" Width="358" Command="{Binding LoginCommand}" FontSize="40"/>
+            <Button x:Name="btnLogin"  Content="Вход" HorizontalAlignment="Left" Margin="10,502,0,0" VerticalAlignment="Top" Height="88" Width="358" Command="{Binding LoginCommand}" FontSize="40" IsHitTestVisible="{Binding IsLoginAvailable}"/>
             <TextBlock Text="Служебен номер" TextAlignment="Center"  HorizontalAlignment="Center" Margin="10,56,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" FontSize="40"/>
-            <TextBox x:Name="txtBoxUserId" Text="{Binding UserId, Mode=TwoWay}" HorizontalAlignment="Left" Height="72" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436"/>
+            <TextBox x:Name="txtBoxUserId" Text="{Binding UserId, Mode=TwoWay}" HorizontalAlignment="Left" Height="72" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" MaxLength="10" InputScope="Number"/>
             <TextBlock Text="Парола" TextAlignment="Center"  HorizontalAlignment="Center" Margin="10,193,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" FontSize="40"/>
-            <TextBox x:Name="txtBoxPass" Text="{Binding Password, Mode=TwoWay}" HorizontalAlignment="Left" Height="72" Margin="10,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436"/>
-            <TextBlock x:Name="textBlock" Text="{Binding WarningMessage}" HorizontalAlignment="Left" Margin="10,376,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="85" Width="436" FontSize="25"/>
+            <TextBox x:Name="txtBoxPass" Text="{Binding Password, Mode=TwoWay}" HorizontalAlignment="Left" Height="72" Margin="10,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" MaxLength="12" InputScope="Password"/>
+            <TextBlock x:Name="textBlock" Text="{Binding WarningMessage}" HorizontalAlignment="Left" Margin="10,376,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="91" Width="436" FontSize="20"/>
             <TextBlock x:Name="textBlock_Copy" Text="{Binding WarningType}" HorizontalAlignment="Left" Margin="10,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="436" FontSize="30" Foreground="Red"/>
             <ProgressBar 
                 Visibility="{Binding IsProgressRingVisible, Converter={StaticResource BoolToVis}}"
                 HorizontalAlignment="Left" Height="30"  Margin="10,472,0,0" VerticalAlignment="Top" Width="436"  IsIndeterminate="True" FontSize="36"/>
-            <Button x:Name="btnLogin_Copy" HorizontalAlignment="Left" Margin="368,502,0,0" VerticalAlignment="Top" Height="88" Width="78" Command="{Binding ClearCommand}" FontSize="40">
+            <Button x:Name="btnLogin_Copy" HorizontalAlignment="Left" Margin="368,502,0,0" VerticalAlignment="Top" Height="88" Width="78" Command="{Binding ClearCommand}" FontSize="40" IsHitTestVisible="{Binding IsClearAvailable}">
                 <Button.Template>
                     <ControlTemplate>
                         <Image x:Name="image" Height="78" Width="78" Source="/Resources/Images/Icons/appbar.delete.png" RenderTransformOrigin="0.167,0.222"/>
