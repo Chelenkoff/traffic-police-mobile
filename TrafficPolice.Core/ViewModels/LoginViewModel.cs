@@ -16,16 +16,16 @@ namespace TrafficPolice.Core.ViewModels
         public LoginViewModel()
         {
             client = new Service1Client();
-            
-            
-            DriverOwner drOwner = new DriverOwner();
-            
+
         }
 
         public override void Start()
         {
 
             client.GetUserByIdAndPassCompleted += client_GetUserByIdAndPassCompleted;
+            stopLoading();
+
+            
             base.Start();
         }
 
@@ -39,6 +39,7 @@ namespace TrafficPolice.Core.ViewModels
                 {
                     WarningMessage = "Логнах се";
                 }
+                stopLoading();
 
             }
         }
@@ -57,8 +58,23 @@ namespace TrafficPolice.Core.ViewModels
 
         private void login()
         {
+            clearInfoMessage();
+            startLoading();
             client.GetUserByIdAndPassAsync(UserId, Password);
         }
+
+        public ICommand ClearCommand
+        {
+            get { return new DelegateCommand(clearFields); }
+        }
+
+        private void clearFields()
+        {
+
+            UserId = string.Empty;
+            Password = string.Empty;
+            clearInfoMessage();
+         }
 
         private bool dbResponseValidation(User usr)
         {
@@ -117,6 +133,18 @@ namespace TrafficPolice.Core.ViewModels
             }
         }
 
+        //IsProgressRingVisible property
+        private bool _isProgressRingVisible;
+        public bool IsProgressRingVisible
+        {
+            get { return _isProgressRingVisible; }
+            set
+            {
+                _isProgressRingVisible = value;
+                RaisePropertyChanged(() => IsProgressRingVisible);
+            }
+        }
+
         //Password property
         private User _user;
         public User User
@@ -141,5 +169,24 @@ namespace TrafficPolice.Core.ViewModels
                 RaisePropertyChanged(() => UserId);
             }
         }
+
+
+        private void startLoading()
+        {
+            IsProgressRingVisible = true;
+
+        }
+        private void stopLoading()
+        {
+            IsProgressRingVisible = false;
+
+        }
+
+        private void clearInfoMessage()
+        {
+            WarningType = string.Empty;
+            WarningMessage = string.Empty;
+        }
+
     }
 }

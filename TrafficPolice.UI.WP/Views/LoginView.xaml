@@ -7,12 +7,19 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="clr-namespace:MvvmCross.WindowsPhone.Views;assembly=MvvmCross.WindowsPhone"
+    xmlns:local="clr-namespace:TrafficPolice.UI.WP"
+    xmlns:converters ="clr-namespace:TrafficPolice.UI.WP.Utilities"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
+
+    <views:MvxPhonePage.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </views:MvxPhonePage.Resources>
+
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -23,20 +30,32 @@
 
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="КАТ" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="Вход" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="КАТ - Пътна полиция" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <Grid>
+                <TextBlock Text="Вход" Margin="9,0,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+                <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="89" Margin="303,0,0,0" VerticalAlignment="Top" Width="91" Source="/TrafficPolice.UI.WP;component/Resources/Images/kat.png"/>
+            </Grid>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Button x:Name="btnLogin" Content="Вход" HorizontalAlignment="Left" Margin="10,509,0,0" VerticalAlignment="Top" Height="88" Width="436" Command="{Binding LoginCommand}" FontSize="40"/>
-            <TextBlock Text="Служебен номер" TextAlignment="Center"  HorizontalAlignment="Center" Margin="10,9,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" FontSize="40"/>
-            <TextBox x:Name="txtBoxUserId" Text="{Binding UserId, Mode=TwoWay}" HorizontalAlignment="Left" Height="72" Margin="10,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436"/>
-            <TextBlock Text="Парола" TextAlignment="Center"  HorizontalAlignment="Center" Margin="10,146,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" FontSize="40"/>
-            <TextBox x:Name="txtBoxPass" Text="{Binding Password, Mode=TwoWay}" HorizontalAlignment="Left" Height="72" Margin="10,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436"/>
-            <TextBlock x:Name="textBlock" Text="{Binding WarningMessage}" HorizontalAlignment="Left" Margin="10,329,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="85" Width="436"/>
-            <TextBlock x:Name="textBlock_Copy" Text="{Binding WarningType}" HorizontalAlignment="Left" Margin="10,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="436" FontSize="25" Foreground="Red"/>
-
+            <Button x:Name="btnLogin" Content="Вход" HorizontalAlignment="Left" Margin="10,502,0,0" VerticalAlignment="Top" Height="88" Width="358" Command="{Binding LoginCommand}" FontSize="40"/>
+            <TextBlock Text="Служебен номер" TextAlignment="Center"  HorizontalAlignment="Center" Margin="10,56,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" FontSize="40"/>
+            <TextBox x:Name="txtBoxUserId" Text="{Binding UserId, Mode=TwoWay}" HorizontalAlignment="Left" Height="72" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436"/>
+            <TextBlock Text="Парола" TextAlignment="Center"  HorizontalAlignment="Center" Margin="10,193,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436" FontSize="40"/>
+            <TextBox x:Name="txtBoxPass" Text="{Binding Password, Mode=TwoWay}" HorizontalAlignment="Left" Height="72" Margin="10,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="436"/>
+            <TextBlock x:Name="textBlock" Text="{Binding WarningMessage}" HorizontalAlignment="Left" Margin="10,376,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="85" Width="436" FontSize="25"/>
+            <TextBlock x:Name="textBlock_Copy" Text="{Binding WarningType}" HorizontalAlignment="Left" Margin="10,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="436" FontSize="30" Foreground="Red"/>
+            <ProgressBar 
+                Visibility="{Binding IsProgressRingVisible, Converter={StaticResource BoolToVis}}"
+                HorizontalAlignment="Left" Height="30"  Margin="10,472,0,0" VerticalAlignment="Top" Width="436"  IsIndeterminate="True" FontSize="36"/>
+            <Button x:Name="btnLogin_Copy" HorizontalAlignment="Left" Margin="368,502,0,0" VerticalAlignment="Top" Height="88" Width="78" Command="{Binding ClearCommand}" FontSize="40">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image x:Name="image" Height="78" Width="78" Source="/Resources/Images/Icons/appbar.delete.png" RenderTransformOrigin="0.167,0.222"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </Grid>
     </Grid>
 
