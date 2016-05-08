@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TrafficPolice.Core.Model;
 using TrafficPolice.Core.Utilities;
 
 namespace TrafficPolice.Core.ViewModels
@@ -15,12 +16,20 @@ namespace TrafficPolice.Core.ViewModels
         {
             DriverOwnerChildVM = new DriverOwnerChildViewModel();
             RegistrationChildVM = new RegistrationChildViewModel();
-            PenaltyChildVM = new PenaltyChildViewModel();
-            WelcomeMessage = "asdadsad";
+            //PenaltyChildVM = new PenaltyChildViewModel();
+           
+        }
+
+        //VM with parameters
+        public void Init(User usr)
+        {
+            User = usr;
+            // use the parameters here
         }
 
         public override void Start()
         {
+            LoginInfo = String.Format("Здравейте, {0} {1}",User.FirstName,User.LastName);
            base.Start();
         }
 
@@ -29,6 +38,20 @@ namespace TrafficPolice.Core.ViewModels
         {
             get { return _welcomeMessage; }
             set { _welcomeMessage = value; RaisePropertyChanged(() => WelcomeMessage); }
+        }
+
+        private User _user;
+        public User User
+        {
+            get { return _user; }
+            set { _user = value; RaisePropertyChanged(() => User); }
+        }
+
+        private string _loginInfo;
+        public string LoginInfo
+        {
+            get { return _loginInfo; }
+            set { _loginInfo = value; RaisePropertyChanged(() => LoginInfo); }
         }
 
         public ICommand Logout
@@ -54,12 +77,12 @@ namespace TrafficPolice.Core.ViewModels
             set { _registrationChildVM = value; RaisePropertyChanged(() => RegistrationChildVM); }
         }
 
-        private PenaltyChildViewModel _penaltyChildVM;
-        public PenaltyChildViewModel PenaltyChildVM
-        {
-            get { return _penaltyChildVM; }
-            set { _penaltyChildVM = value; RaisePropertyChanged(() => PenaltyChildVM); }
-        }
+        //private PenaltyChildViewModel _penaltyChildVM;
+        //public PenaltyChildViewModel PenaltyChildVM
+        //{
+        //    get { return _penaltyChildVM; }
+        //    set { _penaltyChildVM = value; RaisePropertyChanged(() => PenaltyChildVM); }
+        //}
 
 
 

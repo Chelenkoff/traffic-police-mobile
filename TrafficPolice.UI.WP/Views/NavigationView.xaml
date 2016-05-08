@@ -8,6 +8,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:views="clr-namespace:MvvmCross.WindowsPhone.Views;assembly=MvvmCross.WindowsPhone"
     xmlns:bar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar"
+    xmlns:converters ="clr-namespace:TrafficPolice.UI.WP.Utilities"
+
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -15,7 +17,9 @@
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
 
-
+    <views:MvxPhonePage.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </views:MvxPhonePage.Resources>
 
     <bar:Bindable.ApplicationBar>
         <bar:BindableApplicationBar IsVisible="True" IsMenuEnabled="True">
@@ -25,17 +29,17 @@
             IsEnabled="True"
             Command="{Binding Logout}"/>
         </bar:BindableApplicationBar>
-   </bar:Bindable.ApplicationBar>
+    </bar:Bindable.ApplicationBar>
 
-            <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
     <Grid x:Name="LayoutRoot">
 
-        <phone:Panorama Title="{Binding WelcomeMessage}">
+        <phone:Panorama Title="{Binding LoginInfo}">
             <!--Designing Panorama Tite template.-->
             <phone:Panorama.TitleTemplate>
                 <DataTemplate>
                     <Grid>
-                        <TextBlock Text="{Binding}" FontSize="40" Margin="180,61,10,-11" />
+                        <TextBlock Text="{Binding}" FontSize="25"  Foreground="#FF00A2FF" Margin="71,39,-270,-14" />
                     </Grid>
                 </DataTemplate>
             </phone:Panorama.TitleTemplate>
@@ -46,25 +50,34 @@
             </phone:Panorama.Background>
 
             <!--Panorama item one-->
-            <phone:PanoramaItem  Header="Registration"  DataContext="{Binding RegistrationChildVM}">
+            <phone:PanoramaItem  Header="Регистрация"  DataContext="{Binding RegistrationChildVM}">
                 <Grid>
-                    <TextBlock Text="{Binding Bar}" FontSize="40"></TextBlock>
+                    <TextBlock Text="Справка по номер на превозното средство" FontSize="30" Margin="0,-520,0,0" Height="90" TextWrapping="Wrap" TextAlignment="Center"/>
+                    <TextBlock Text="Регистрационен номер" FontSize="39" Margin="0,-250,0,0" Height="60" TextWrapping="Wrap" TextAlignment="Center"/>
+                    <TextBox x:Name="textBox" Text="{Binding RegNum,Mode=TwoWay}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" ToolTipService.ToolTip="Въведете рег. номер" Height="104" Margin="0,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="420" MaxLength="13" FontSize="39"/>
+                    <TextBlock x:Name="textBlock" Text="{Binding WarningMessage}" HorizontalAlignment="Left" Margin="0,376,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="91" Width="420" FontSize="20"/>
+                    <TextBlock x:Name="textBlock_Copy" Text="{Binding WarningType}" HorizontalAlignment="Left" Margin="0,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="420" FontSize="30" Foreground="Red"/>
+                    <ProgressBar 
+                           Visibility="{Binding IsProgressRingVisible, Converter={StaticResource BoolToVis}}"
+                             HorizontalAlignment="Left" Height="25"  Margin="0,450,0,0" VerticalAlignment="Top" Width="420"  IsIndeterminate="True" FontSize="36"/>
+                    <Button   Content="Търси" Height="90" HorizontalAlignment="Left" Margin="0,480,0,0" VerticalAlignment="Top"  Width="420" Command="{Binding ShowRegCommand}" FontSize="40" IsHitTestVisible="{Binding IsLoginAvailable}"/>
+
                 </Grid>
             </phone:PanoramaItem>
 
             <!--Panorama item two-->
-            <phone:PanoramaItem Header="DROwner"  DataContext="{Binding DriverOwnerChildVM}">
+            <phone:PanoramaItem Header="Водач"  DataContext="{Binding DriverOwnerChildVM}">
                 <Grid>
                     <TextBlock Text="{Binding Foo}" FontSize="40"></TextBlock>
                 </Grid>
             </phone:PanoramaItem>
 
             <!--Panorama item three-->
-            <phone:PanoramaItem Header="Penalty" DataContext="{Binding PenaltyChildVM}">
+            <!--<phone:PanoramaItem Header="Penalty" DataContext="{Binding PenaltyChildVM}">
                 <Grid>
                     <TextBlock Text="{Binding Oink}" FontSize="40"></TextBlock>
                 </Grid>
-            </phone:PanoramaItem>
+            </phone:PanoramaItem>-->
         </phone:Panorama>
     </Grid>
 

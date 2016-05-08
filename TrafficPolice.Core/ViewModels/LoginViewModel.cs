@@ -23,6 +23,7 @@ namespace TrafficPolice.Core.ViewModels
         {
 
             client.GetUserByIdAndPassCompleted += client_GetUserByIdAndPassCompleted;
+
             stopLoading();
 
             
@@ -37,19 +38,15 @@ namespace TrafficPolice.Core.ViewModels
 
                 if (dbResponseValidation(User))
                 {
-                    ShowViewModel<NavigationViewModel>();
+                    ShowViewModel<NavigationViewModel>(User);
                 }
                 stopLoading();
 
             }
         }
 
-        private string _welcomeMessage;
-        public string WelcomeMessage
-        {
-            get { return _welcomeMessage; }
-            set { _welcomeMessage = value; RaisePropertyChanged(() => WelcomeMessage);  }
-        }
+
+
 
         public ICommand LoginCommand
         {
@@ -64,6 +61,8 @@ namespace TrafficPolice.Core.ViewModels
 
             startLoading();
             client.GetUserByIdAndPassAsync(UserId, Password);
+
+
         }
 
         public ICommand ClearCommand
@@ -192,7 +191,7 @@ namespace TrafficPolice.Core.ViewModels
             }
         }
 
-        //Password property
+        //User property
         private User _user;
         public User User
         {

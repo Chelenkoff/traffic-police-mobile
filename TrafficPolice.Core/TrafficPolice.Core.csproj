@@ -47,6 +47,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Utilities\DelegateCommand.cs" />
+    <Compile Include="Utilities\InputValidator.cs" />
     <Compile Include="ViewModels\DriverOwnerChildViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModel.cs" />
