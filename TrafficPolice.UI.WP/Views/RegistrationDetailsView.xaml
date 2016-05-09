@@ -41,7 +41,7 @@
             <!--Pivot item one-->
             <phone:PivotItem Header="Застрахователна информация">
 
-                <Grid Margin="0,-1,0,1">
+                <Grid >
                     <!--Vignette data-->
                     <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="118" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,2,0,0"/>
                     <CheckBox Content="Винетка" IsChecked="{Binding Registration.HasVignette}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" IsHitTestVisible="False" Margin="0,2,0,0"/>
@@ -75,11 +75,39 @@
 
             <!--Pivot item two-->
             <phone:PivotItem Header="Технически характеристики">
-                <Grid/>
+                <Grid>
+                    <!--Technical data-->
+                    <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="454" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,71,0,0"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="10,84,0,0" TextWrapping="Wrap" Text="Производител:" VerticalAlignment="Top" FontSize="25"/>
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="190,84,0,0" TextWrapping="Wrap" Text="{Binding Registration.CarManufacturer}" VerticalAlignment="Top" FontSize="25" Width="183" FontWeight="Bold"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="10,138,0,0" TextWrapping="Wrap" Text="Модел:" VerticalAlignment="Top" FontSize="25"/>
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="100,138,0,0" TextWrapping="Wrap" Text="{Binding Registration.CarModel}" VerticalAlignment="Top" FontSize="25" Width="274" FontWeight="Bold"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="10,194,0,0" TextWrapping="Wrap" Text="Тип:" VerticalAlignment="Top" FontSize="25"/>
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="69,194,0,0" TextWrapping="Wrap" Text="{Binding Registration.CarType}" VerticalAlignment="Top" FontSize="25" Width="306" FontWeight="Bold"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="10,247,0,0" TextWrapping="Wrap" Text="Кубатура:" VerticalAlignment="Top" FontSize="25"/>
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="135,247,0,0" TextWrapping="Wrap" Text="{Binding Registration.CarCubage}" VerticalAlignment="Top" FontSize="25" Width="239" FontWeight="Bold"/>
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Left" Margin="377,252,0,0" TextWrapping="Wrap" Text="куб. м." VerticalAlignment="Top" FontSize="18" Width="58"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="10,300,0,0" TextWrapping="Wrap" Text="Мощност:" VerticalAlignment="Top" FontSize="25"/>
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="135,300,0,0" TextWrapping="Wrap" Text="{Binding Registration.CarHp}" VerticalAlignment="Top" FontSize="25" Width="239" FontWeight="Bold"/>
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Left" Margin="377,308,0,0" TextWrapping="Wrap" Text="к.с." VerticalAlignment="Top" FontSize="18" Width="58"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="10,356,0,0" TextWrapping="Wrap" Text="Цвят:" VerticalAlignment="Top" FontSize="25"/>
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Right" Margin="133,356,0,0" TextWrapping="Wrap" Text="{Binding Registration.CarColor}" VerticalAlignment="Top" FontSize="25" Width="242" FontWeight="Bold"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="0,415,0,0" TextWrapping="Wrap" Text="VIN:" TextAlignment="Center" VerticalAlignment="Top" FontSize="40" Width="444"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="0,465,0,0" TextWrapping="Wrap" Text="{Binding Registration.CarVin}" TextAlignment="Center" VerticalAlignment="Top" FontSize="35" Width="444" Foreground="#FFFFE800"/>
+
+                </Grid>
             </phone:PivotItem>
 
             <phone:PivotItem Header="Общи данни">
-                <Grid/>
+                <Grid>
+                    <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="412" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,71,0,0"/>
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Center" Margin="0,88,0,0" TextWrapping="Wrap" Text="ЕГН на собственика:" VerticalAlignment="Top" FontSize="35" Width="450"/>
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Center" Margin="0,135,0,0" TextWrapping="Wrap" Text="{Binding Registration.DriverOwnerId}" VerticalAlignment="Top" FontSize="45" Width="450" FontWeight="Bold"/>
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="0,222,0,0" TextWrapping="Wrap" Text="Първа регистрация:" VerticalAlignment="Top" FontSize="35" Width="450"/>
+                    <toolkit:DatePicker Margin="135,269,136,324" HorizontalContentAlignment="Center"  Value="{Binding Registration.FirstRegDate}" IsHitTestVisible="False"  FontSize="40" />
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="0,357,0,0" TextWrapping="Wrap" Text="Настояща регистрация:" VerticalAlignment="Top" FontSize="35" Width="450"/>
+                    <toolkit:DatePicker Margin="135,404,136,189" HorizontalContentAlignment="Center"  Value="{Binding Registration.RecentRegDate}" IsHitTestVisible="False"  FontSize="40" />
+                </Grid>
             </phone:PivotItem>
 
         </phone:Pivot>
