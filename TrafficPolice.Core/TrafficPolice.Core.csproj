@@ -53,6 +53,7 @@
     <Compile Include="ViewModels\NavigationViewModel.cs" />
     <Compile Include="ViewModels\PenaltyChildViewModel.cs" />
     <Compile Include="ViewModels\RegistrationChildViewModel.cs" />
+    <Compile Include="ViewModels\RegistrationDetailsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />

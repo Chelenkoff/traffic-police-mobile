@@ -39,22 +39,22 @@ namespace WCFRestMobile.Model
         [DataMember]
         public string CivilInsurer { get; set; }
         [DataMember]
-        public DateTime? CivilInsuranceStartDate { get; set; }
+        public DateTime CivilInsuranceStartDate { get; set; }
         [DataMember]
-        public DateTime? CivilInsuranceEndDate { get; set; }
+        public DateTime CivilInsuranceEndDate { get; set; }
 
         [DataMember]
         public bool HasVignette { get; set; }
         [DataMember]
-        public DateTime? VignetteValidUntil { get; set; }
+        public DateTime VignetteValidUntil { get; set; }
 
         [DataMember]
         public bool HasDamageInsurance { get; set; }
         [DataMember]
         public string DamageInsurer { get; set; }
         [DataMember]
-        public DateTime? DamageInsuranceStartDate { get; set; }
+        public DateTime DamageInsuranceStartDate { get; set; }
         [DataMember]
-        public DateTime? DamageInsuranceEndDate { get; set; }
+        public DateTime DamageInsuranceEndDate { get; set; }
     }
 }

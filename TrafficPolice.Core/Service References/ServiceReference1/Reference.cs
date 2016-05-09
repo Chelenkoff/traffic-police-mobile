@@ -1334,15 +1334,15 @@ namespace TrafficPolice.Core.ServiceReference1 {
         
         private string CarVinField;
         
-        private System.Nullable<System.DateTime> CivilInsuranceEndDateField;
+        private System.DateTime CivilInsuranceEndDateField;
         
-        private System.Nullable<System.DateTime> CivilInsuranceStartDateField;
+        private System.DateTime CivilInsuranceStartDateField;
         
         private string CivilInsurerField;
         
-        private System.Nullable<System.DateTime> DamageInsuranceEndDateField;
+        private System.DateTime DamageInsuranceEndDateField;
         
-        private System.Nullable<System.DateTime> DamageInsuranceStartDateField;
+        private System.DateTime DamageInsuranceStartDateField;
         
         private string DamageInsurerField;
         
@@ -1360,7 +1360,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         
         private string RegNumField;
         
-        private System.Nullable<System.DateTime> VignetteValidUntilField;
+        private System.DateTime VignetteValidUntilField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string CarColor {
@@ -1454,7 +1454,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> CivilInsuranceEndDate {
+        public System.DateTime CivilInsuranceEndDate {
             get {
                 return this.CivilInsuranceEndDateField;
             }
@@ -1467,7 +1467,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> CivilInsuranceStartDate {
+        public System.DateTime CivilInsuranceStartDate {
             get {
                 return this.CivilInsuranceStartDateField;
             }
@@ -1493,7 +1493,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> DamageInsuranceEndDate {
+        public System.DateTime DamageInsuranceEndDate {
             get {
                 return this.DamageInsuranceEndDateField;
             }
@@ -1506,7 +1506,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> DamageInsuranceStartDate {
+        public System.DateTime DamageInsuranceStartDate {
             get {
                 return this.DamageInsuranceStartDateField;
             }
@@ -1623,7 +1623,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> VignetteValidUntil {
+        public System.DateTime VignetteValidUntil {
             get {
                 return this.VignetteValidUntilField;
             }

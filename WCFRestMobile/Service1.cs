@@ -319,16 +319,16 @@ namespace WCFRestMobile
 
                         reg.HasCivilInsurance = Convert.ToBoolean(dataReader["civil_insurance"]);
                         reg.CivilInsurer = dataReader["civil_insurer"] + "";
-                        reg.CivilInsuranceStartDate = dataReader["civil_insurance_start_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["civil_insurance_start_date"]);
-                        reg.CivilInsuranceEndDate = dataReader["civil_insurance_end_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["civil_insurance_end_date"]);
+                        reg.CivilInsuranceStartDate = dataReader["civil_insurance_start_date"] == DBNull.Value ? Convert.ToDateTime("01/01/0001") : Convert.ToDateTime(dataReader["civil_insurance_start_date"]);
+                        reg.CivilInsuranceEndDate = dataReader["civil_insurance_end_date"] == DBNull.Value ? Convert.ToDateTime("01/01/0001") : Convert.ToDateTime(dataReader["civil_insurance_end_date"]);
 
                         reg.HasVignette = Convert.ToBoolean(dataReader["has_vignette"]);
-                        reg.VignetteValidUntil = dataReader["vignette_valid_until"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["vignette_valid_until"]);
+                        reg.VignetteValidUntil = dataReader["vignette_valid_until"] == DBNull.Value ? Convert.ToDateTime("01/01/0001") : Convert.ToDateTime(dataReader["vignette_valid_until"]);
 
                         reg.HasDamageInsurance = Convert.ToBoolean(dataReader["damage_insurance"]);
                         reg.DamageInsurer = dataReader["damage_insurer"] + "";
-                        reg.DamageInsuranceStartDate = dataReader["damage_insurance_start_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["damage_insurance_start_date"]);
-                        reg.DamageInsuranceEndDate = dataReader["damage_insurance_end_date"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dataReader["damage_insurance_end_date"]);
+                        reg.DamageInsuranceStartDate = dataReader["damage_insurance_start_date"] == DBNull.Value ? Convert.ToDateTime("01/01/0001") : Convert.ToDateTime(dataReader["damage_insurance_start_date"]);
+                        reg.DamageInsuranceEndDate = dataReader["damage_insurance_end_date"] == DBNull.Value ? Convert.ToDateTime("01/01/0001") : Convert.ToDateTime(dataReader["damage_insurance_end_date"]);
 
 
                     }

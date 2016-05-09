@@ -21,13 +21,13 @@ namespace TrafficPolice.Core.Model
         public DateTime RecentRegDate { get; set; }
         public bool HasCivilInsurance { get; set; }
         public string CivilInsurer { get; set; }
-        public DateTime? CivilInsuranceStartDate { get; set; }
-        public DateTime? CivilInsuranceEndDate { get; set; }
+        public DateTime CivilInsuranceStartDate { get; set; }
+        public DateTime CivilInsuranceEndDate { get; set; }
         public bool HasVignette { get; set; }
-        public DateTime? VignetteValidUntil { get; set; }
+        public DateTime VignetteValidUntil { get; set; }
         public bool HasDamageInsurance { get; set; }
         public string DamageInsurer { get; set; }
-        public DateTime? DamageInsuranceStartDate { get; set; }
-        public DateTime? DamageInsuranceEndDate { get; set; }
+        public DateTime DamageInsuranceStartDate { get; set; }
+        public DateTime DamageInsuranceEndDate { get; set; }
     }
 }

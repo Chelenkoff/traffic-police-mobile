@@ -1,0 +1,88 @@
+﻿<views:MvxPhonePage
+    x:Class="TrafficPolice.UI.WP.Views.RegistrationDetailsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:views="clr-namespace:MvvmCross.WindowsPhone.Views;assembly=MvvmCross.WindowsPhone"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <phone:Pivot Title="{Binding Title}">
+            <!--Pivot title design-->
+            <phone:Pivot.TitleTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="{Binding}" FontSize="25"  Foreground="#FF00A2FF" />
+                    </Grid>
+                </DataTemplate>
+            </phone:Pivot.TitleTemplate>
+
+            <!--Assigns a background image to the Pivot control.-->
+            <phone:Pivot.Background>
+                <ImageBrush ImageSource="/Resources/Images/navigation_background.jpg"/>
+            </phone:Pivot.Background>
+
+            <phone:Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" FontSize="32"/>
+                </DataTemplate>
+            </phone:Pivot.HeaderTemplate>
+            <!--Pivot item one-->
+            <phone:PivotItem Header="Застрахователна информация">
+
+                <Grid Margin="0,-1,0,1">
+                    <!--Vignette data-->
+                    <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="118" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,2,0,0"/>
+                    <CheckBox Content="Винетка" IsChecked="{Binding Registration.HasVignette}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" IsHitTestVisible="False" Margin="0,2,0,0"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="257,16,0,0" TextWrapping="Wrap" Text="Валидна до:" VerticalAlignment="Top" FontSize="25"/>
+                    <toolkit:DatePicker Margin="234,57,37,536" HorizontalContentAlignment="Center"  Value="{Binding Registration.VignetteValidUntil}" IsHitTestVisible="False"  FontSize="40" />
+
+                    <!--Civil insurance data-->
+
+                    <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="221" Margin="0,122,0,0" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5"/>
+                    <CheckBox Content="Гражданска отговорност" IsChecked="{Binding Registration.HasCivilInsurance}" HorizontalAlignment="Left" Margin="0,125,0,0" VerticalAlignment="Top" FontSize="30" IsHitTestVisible="False" Height="81"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="2,210,0,0" TextWrapping="Wrap" Text="Застраховател:" VerticalAlignment="Top" FontSize="22"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="162,208,0,0" TextWrapping="Wrap" Text="{Binding Registration.CivilInsurer}" VerticalAlignment="Top" FontSize="25" Width="283" FontStyle="Italic" FontWeight="Medium"/>
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="17,241,0,0" TextWrapping="Wrap" Text="Сключена на:" VerticalAlignment="Top" FontSize="25" Width="185"/>
+                    <toolkit:DatePicker Margin="17,280,254,313" HorizontalContentAlignment="Center"  Value="{Binding Registration.CivilInsuranceStartDate}" IsHitTestVisible="False"  FontSize="40" />
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="250,241,0,0" TextWrapping="Wrap" Text="Валидна до:" VerticalAlignment="Top" FontSize="25" Width="185"/>
+                    <toolkit:DatePicker Margin="250,280,21,313" HorizontalContentAlignment="Center"  Value="{Binding Registration.CivilInsuranceEndDate}" IsHitTestVisible="False"  FontSize="40" />
+
+                    <!--Damage insurance data-->
+
+                    <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="221" Margin="0,345,0,0" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5"/>
+                    <CheckBox Content="Автокаско" IsChecked="{Binding Registration.HasDamageInsurance}" HorizontalAlignment="Left" Margin="0,348,0,0" VerticalAlignment="Top" FontSize="30" IsHitTestVisible="False" Height="81"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="2,433,0,0" TextWrapping="Wrap" Text="Застраховател:" VerticalAlignment="Top" FontSize="22"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="162,431,0,0" TextWrapping="Wrap" Text="{Binding Registration.DamageInsurer}" VerticalAlignment="Top" FontSize="25" Width="283" FontStyle="Italic" FontWeight="Medium"/>
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="17,464,0,0" TextWrapping="Wrap" Text="Сключена на:" VerticalAlignment="Top" FontSize="25" Width="185"/>
+                    <toolkit:DatePicker Margin="17,503,254,90" HorizontalContentAlignment="Center"  Value="{Binding Registration.DamageInsuranceStartDate}" IsHitTestVisible="False"  FontSize="40" />
+                    <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="250,464,0,0" TextWrapping="Wrap" Text="Валидна до:" VerticalAlignment="Top" FontSize="25" Width="185"/>
+                    <toolkit:DatePicker Margin="250,503,21,90" HorizontalContentAlignment="Center"  Value="{Binding Registration.DamageInsuranceEndDate}" IsHitTestVisible="False"  FontSize="40" />
+
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem Header="Технически характеристики">
+                <Grid/>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="Общи данни">
+                <Grid/>
+            </phone:PivotItem>
+
+        </phone:Pivot>
+    </Grid>
+
+</views:MvxPhonePage>

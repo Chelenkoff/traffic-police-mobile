@@ -38,7 +38,11 @@ namespace TrafficPolice.Core.ViewModels
 
                 if (dbResponseValidation(Registration))
                 {
-                    //ShowViewModel<NavigationViewModel>(User);
+                    
+
+
+                    ShowViewModel<RegistrationDetailsViewModel>(Registration);
+
                 }
                 stopLoading();
 
