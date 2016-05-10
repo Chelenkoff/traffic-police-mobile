@@ -38,7 +38,7 @@ namespace WCFRestMobile.Model
         public string Email { get; set; }
 
         [DataMember]
-        public byte RemainingPts { get; set; }
+        public int RemainingPts { get; set; }
         [DataMember]
         public DateTime LicenceIssueDate { get; set; }
         [DataMember]

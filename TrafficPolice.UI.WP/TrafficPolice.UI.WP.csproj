@@ -116,6 +116,9 @@
     <Compile Include="Views\NavigationView.xaml.cs">
       <DependentUpon>NavigationView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DriverOwnerDetailsView.xaml.cs">
+      <DependentUpon>DriverOwnerDetailsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegistrationDetailsView.xaml.cs">
       <DependentUpon>RegistrationDetailsView.xaml</DependentUpon>
     </Compile>
@@ -244,6 +247,10 @@
     <Page Include="Views\NavigationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DriverOwnerDetailsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\RegistrationDetailsView.xaml">
       <SubType>Designer</SubType>

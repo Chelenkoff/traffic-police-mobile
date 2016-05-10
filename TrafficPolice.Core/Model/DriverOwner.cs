@@ -22,7 +22,7 @@ namespace TrafficPolice.Core.Model
         public string Residence { get; set; }
         public string TelNum { get; set; }
         public string Email { get; set; }
-        public byte RemainingPts { get; set; }
+        public int RemainingPts { get; set; }
         public DateTime LicenceIssueDate { get; set; }
         public DateTime LicenceExpiryDate { get; set; }
         public string LicenceIssuedBy { get; set; }

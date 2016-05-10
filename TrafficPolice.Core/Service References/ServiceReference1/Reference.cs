@@ -147,7 +147,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         
         private System.Collections.ObjectModel.ObservableCollection<TrafficPolice.Core.ServiceReference1.Penalty> PenaltiesField;
         
-        private byte RemainingPtsField;
+        private int RemainingPtsField;
         
         private string ResidenceField;
         
@@ -314,7 +314,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte RemainingPts {
+        public int RemainingPts {
             get {
                 return this.RemainingPtsField;
             }
@@ -393,110 +393,110 @@ namespace TrafficPolice.Core.ServiceReference1 {
     [System.Runtime.Serialization.DataContractAttribute(Name="Categories", Namespace="http://schemas.datacontract.org/2004/07/WCFRestMobile.Model")]
     public partial class Categories : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private System.Nullable<System.DateTime> a1AcquiryDateField;
+        private System.DateTime a1AcquiryDateField;
         
-        private System.Nullable<System.DateTime> a1ExpiryDateField;
+        private System.DateTime a1ExpiryDateField;
         
         private string a1RestrictionsField;
         
-        private System.Nullable<System.DateTime> aAcquiryDateField;
+        private System.DateTime aAcquiryDateField;
         
-        private System.Nullable<System.DateTime> aExpiryDateField;
+        private System.DateTime aExpiryDateField;
         
         private string aRestrictionsField;
         
-        private System.Nullable<System.DateTime> b1AcquiryDateField;
+        private System.DateTime b1AcquiryDateField;
         
-        private System.Nullable<System.DateTime> b1ExpiryDateField;
+        private System.DateTime b1ExpiryDateField;
         
         private string b1RestrictionsField;
         
-        private System.Nullable<System.DateTime> bAcquiryDateField;
+        private System.DateTime bAcquiryDateField;
         
-        private System.Nullable<System.DateTime> bExpiryDateField;
+        private System.DateTime bExpiryDateField;
         
         private string bRestrictionsField;
         
-        private System.Nullable<System.DateTime> beAcquiryDateField;
+        private System.DateTime beAcquiryDateField;
         
-        private System.Nullable<System.DateTime> beExpiryDateField;
+        private System.DateTime beExpiryDateField;
         
         private string beRestrictionsField;
         
-        private System.Nullable<System.DateTime> c1AcquiryDateField;
+        private System.DateTime c1AcquiryDateField;
         
-        private System.Nullable<System.DateTime> c1ExpiryDateField;
+        private System.DateTime c1ExpiryDateField;
         
         private string c1RestrictionsField;
         
-        private System.Nullable<System.DateTime> c1eAcquiryDateField;
+        private System.DateTime c1eAcquiryDateField;
         
-        private System.Nullable<System.DateTime> c1eExpiryDateField;
+        private System.DateTime c1eExpiryDateField;
         
         private string c1eRestrictionsField;
         
-        private System.Nullable<System.DateTime> cAcquiryDateField;
+        private System.DateTime cAcquiryDateField;
         
-        private System.Nullable<System.DateTime> cExpiryDateField;
+        private System.DateTime cExpiryDateField;
         
         private string cRestrictionsField;
         
-        private System.Nullable<System.DateTime> ceAcquiryDateField;
+        private System.DateTime ceAcquiryDateField;
         
-        private System.Nullable<System.DateTime> ceExpiryDateField;
+        private System.DateTime ceExpiryDateField;
         
         private string ceRestrictionsField;
         
-        private System.Nullable<System.DateTime> d1AcquiryDateField;
+        private System.DateTime d1AcquiryDateField;
         
-        private System.Nullable<System.DateTime> d1ExpiryDateField;
+        private System.DateTime d1ExpiryDateField;
         
         private string d1RestrictionsField;
         
-        private System.Nullable<System.DateTime> d1eAcquiryDateField;
+        private System.DateTime d1eAcquiryDateField;
         
-        private System.Nullable<System.DateTime> d1eExpiryDateField;
+        private System.DateTime d1eExpiryDateField;
         
         private string d1eRestrictionsField;
         
-        private System.Nullable<System.DateTime> dAcquiryDateField;
+        private System.DateTime dAcquiryDateField;
         
-        private System.Nullable<System.DateTime> dExpiryDateField;
+        private System.DateTime dExpiryDateField;
         
         private string dRestrictionsField;
         
-        private System.Nullable<System.DateTime> deAcquiryDateField;
+        private System.DateTime deAcquiryDateField;
         
-        private System.Nullable<System.DateTime> deExpiryDateField;
+        private System.DateTime deExpiryDateField;
         
         private string deRestrictionsField;
         
-        private System.Nullable<System.DateTime> mAcquiryDateField;
+        private System.DateTime mAcquiryDateField;
         
-        private System.Nullable<System.DateTime> mExpiryDateField;
+        private System.DateTime mExpiryDateField;
         
         private string mRestrictionsField;
         
-        private System.Nullable<System.DateTime> tktAcquiryDateField;
+        private System.DateTime tktAcquiryDateField;
         
-        private System.Nullable<System.DateTime> tktExpiryDateField;
+        private System.DateTime tktExpiryDateField;
         
         private string tktRestrictionsField;
         
-        private System.Nullable<System.DateTime> ttbAcquiryDateField;
+        private System.DateTime ttbAcquiryDateField;
         
-        private System.Nullable<System.DateTime> ttbExpiryDateField;
+        private System.DateTime ttbExpiryDateField;
         
         private string ttbRestrictionsField;
         
-        private System.Nullable<System.DateTime> ttmAcquiryDateField;
+        private System.DateTime ttmAcquiryDateField;
         
-        private System.Nullable<System.DateTime> ttmExpiryDateField;
+        private System.DateTime ttmExpiryDateField;
         
         private string ttmRestrictionsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> a1AcquiryDate {
+        public System.DateTime a1AcquiryDate {
             get {
                 return this.a1AcquiryDateField;
             }
@@ -509,7 +509,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> a1ExpiryDate {
+        public System.DateTime a1ExpiryDate {
             get {
                 return this.a1ExpiryDateField;
             }
@@ -535,7 +535,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> aAcquiryDate {
+        public System.DateTime aAcquiryDate {
             get {
                 return this.aAcquiryDateField;
             }
@@ -548,7 +548,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> aExpiryDate {
+        public System.DateTime aExpiryDate {
             get {
                 return this.aExpiryDateField;
             }
@@ -574,7 +574,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> b1AcquiryDate {
+        public System.DateTime b1AcquiryDate {
             get {
                 return this.b1AcquiryDateField;
             }
@@ -587,7 +587,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> b1ExpiryDate {
+        public System.DateTime b1ExpiryDate {
             get {
                 return this.b1ExpiryDateField;
             }
@@ -613,7 +613,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> bAcquiryDate {
+        public System.DateTime bAcquiryDate {
             get {
                 return this.bAcquiryDateField;
             }
@@ -626,7 +626,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> bExpiryDate {
+        public System.DateTime bExpiryDate {
             get {
                 return this.bExpiryDateField;
             }
@@ -652,7 +652,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> beAcquiryDate {
+        public System.DateTime beAcquiryDate {
             get {
                 return this.beAcquiryDateField;
             }
@@ -665,7 +665,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> beExpiryDate {
+        public System.DateTime beExpiryDate {
             get {
                 return this.beExpiryDateField;
             }
@@ -691,7 +691,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> c1AcquiryDate {
+        public System.DateTime c1AcquiryDate {
             get {
                 return this.c1AcquiryDateField;
             }
@@ -704,7 +704,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> c1ExpiryDate {
+        public System.DateTime c1ExpiryDate {
             get {
                 return this.c1ExpiryDateField;
             }
@@ -730,7 +730,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> c1eAcquiryDate {
+        public System.DateTime c1eAcquiryDate {
             get {
                 return this.c1eAcquiryDateField;
             }
@@ -743,7 +743,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> c1eExpiryDate {
+        public System.DateTime c1eExpiryDate {
             get {
                 return this.c1eExpiryDateField;
             }
@@ -769,7 +769,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> cAcquiryDate {
+        public System.DateTime cAcquiryDate {
             get {
                 return this.cAcquiryDateField;
             }
@@ -782,7 +782,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> cExpiryDate {
+        public System.DateTime cExpiryDate {
             get {
                 return this.cExpiryDateField;
             }
@@ -808,7 +808,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ceAcquiryDate {
+        public System.DateTime ceAcquiryDate {
             get {
                 return this.ceAcquiryDateField;
             }
@@ -821,7 +821,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ceExpiryDate {
+        public System.DateTime ceExpiryDate {
             get {
                 return this.ceExpiryDateField;
             }
@@ -847,7 +847,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> d1AcquiryDate {
+        public System.DateTime d1AcquiryDate {
             get {
                 return this.d1AcquiryDateField;
             }
@@ -860,7 +860,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> d1ExpiryDate {
+        public System.DateTime d1ExpiryDate {
             get {
                 return this.d1ExpiryDateField;
             }
@@ -886,7 +886,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> d1eAcquiryDate {
+        public System.DateTime d1eAcquiryDate {
             get {
                 return this.d1eAcquiryDateField;
             }
@@ -899,7 +899,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> d1eExpiryDate {
+        public System.DateTime d1eExpiryDate {
             get {
                 return this.d1eExpiryDateField;
             }
@@ -925,7 +925,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> dAcquiryDate {
+        public System.DateTime dAcquiryDate {
             get {
                 return this.dAcquiryDateField;
             }
@@ -938,7 +938,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> dExpiryDate {
+        public System.DateTime dExpiryDate {
             get {
                 return this.dExpiryDateField;
             }
@@ -964,7 +964,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> deAcquiryDate {
+        public System.DateTime deAcquiryDate {
             get {
                 return this.deAcquiryDateField;
             }
@@ -977,7 +977,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> deExpiryDate {
+        public System.DateTime deExpiryDate {
             get {
                 return this.deExpiryDateField;
             }
@@ -1003,7 +1003,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> mAcquiryDate {
+        public System.DateTime mAcquiryDate {
             get {
                 return this.mAcquiryDateField;
             }
@@ -1016,7 +1016,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> mExpiryDate {
+        public System.DateTime mExpiryDate {
             get {
                 return this.mExpiryDateField;
             }
@@ -1042,7 +1042,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> tktAcquiryDate {
+        public System.DateTime tktAcquiryDate {
             get {
                 return this.tktAcquiryDateField;
             }
@@ -1055,7 +1055,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> tktExpiryDate {
+        public System.DateTime tktExpiryDate {
             get {
                 return this.tktExpiryDateField;
             }
@@ -1081,7 +1081,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ttbAcquiryDate {
+        public System.DateTime ttbAcquiryDate {
             get {
                 return this.ttbAcquiryDateField;
             }
@@ -1094,7 +1094,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ttbExpiryDate {
+        public System.DateTime ttbExpiryDate {
             get {
                 return this.ttbExpiryDateField;
             }
@@ -1120,7 +1120,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ttmAcquiryDate {
+        public System.DateTime ttmAcquiryDate {
             get {
                 return this.ttmAcquiryDateField;
             }
@@ -1133,7 +1133,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> ttmExpiryDate {
+        public System.DateTime ttmExpiryDate {
             get {
                 return this.ttmExpiryDateField;
             }

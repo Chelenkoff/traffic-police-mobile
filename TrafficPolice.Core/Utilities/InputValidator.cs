@@ -69,6 +69,21 @@ namespace TrafficPolice.Core.Utilities
             else message = null;
             return message;
         }
+
+        public static string validateEGN(string egn)
+        {
+            if (String.IsNullOrWhiteSpace(egn))
+                message = "Не сте въвели 'ЕГН'!";
+            else if (egn.Contains(" "))
+                message = "Не е възможно да имате интервали в полето 'ЕГН'!";
+            else if (specialCharactersRegex.IsMatch(egn) || !IsDigitsOnly(egn))
+                message = "'ЕГН' се състои само от цифри!";
+            else if (egn.Length != 10)
+                message = "'ЕГН' се състои от точно 10 цифри!";
+
+            else message = null;
+            return message;
+        }
         public static string validateDate(string date)
         {
             if (String.IsNullOrWhiteSpace(date))
