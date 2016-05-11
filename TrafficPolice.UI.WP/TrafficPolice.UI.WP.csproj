@@ -166,6 +166,7 @@
     <Content Include="Assets\WideLogo.png" />
     <Content Include="README_FIRST.txt" />
     <Content Include="Resources\Images\Icons\appbar.delete.png" />
+    <Content Include="Resources\Images\Icons\appbar.phone.png" />
     <Content Include="Resources\Images\Icons\logout_icon.png" />
     <Content Include="Resources\Images\navigation_background.jpg" />
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
