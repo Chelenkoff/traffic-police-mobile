@@ -110,6 +110,9 @@
     </Compile>
     <Compile Include="Setup.cs" />
     <Compile Include="Utilities\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Views\AddPenaltyView.xaml.cs">
+      <DependentUpon>AddPenaltyView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
@@ -118,6 +121,9 @@
     </Compile>
     <Compile Include="Views\DriverOwnerDetailsView.xaml.cs">
       <DependentUpon>DriverOwnerDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\pivot.xaml.cs">
+      <DependentUpon>pivot.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegistrationDetailsView.xaml.cs">
       <DependentUpon>RegistrationDetailsView.xaml</DependentUpon>
@@ -242,6 +248,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\AddPenaltyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -253,6 +263,10 @@
     <Page Include="Views\DriverOwnerDetailsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\pivot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RegistrationDetailsView.xaml">
       <SubType>Designer</SubType>

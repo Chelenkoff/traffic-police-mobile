@@ -28,6 +28,12 @@
             IconUri="{Binding IconUri, FallbackValue=/Resources/Images/Icons/logout_icon.png}"
             IsEnabled="True"
             Command="{Binding Logout}"/>
+
+            <bar:BindableApplicationBarButton
+            Text="Акт"
+            IconUri="{Binding IconUri, FallbackValue=/Resources/Images/Icons/appbar.phone.png}"
+            IsEnabled="True"
+            Command="{Binding CreatePenaltyCommand}"/>
         </bar:BindableApplicationBar>
     </bar:Bindable.ApplicationBar>
 

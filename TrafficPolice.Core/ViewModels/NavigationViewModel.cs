@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TrafficPolice.Core.Model;
+using TrafficPolice.Core.ServiceReference1;
 using TrafficPolice.Core.Utilities;
 
 namespace TrafficPolice.Core.ViewModels
@@ -60,6 +60,15 @@ namespace TrafficPolice.Core.ViewModels
             {
                 return new MvxCommand(() => Close(this));
             }
+        }
+
+        public ICommand CreatePenaltyCommand
+        {
+            get { return new DelegateCommand(createPenalty); }
+        }
+        private void createPenalty()
+        {
+            ShowViewModel<AddPenaltyViewModel>();
         }
 
 
