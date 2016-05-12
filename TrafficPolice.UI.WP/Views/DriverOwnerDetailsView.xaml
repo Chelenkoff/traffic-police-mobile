@@ -1,5 +1,4 @@
 ﻿<views:MvxPhonePage
-    x:Class="TrafficPolice.UI.WP.Views.DriverOwnerDetailsView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -8,6 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
      xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:views="clr-namespace:MvvmCross.WindowsPhone.Views;assembly=MvvmCross.WindowsPhone"
+    xmlns:maps="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
+    x:Class="TrafficPolice.UI.WP.Views.DriverOwnerDetailsView"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -51,8 +52,8 @@
                     <toolkit:DatePicker Margin="230,170,25,370" Value="{Binding DriverOwner.LicenceExpiryDate}" Height="120" Width="200" HorizontalContentAlignment="Center" Header="Валиден до"  IsHitTestVisible="False"  FontSize="30" />
 
                     <TextBlock  HorizontalAlignment="Left" Margin="0,300,0,0" TextWrapping="Wrap" TextAlignment="Center" Text="Налични контролни точки" VerticalAlignment="Top" FontSize="30" Width="450"/>
-                    <TextBlock  HorizontalAlignment="Left" Margin="0,360,0,0" TextWrapping="Wrap" TextAlignment="Center" Text="{Binding  DriverOwner.RemainingPts}" VerticalAlignment="Top" FontSize="50" Width="450" FontWeight="Bold" Height="67"/>
-                    <Slider x:Name="slider"  HorizontalAlignment="Left" Value="{Binding  DriverOwner.RemainingPts}" Margin="0,427,0,0" VerticalAlignment="Top" Width="448" Maximum="39" Background="White" Foreground="#FFFF8B00" Height="86" IsHitTestVisible="False"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="0,360,0,0" TextWrapping="Wrap" TextAlignment="Center" Text="{Binding DriverOwner.RemainingPts}" VerticalAlignment="Top" FontSize="50" Width="450" FontWeight="Bold" Height="67"/>
+                    <Slider x:Name="slider"  HorizontalAlignment="Left" Value="{Binding DriverOwner.RemainingPts}" Margin="0,427,0,0" VerticalAlignment="Top" Width="448" Maximum="39" Background="White" Foreground="#FFFF8B00" Height="86" IsHitTestVisible="False"/>
 
 
 
@@ -69,14 +70,14 @@
                         <toolkit:DatePicker Margin="90,80,200,610" Value="{Binding DriverOwner.Categories.a1AcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,80,10,610" Value="{Binding DriverOwner.Categories.a1ExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,165,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock  HorizontalAlignment="Left" Margin="90,200,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.a1Restrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock  HorizontalAlignment="Left" Margin="90,200,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.a1Restrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,240,0,0"/>
                         <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="25,285,0,0" TextWrapping="Wrap" Text="A" VerticalAlignment="Top" FontSize="50" Height="64"/>
                         <toolkit:DatePicker Margin="90,250,200,440" Value="{Binding DriverOwner.Categories.aAcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,250,10,440" Value="{Binding DriverOwner.Categories.aExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,335,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock Margin="90,370,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.aRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock Margin="90,370,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.aRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,410,0,0"/>
@@ -84,7 +85,7 @@
                         <toolkit:DatePicker Margin="90,420,200,270"  Value="{Binding DriverOwner.Categories.b1AcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,420,10,270" Value="{Binding DriverOwner.Categories.b1ExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,505,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock  HorizontalAlignment="Left" Margin="90,540,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.b1Restrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock  HorizontalAlignment="Left" Margin="90,540,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.b1Restrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,580,0,0"/>
@@ -92,7 +93,7 @@
                         <toolkit:DatePicker Margin="90,590,200,100"  Value="{Binding DriverOwner.Categories.bAcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,590,10,100"  Value="{Binding DriverOwner.Categories.bExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,675,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock Margin="90,710,0,0"   HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.bRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock Margin="90,710,0,0"   HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.bRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,750,0,0"/>
@@ -100,91 +101,91 @@
                         <toolkit:DatePicker Margin="90,760,200,-70" Value="{Binding DriverOwner.Categories.c1AcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,760,10,-70" Value="{Binding DriverOwner.Categories.c1ExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,845,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock  Margin="90,880,0,0" HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.c1Restrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock  Margin="90,880,0,0" HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.c1Restrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,920,0,0"/>
                         <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="25,965,0,0" TextWrapping="Wrap" Text="C" VerticalAlignment="Top" FontSize="50" Height="64"/>
                         <toolkit:DatePicker Margin="90,930,200,-240" Value="{Binding DriverOwner.Categories.cAcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,930,10,-240"  Value="{Binding DriverOwner.Categories.cExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,1015,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock Margin="90,1050,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap"  Text="{Binding  DriverOwner.Categories.cRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock Margin="90,1050,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap"  Text="{Binding DriverOwner.Categories.cRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,1090,0,0"/>
                         <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="25,1135,0,0" TextWrapping="Wrap" Text="D1" VerticalAlignment="Top" FontSize="50" Height="64"/>
                         <toolkit:DatePicker Margin="90,1100,200,-410" Value="{Binding DriverOwner.Categories.d1AcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,1100,10,-410" Value="{Binding DriverOwner.Categories.d1ExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,1185,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock  Margin="90,1220,0,0" HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap"  Text="{Binding  DriverOwner.Categories.d1Restrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock  Margin="90,1220,0,0" HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap"  Text="{Binding DriverOwner.Categories.d1Restrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,1260,0,0"/>
                         <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="25,1305,0,0" TextWrapping="Wrap" Text="D" VerticalAlignment="Top" FontSize="50" Height="64"/>
                         <toolkit:DatePicker Margin="90,1270,200,-580"  Value="{Binding DriverOwner.Categories.dAcquiryDate}"  Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,1270,10,-580" Value="{Binding DriverOwner.Categories.dExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,1355,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock Margin="90,1390,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.dRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock Margin="90,1390,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.dRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,1430,0,0"/>
                         <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="25,1475,0,0" TextWrapping="Wrap" Text="BE" VerticalAlignment="Top" FontSize="50" Height="64"/>
                         <toolkit:DatePicker Margin="90,1440,200,-750"  Value="{Binding DriverOwner.Categories.beAcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,1440,10,-750" Value="{Binding DriverOwner.Categories.beExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,1525,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock Margin="90,1560,0,0"   HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.beRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock Margin="90,1560,0,0"   HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.beRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,1600,0,0"/>
                         <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="11,1645,0,0" TextWrapping="Wrap" Text="C1E" VerticalAlignment="Top" FontSize="50" Height="64"/>
                         <toolkit:DatePicker Margin="90,1610,200,-920" Value="{Binding DriverOwner.Categories.c1eAcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,1610,10,-920" Value="{Binding DriverOwner.Categories.c1eExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,1695,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock Margin="90,1730,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.c1eRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock Margin="90,1730,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.c1eRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,1770,0,0"/>
                         <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="25,1815,0,0" TextWrapping="Wrap" Text="CE" VerticalAlignment="Top" FontSize="50" Height="64"/>
                         <toolkit:DatePicker Margin="90,1780,200,-1090" Value="{Binding DriverOwner.Categories.ceAcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,1780,10,-1090" Value="{Binding DriverOwner.Categories.ceExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,1865,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock  Margin="90,1900,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.ceRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock  Margin="90,1900,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.ceRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,1940,0,0"/>
                         <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="11,1985,0,0" TextWrapping="Wrap" Text="D1E" VerticalAlignment="Top" FontSize="50" Height="64"/>
                         <toolkit:DatePicker Margin="90,1950,200,-1260" Value="{Binding DriverOwner.Categories.d1eAcquiryDate}"  Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,1950,10,-1260"  Value="{Binding DriverOwner.Categories.d1eExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,2035,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock Margin="90,2070,0,0" HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.d1eRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock Margin="90,2070,0,0" HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.d1eRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,2110,0,0"/>
                         <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="25,2155,0,0" TextWrapping="Wrap" Text="DE" VerticalAlignment="Top" FontSize="50" Height="64"/>
                         <toolkit:DatePicker Margin="90,2120,200,-1430" Value="{Binding DriverOwner.Categories.deAcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,2120,10,-1430" Value="{Binding DriverOwner.Categories.deExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,2205,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock  Margin="90,2240,0,0"  HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.deRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock  Margin="90,2240,0,0"  HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.deRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,2280,0,0"/>
                         <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="11,2325,0,0" TextWrapping="Wrap" Text="Tтб" VerticalAlignment="Top" FontSize="50" Height="64"/>
                         <toolkit:DatePicker Margin="90,2290,200,-1600"  Value="{Binding DriverOwner.Categories.ttbAcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,2290,10,-1600" Value="{Binding DriverOwner.Categories.ttbExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,2375,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock  Margin="90,2410,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.ttbRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock  Margin="90,2410,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.ttbRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,2450,0,0"/>
                         <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="11,2495,0,0" TextWrapping="Wrap" Text="Tтм" VerticalAlignment="Top" FontSize="50" Height="64"/>
                         <toolkit:DatePicker Margin="90,2460,200,-1770" Value="{Binding DriverOwner.Categories.ttmAcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,2460,10,-1770" Value="{Binding DriverOwner.Categories.ttmExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,2545,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock Margin="90,2580,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.ttmRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock Margin="90,2580,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.ttmRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,2620,0,0"/>
                         <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="11,2665,0,0" TextWrapping="Wrap" Text="Tкт" VerticalAlignment="Top" FontSize="50" Height="64"/>
                         <toolkit:DatePicker Margin="90,2630,200,-1940" Value="{Binding DriverOwner.Categories.tktAcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,2630,10,-1940" Value="{Binding DriverOwner.Categories.tktExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,2715,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock  Margin="90,2750,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.tktRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock  Margin="90,2750,0,0"  HorizontalAlignment="Left" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.tktRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
                         <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="157" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,2790,0,0"/>
                         <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="25,2835,0,0" TextWrapping="Wrap" Text="М" VerticalAlignment="Top" FontSize="50" Height="64"/>
                         <toolkit:DatePicker Margin="90,2800,200,-2110" Value="{Binding DriverOwner.Categories.mAcquiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Издадена на"  IsHitTestVisible="False"  FontSize="20" />
                         <toolkit:DatePicker Margin="270,2800,10,-2110" Value="{Binding DriverOwner.Categories.mExpiryDate}" Width="170" HorizontalContentAlignment="Center" Header="Валидна до"  IsHitTestVisible="False"  FontSize="20" />
                         <TextBlock  HorizontalAlignment="Left" Margin="90,2885,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="Ограничение:" VerticalAlignment="Top" FontSize="20" Height="31" Width="353"/>
-                        <TextBlock Margin="90,2920,0,0"  HorizontalAlignment="Left" TextAlignment="Center"  TextWrapping="Wrap" Text="{Binding  DriverOwner.Categories.mRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
+                        <TextBlock Margin="90,2920,0,0"  HorizontalAlignment="Left" TextAlignment="Center"  TextWrapping="Wrap" Text="{Binding DriverOwner.Categories.mRestrictions}" VerticalAlignment="Top" FontSize="20" Height="30" Width="350" FontWeight="Bold"/>
 
                     </Grid>
                 </ScrollViewer>
@@ -198,11 +199,11 @@
                     <TextBlock  HorizontalAlignment="Left" Margin="10,115,0,0" TextWrapping="Wrap" TextAlignment="Center" Text="{Binding DriverOwner.SecondName}" VerticalAlignment="Top" FontSize="35" Width="440" FontWeight="Bold"/>
                     <TextBlock  HorizontalAlignment="Left" Margin="10,155,0,0" TextWrapping="Wrap" TextAlignment="Center" Text="{Binding DriverOwner.LastName}" VerticalAlignment="Top" FontSize="35" Width="440" FontWeight="Bold"/>
                     <TextBlock  HorizontalAlignment="Left" Margin="10,214,0,0" TextWrapping="Wrap" TextAlignment="Left" Text="Гражданство" VerticalAlignment="Top" FontSize="30" Width="440"/>
-                    <TextBlock  HorizontalAlignment="Left" Margin="10,254,0,0" TextWrapping="Wrap" TextAlignment="Center" Text="{Binding  DriverOwner.Nationality}" VerticalAlignment="Top" FontSize="35" Width="440" FontWeight="Bold"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="10,254,0,0" TextWrapping="Wrap" TextAlignment="Center" Text="{Binding DriverOwner.Nationality}" VerticalAlignment="Top" FontSize="35" Width="440" FontWeight="Bold"/>
                     <Image x:Name="image" HorizontalAlignment="Left" Height="66" Margin="10,301,0,0" VerticalAlignment="Top" Width="66" Source="/Resources/Images/Icons/appbar.phone.png"/>
                     <TextBlock  HorizontalAlignment="Left" Margin="80,311,0,0" TextWrapping="Wrap" TextAlignment="Left" Text="{Binding DriverOwner.TelNum}" VerticalAlignment="Top" FontSize="30" Width="350" FontWeight="Bold" Height="54"/>
                     <TextBlock  HorizontalAlignment="Left" Margin="10,370,0,0" TextWrapping="Wrap" TextAlignment="Left" Text="Постоянен адрес" VerticalAlignment="Top" FontSize="30" Width="440"/>
-                    <TextBlock  HorizontalAlignment="Left" Margin="10,410,0,0" TextWrapping="Wrap" TextAlignment="Center" Text="{Binding DriverOwner.Residence}" VerticalAlignment="Top" FontSize="25" Width="440" Height="120" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="10,410,0,0" TextWrapping="Wrap" TextAlignment="Center" Text="{Binding DriverOwner.Residence}" VerticalAlignment="Top" FontSize="25" Width="440" Height="120" ScrollViewer.VerticalScrollBarVisibility="Visible" FontWeight="Bold"/>
 
                 </Grid>
             </phone:PivotItem>

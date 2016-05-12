@@ -23,14 +23,16 @@ namespace TrafficPolice.Core.ViewModels
         {
 
             client.GetUserByIdAndPassCompleted += client_GetUserByIdAndPassCompleted;
-
+            
             stopLoading();
 
+
+            
             
             base.Start();
         }
 
-        void client_GetUserByIdAndPassCompleted(object sender, GetUserByIdAndPassCompletedEventArgs e)
+         void client_GetUserByIdAndPassCompleted(object sender, GetUserByIdAndPassCompletedEventArgs e)
         {
             if (e.Error == null)
             {
@@ -38,12 +40,18 @@ namespace TrafficPolice.Core.ViewModels
 
                 if (dbResponseValidation(User))
                 {
+
                     ShowViewModel<NavigationViewModel>(User);
+
                 }
                 stopLoading();
 
             }
         }
+
+
+
+
 
 
 

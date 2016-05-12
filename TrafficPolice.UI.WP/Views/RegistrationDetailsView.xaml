@@ -6,24 +6,46 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+     xmlns:aplibar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar"
     xmlns:views="clr-namespace:MvvmCross.WindowsPhone.Views;assembly=MvvmCross.WindowsPhone"
+        xmlns:converters ="clr-namespace:TrafficPolice.UI.WP.Utilities"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
+    <views:MvxPhonePage.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </views:MvxPhonePage.Resources>
+
+    <aplibar:Bindable.ApplicationBar>
+        <aplibar:BindableApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <aplibar:BindableApplicationBarButton
+            Text="Собственик"
+            IconUri="{Binding IconUri, FallbackValue=/Resources/Images/Icons/appbar.user.tie.png}"
+            IsEnabled="True"
+            Command="{Binding ShowDriverOwnerCommand}"/>
+        </aplibar:BindableApplicationBar>
+    </aplibar:Bindable.ApplicationBar>
+
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <ProgressBar 
+                Visibility="{Binding IsProgressRingVisible, Converter={StaticResource BoolToVis}}" Canvas.ZIndex="1"
+                HorizontalAlignment="Left" Height="30"  Margin="15,85,0,0" VerticalAlignment="Top" Width="445"  IsIndeterminate="True" FontSize="36"/>
         <!--Pivot Control-->
         <phone:Pivot Title="{Binding Title}">
+
             <!--Pivot title design-->
             <phone:Pivot.TitleTemplate>
                 <DataTemplate>
                     <Grid>
                         <TextBlock Text="{Binding}" FontSize="25"  Foreground="#FF00A2FF" />
+
                     </Grid>
                 </DataTemplate>
             </phone:Pivot.TitleTemplate>
@@ -46,7 +68,7 @@
                     <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="118" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,2,0,0"/>
                     <CheckBox Content="Винетка" IsChecked="{Binding Registration.HasVignette}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" IsHitTestVisible="False" Margin="0,2,0,0"/>
                     <TextBlock  HorizontalAlignment="Left" Margin="257,16,0,0" TextWrapping="Wrap" Text="Валидна до:" VerticalAlignment="Top" FontSize="25"/>
-                    <toolkit:DatePicker Margin="234,57,37,536" HorizontalContentAlignment="Center"  Value="{Binding Registration.VignetteValidUntil}" IsHitTestVisible="False"  FontSize="40" />
+                    <toolkit:DatePicker Margin="234,57,37,0" ValueStringFormat="{}{0:dd.MM.yyyy}" HorizontalContentAlignment="Center"  Value="{Binding Registration.VignetteValidUntil}" IsHitTestVisible="False"  FontSize="40" />
 
                     <!--Civil insurance data-->
 
@@ -55,9 +77,10 @@
                     <TextBlock  HorizontalAlignment="Left" Margin="2,210,0,0" TextWrapping="Wrap" Text="Застраховател:" VerticalAlignment="Top" FontSize="22"/>
                     <TextBlock  HorizontalAlignment="Left" Margin="162,208,0,0" TextWrapping="Wrap" Text="{Binding Registration.CivilInsurer}" VerticalAlignment="Top" FontSize="25" Width="283" FontStyle="Italic" FontWeight="Medium"/>
                     <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="17,241,0,0" TextWrapping="Wrap" Text="Сключена на:" VerticalAlignment="Top" FontSize="25" Width="185"/>
-                    <toolkit:DatePicker Margin="17,280,254,313" HorizontalContentAlignment="Center"  Value="{Binding Registration.CivilInsuranceStartDate}" IsHitTestVisible="False"  FontSize="40" />
+                    <toolkit:DatePicker Margin="17,280,254,0" HorizontalContentAlignment="Center" ValueStringFormat="{}{0:dd.MM.yyyy}"   Value="{Binding Registration.CivilInsuranceStartDate}" IsHitTestVisible="False"  FontSize="40" />
+
                     <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="250,241,0,0" TextWrapping="Wrap" Text="Валидна до:" VerticalAlignment="Top" FontSize="25" Width="185"/>
-                    <toolkit:DatePicker Margin="250,280,21,313" HorizontalContentAlignment="Center"  Value="{Binding Registration.CivilInsuranceEndDate}" IsHitTestVisible="False"  FontSize="40" />
+                    <toolkit:DatePicker Margin="250,280,21,0" HorizontalContentAlignment="Center" ValueStringFormat="{}{0:dd.MM.yyyy}"  Value="{Binding Registration.CivilInsuranceEndDate}" IsHitTestVisible="False"  FontSize="40" />
 
                     <!--Damage insurance data-->
 
@@ -66,9 +89,10 @@
                     <TextBlock  HorizontalAlignment="Left" Margin="2,433,0,0" TextWrapping="Wrap" Text="Застраховател:" VerticalAlignment="Top" FontSize="22"/>
                     <TextBlock  HorizontalAlignment="Left" Margin="162,431,0,0" TextWrapping="Wrap" Text="{Binding Registration.DamageInsurer}" VerticalAlignment="Top" FontSize="25" Width="283" FontStyle="Italic" FontWeight="Medium"/>
                     <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="17,464,0,0" TextWrapping="Wrap" Text="Сключена на:" VerticalAlignment="Top" FontSize="25" Width="185"/>
-                    <toolkit:DatePicker Margin="17,503,254,90" HorizontalContentAlignment="Center"  Value="{Binding Registration.DamageInsuranceStartDate}" IsHitTestVisible="False"  FontSize="40" />
+                    <toolkit:DatePicker Margin="17,503,254,0" ValueStringFormat="{}{0:dd.MM.yyyy}" HorizontalContentAlignment="Center"  Value="{Binding Registration.DamageInsuranceStartDate}" IsHitTestVisible="False"  FontSize="40" />
                     <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="250,464,0,0" TextWrapping="Wrap" Text="Валидна до:" VerticalAlignment="Top" FontSize="25" Width="185"/>
-                    <toolkit:DatePicker Margin="250,503,21,90" HorizontalContentAlignment="Center"  Value="{Binding Registration.DamageInsuranceEndDate}" IsHitTestVisible="False"  FontSize="40" />
+                    <toolkit:DatePicker Margin="250,503,21,0" ValueStringFormat="{}{0:dd.MM.yyyy}" HorizontalContentAlignment="Center"  Value="{Binding Registration.DamageInsuranceEndDate}" IsHitTestVisible="False"  FontSize="40" />
+
 
                 </Grid>
             </phone:PivotItem>
@@ -104,13 +128,16 @@
                     <TextBlock  HorizontalAlignment="Left" TextAlignment="Center" Margin="0,88,0,0" TextWrapping="Wrap" Text="ЕГН на собственика:" VerticalAlignment="Top" FontSize="35" Width="450"/>
                     <TextBlock  HorizontalAlignment="Left" TextAlignment="Center" Margin="0,135,0,0" TextWrapping="Wrap" Text="{Binding Registration.DriverOwnerId}" VerticalAlignment="Top" FontSize="45" Width="450" FontWeight="Bold"/>
                     <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="0,222,0,0" TextWrapping="Wrap" Text="Първа регистрация:" VerticalAlignment="Top" FontSize="35" Width="450"/>
-                    <toolkit:DatePicker Margin="135,269,136,324" HorizontalContentAlignment="Center"  Value="{Binding Registration.FirstRegDate}" IsHitTestVisible="False"  FontSize="40" />
+                    <toolkit:DatePicker Margin="135,269,136,0" ValueStringFormat="{}{0:dd.MM.yyyy}" HorizontalContentAlignment="Center"  Value="{Binding Registration.FirstRegDate}" IsHitTestVisible="False"  FontSize="40" />
                     <TextBlock  HorizontalAlignment="Left" TextAlignment="Center"  Margin="0,357,0,0" TextWrapping="Wrap" Text="Настояща регистрация:" VerticalAlignment="Top" FontSize="35" Width="450"/>
-                    <toolkit:DatePicker Margin="135,404,136,189" HorizontalContentAlignment="Center"  Value="{Binding Registration.RecentRegDate}" IsHitTestVisible="False"  FontSize="40" />
+                    <toolkit:DatePicker Margin="135,404,136,0" ValueStringFormat="{}{0:dd.MM.yyyy}" HorizontalContentAlignment="Center"  Value="{Binding Registration.RecentRegDate}" IsHitTestVisible="False"  FontSize="40" />
+
                 </Grid>
             </phone:PivotItem>
 
         </phone:Pivot>
     </Grid>
+
+
 
 </views:MvxPhonePage>
