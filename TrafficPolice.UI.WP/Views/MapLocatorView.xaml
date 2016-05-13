@@ -8,6 +8,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:maps="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
+    xmlns:mapsTools="clr-namespace:Microsoft.Phone.Maps.Toolkit;assembly=Microsoft.Phone.Controls.Toolkit"
+
     x:Class="TrafficPolice.UI.WP.Views.MapLocatorView"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -24,15 +26,18 @@
         </Grid.RowDefinitions>
 
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+        <StackPanel Grid.Row="0" Margin="10,15,0,20">
             <TextBlock Text="Местопроизшествие" Style="{StaticResource PhoneTextNormalStyle}"/>
         </StackPanel>
 
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+        <Grid x:Name="ContentPanel" Grid.Row="1" >
 
-            <maps:Map HorizontalAlignment="Left" Width="695" Loaded="Map_Loaded_1" Margin="0,0,0,162"  />
-            <TextBlock Text="{Binding Latitude}" FontSize="25" Margin="0,290,0,60"></TextBlock>
-            <TextBlock Text="{Binding Longtitude}" FontSize="25" Margin="4,344,-4,6"></TextBlock>
+            <maps:Map HorizontalAlignment="Left" Width="725" Center="{Binding Location}" ZoomLevel="17" Loaded="Map_Loaded_1" >
+                <mapsTools:MapExtensions.Children>
+                    <mapsTools:Pushpin x:Name="pushpin0" GeoCoordinate="{Binding Location}"  Content="Намирате се тук"/>
+                </mapsTools:MapExtensions.Children>
+            </maps:Map>
+
 
         </Grid>
     </Grid>

@@ -27,7 +27,8 @@ namespace TrafficPolice.Core.ViewModels
         }
         public override void Start()
         {
-
+            _penaltyIssuedDate = DateTime.Now;
+            _penaltyHappenedDate = DateTime.Now;
             base.Start();
         }
 
@@ -135,7 +136,12 @@ namespace TrafficPolice.Core.ViewModels
 
         private void sowLocation()
         {
-            ShowViewModel<MapLocatorViewModel>();
+            ShowViewModel<MapLocatorViewModel>(new CoordinatesParameters
+            {
+                Latitude = _latitude,
+                Longtitude = _longtitude
+                
+            });
 
 
         }
@@ -145,6 +151,48 @@ namespace TrafficPolice.Core.ViewModels
         {
             get { return _latitude; }
             set { _latitude = value; RaisePropertyChanged(() => Latitude); }
+        }
+
+        private string _penaltyDescription;
+        public string PenaltyDescription
+        {
+            get { return _penaltyDescription; }
+            set { _penaltyDescription = value; RaisePropertyChanged(() => PenaltyDescription); }
+        }
+
+        private string _penaltyDisagreement;
+        public string PenaltyDisagreement
+        {
+            get { return _penaltyDisagreement; }
+            set { _penaltyDisagreement = value; RaisePropertyChanged(() => PenaltyDisagreement); }
+        }
+
+        private long _criminalId;
+        public long CriminalId
+        {
+            get { return _criminalId; }
+            set { _criminalId = value; RaisePropertyChanged(() => CriminalId); }
+        }
+
+        private long _issuerId;
+        public long IssuerId
+        {
+            get { return _issuerId; }
+            set { _issuerId = value; RaisePropertyChanged(() => IssuerId); }
+        }
+
+        private DateTime _penaltyHappenedDate;
+        public DateTime PenaltyHappenedDate
+        {
+            get { return _penaltyHappenedDate; }
+            set { _penaltyHappenedDate = value; RaisePropertyChanged(() => PenaltyHappenedDate); }
+        }
+
+        private DateTime _penaltyIssuedDate;
+        public DateTime PenaltyIssuedDate
+        {
+            get { return _penaltyIssuedDate; }
+            set { _penaltyIssuedDate = value; RaisePropertyChanged(() => PenaltyIssuedDate); }
         }
 
 

@@ -3,9 +3,11 @@ using MvvmCross.Platform;
 using MvvmCross.Plugins.Location;
 using System;
 using System.Collections.Generic;
+using System.Device.Location;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TrafficPolice.Core.Utilities;
 using Windows.Devices.Geolocation;
 
 namespace TrafficPolice.Core.ViewModels
@@ -18,6 +20,15 @@ namespace TrafficPolice.Core.ViewModels
 
             //_watcher = watcher;
             //watcher.Start(new MvxLocationOptions(), OnLocation, OnError);
+        }
+
+        public void Init(CoordinatesParameters coordinates)
+        {
+            //Latitude = coordinates.Latitude;
+            //Longtitude = coordinates.Longtitude;
+
+            Location = new GeoCoordinate(coordinates.Latitude,coordinates.Longtitude);
+
         }
 
         private void OnError(MvxLocationError error)
@@ -41,6 +52,13 @@ namespace TrafficPolice.Core.ViewModels
         {
             get { return _latitude; }
             set { _latitude = value; RaisePropertyChanged(() => Latitude); }
+        }
+
+        private GeoCoordinate _location;
+        public GeoCoordinate Location
+        {
+            get { return _location; }
+            set { _location = value; RaisePropertyChanged(() => Location); }
         }
 
         private double _longtitude;
