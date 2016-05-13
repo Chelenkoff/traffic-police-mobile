@@ -8,24 +8,14 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MvvmCross.WindowsPhone.Views;
-using TrafficPolice.Core.ViewModels;
-using TrafficPolice.Core.ServiceReference1;
 
 namespace TrafficPolice.UI.WP.Views
 {
-    public partial class LoginView : MvxPhonePage
+    public partial class MapLocatorView : MvxPhonePage
     {
-
-        public LoginView()
+        public MapLocatorView()
         {
-
             InitializeComponent();
         }
-
-
-
-
-
-
     }
 }

@@ -4,7 +4,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:bar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar"
     xmlns:views="clr-namespace:MvvmCross.WindowsPhone.Views;assembly=MvvmCross.WindowsPhone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -13,11 +15,25 @@
     SupportedOrientations="Landscape" Orientation="Landscape"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
+    <bar:Bindable.ApplicationBar>
+        <bar:BindableApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <bar:BindableApplicationBarButton
+            Text="Локация"
+            IconUri="{Binding IconUri, FallbackValue=/Resources/Images/Icons/logout_icon.png}"
+            IsEnabled="True"
+            Command="{Binding ShowLocationCommand}"/>
 
+            <bar:BindableApplicationBarButton
+            Text="Нарушение"
+            IconUri="{Binding IconUri, FallbackValue=/Resources/Images/Icons/appbar.clipboard.paper.check.png}"
+            IsEnabled="True"
+            Command="{Binding CreatePenaltyCommand}"/>
+        </bar:BindableApplicationBar>
+    </bar:Bindable.ApplicationBar>
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
 
-       
+
         <!--Pivot Control-->
         <phone:Pivot Title="{Binding Title}">
 
@@ -25,7 +41,7 @@
             <phone:Pivot.TitleTemplate>
                 <DataTemplate>
                     <Grid>
-                        <TextBlock Text="{Binding}" FontSize="25"  Foreground="#FF00A2FF" />
+                        <TextBlock Text="{Binding}" FontSize="25"  Foreground="#FF00A2FF" Margin="0,0,-670,0" />
 
                     </Grid>
                 </DataTemplate>
@@ -42,22 +58,38 @@
                 </DataTemplate>
             </phone:Pivot.HeaderTemplate>
             <!--Pivot item one-->
-            <phone:PivotItem Header="Застрахователна информация">
-
-                <Grid >
-                    <!--Vignette data-->
-                    <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="118" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,2,0,0"/>
-                    <CheckBox Content="Винетка" IsChecked="{Binding Registration.HasVignette}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" IsHitTestVisible="False" Margin="0,2,0,0"/>
-                    <TextBlock  HorizontalAlignment="Left" Margin="257,16,0,0" TextWrapping="Wrap" Text="Валидна до:" VerticalAlignment="Top" FontSize="25"/>
-                </Grid>
-            </phone:PivotItem>
             <phone:PivotItem Header="Обща информация">
 
                 <Grid >
-                    <!--Vignette data-->
-                    <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="118" Stroke="Black" VerticalAlignment="Top" Width="450" Opacity="0.5" Margin="0,2,0,0"/>
-                    <CheckBox Content="Винетка" IsChecked="{Binding Registration.HasVignette}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="30" IsHitTestVisible="False" Margin="0,2,0,0"/>
-                    <TextBlock  HorizontalAlignment="Left" Margin="257,16,0,0" TextWrapping="Wrap" Text="Валидна до:" VerticalAlignment="Top" FontSize="25"/>
+                    <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="351" Stroke="Black" VerticalAlignment="Top" Width="635" Opacity="0.5" Margin="0,0,0,0"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="5,-1,0,0" TextWrapping="Wrap" Text="ЕГН на извършителя" VerticalAlignment="Top" FontSize="30" Height="46"/>
+                    <TextBox  HorizontalAlignment="Left"  Margin="25,45,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="9403122826" VerticalAlignment="Top" FontSize="35" Width="550" FontWeight="Bold" InputScope="Number" Height="84" MaxLength="10"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="5,130,0,0" TextWrapping="Wrap" Text="Служебен номер на съставителя" VerticalAlignment="Top" FontSize="30"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="25,170,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" FontSize="35" Width="550" FontWeight="Bold"  Height="80"/>
+                    <toolkit:DatePicker Margin="40,238,400,17" Height="110" Value="{Binding DriverOwner.LicenceIssueDate}" HorizontalContentAlignment="Center" Header="Извършено на"   FontSize="20" />
+                    <toolkit:DatePicker Margin="366,238,80,17" Height="110" Value="{Binding DriverOwner.LicenceIssueDate}" HorizontalContentAlignment="Center" Header="Регистрирано на"   FontSize="20" />
+
+                </Grid>
+            </phone:PivotItem>
+            <phone:PivotItem Header="Описание">
+
+                <Grid >
+                    <!--Description data-->
+                    <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="351" Stroke="Black" VerticalAlignment="Top" Width="635" Opacity="0.5" Margin="0,0,0,0"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="5,-1,0,0" TextWrapping="Wrap" Text="Описание на нарушението" VerticalAlignment="Top" FontSize="30" Height="46"/>
+                    <TextBox  HorizontalAlignment="Left"  Margin="25,45,0,0" TextAlignment="Left" TextWrapping="Wrap" Text="9403122826" VerticalAlignment="Top" FontSize="25" Width="550" InputScope="Text" Height="310" MaxLength="250"/>
+
+                </Grid>
+            </phone:PivotItem>
+            <phone:PivotItem Header="Възражение">
+
+                <Grid >
+                    
+                    <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="351" Stroke="Black" VerticalAlignment="Top" Width="635" Opacity="0.5" Margin="0,0,0,0"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="5,-1,0,0" TextWrapping="Wrap" Text="Възражение на нарушителя" VerticalAlignment="Top" FontSize="30" Height="46"/>
+                    <ScrollViewer>
+                    <TextBox  HorizontalAlignment="Left"  Margin="25,45,0,0" TextAlignment="Left" TextWrapping="Wrap" Text="9403122826" VerticalAlignment="Top" FontSize="25" Width="550" InputScope="Text" Height="310" MaxLength="1500"/>
+                    </ScrollViewer>
                 </Grid>
             </phone:PivotItem>
 

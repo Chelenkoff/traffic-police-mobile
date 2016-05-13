@@ -48,6 +48,7 @@
     <Compile Include="ViewModels\DriverOwnerChildViewModel.cs" />
     <Compile Include="ViewModels\DriverOwnerDetailsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MapLocatorViewModel.cs" />
     <Compile Include="ViewModels\NavigationViewModel.cs" />
     <Compile Include="ViewModels\RegistrationChildViewModel.cs" />
     <Compile Include="ViewModels\RegistrationDetailsViewModel.cs" />

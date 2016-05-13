@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using TrafficPolice.Core.ServiceReference1;
 using TrafficPolice.Core.Utilities;
 using static TrafficPolice.Core.Utilities.DriverOwnerParameters;
@@ -118,6 +119,18 @@ namespace TrafficPolice.Core.ViewModels
         {
             get { return _driverOwner; }
             set { _driverOwner = value; RaisePropertyChanged(() => DriverOwner); }
+        }
+
+        public ICommand ShowLocationCommand
+        {
+            get { return new DelegateCommand(sowLocation); }
+        }
+
+        private void sowLocation()
+        {
+            ShowViewModel<MapLocatorViewModel>();
+
+
         }
     }
 }

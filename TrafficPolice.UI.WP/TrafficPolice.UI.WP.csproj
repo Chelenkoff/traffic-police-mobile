@@ -116,6 +116,9 @@
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MapLocatorView.xaml.cs">
+      <DependentUpon>MapLocatorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\NavigationView.xaml.cs">
       <DependentUpon>NavigationView.xaml</DependentUpon>
     </Compile>
@@ -171,6 +174,7 @@
     </Content>
     <Content Include="Assets\WideLogo.png" />
     <Content Include="README_FIRST.txt" />
+    <Content Include="Resources\Images\Icons\appbar.clipboard.paper.check.png" />
     <Content Include="Resources\Images\Icons\appbar.delete.png" />
     <Content Include="Resources\Images\Icons\appbar.phone.png" />
     <Content Include="Resources\Images\Icons\appbar.user.tie.png" />
@@ -253,6 +257,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MapLocatorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
