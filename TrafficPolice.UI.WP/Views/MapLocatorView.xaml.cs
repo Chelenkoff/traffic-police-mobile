@@ -17,5 +17,12 @@ namespace TrafficPolice.UI.WP.Views
         {
             InitializeComponent();
         }
+
+
+        private void Map_Loaded_1(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Phone.Maps.MapsSettings.ApplicationContext.ApplicationId = "62a9fcbd-6a12-41cc-afa5-a09000b97ff8";
+            Microsoft.Phone.Maps.MapsSettings.ApplicationContext.AuthenticationToken = "jkQkTkbUhZxB5R23TKGgIw";
+        }
     }
 }

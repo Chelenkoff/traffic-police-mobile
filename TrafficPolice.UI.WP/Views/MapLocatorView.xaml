@@ -30,7 +30,9 @@
 
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
 
-            <maps:Map HorizontalAlignment="Left" Width="693"  />
+            <maps:Map HorizontalAlignment="Left" Width="695" Loaded="Map_Loaded_1" Margin="0,0,0,162"  />
+            <TextBlock Text="{Binding Latitude}" FontSize="25" Margin="0,290,0,60"></TextBlock>
+            <TextBlock Text="{Binding Longtitude}" FontSize="25" Margin="4,344,-4,6"></TextBlock>
 
         </Grid>
     </Grid>

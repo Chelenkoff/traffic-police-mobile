@@ -14,6 +14,7 @@ namespace TrafficPolice.Core.ViewModels
     public class RegistrationDetailsViewModel : MvxViewModel
     {
         Service1Client client;
+
         public RegistrationDetailsViewModel()
         {
             client = new Service1Client();

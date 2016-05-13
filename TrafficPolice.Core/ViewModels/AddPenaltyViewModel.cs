@@ -1,4 +1,6 @@
 ﻿using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
+using MvvmCross.Plugins.Location;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +15,19 @@ namespace TrafficPolice.Core.ViewModels
 {
     class AddPenaltyViewModel : MvxViewModel
     {
-
-        public AddPenaltyViewModel()
+        IMvxLocationWatcher _watcher;
+        public AddPenaltyViewModel(IMvxLocationWatcher watcher)
         {
+            _watcher = watcher;
 
+            watcher.Start(new MvxLocationOptions(), OnLocation, OnError);
+            LocationingInfoMessage = "Позициониране . . .";
+            
 
         }
         public override void Start()
         {
+
             base.Start();
         }
 
@@ -131,6 +138,44 @@ namespace TrafficPolice.Core.ViewModels
             ShowViewModel<MapLocatorViewModel>();
 
 
+        }
+
+        private double _latitude;
+        public double Latitude
+        {
+            get { return _latitude; }
+            set { _latitude = value; RaisePropertyChanged(() => Latitude); }
+        }
+
+
+        private string _locationingInfoMessage;
+        public string LocationingInfoMessage
+        {
+            get { return _locationingInfoMessage; }
+            set { _locationingInfoMessage = value; RaisePropertyChanged(() => LocationingInfoMessage); }
+        }
+
+        private double _longtitude;
+        public double Longtitude
+        {
+            get { return _longtitude; }
+            set { _longtitude = value; RaisePropertyChanged(() => Longtitude); }
+        }
+
+        private void OnError(MvxLocationError error)
+        {
+            //Mvx.Error("Location error {0}", error.Code);
+            LocationingInfoMessage = "Позиционирането е неуспешно";
+            _watcher.Stop();
+        }
+
+        private void OnLocation(MvxGeoLocation location)
+        {
+            Longtitude = location.Coordinates.Longitude;
+            Latitude = location.Coordinates.Latitude;
+            LocationingInfoMessage =String.Format("Позиционирането е успешно\nДълж: {0} Шир: {1}",Longtitude,Latitude);
+
+            _watcher.Stop();
         }
     }
 }

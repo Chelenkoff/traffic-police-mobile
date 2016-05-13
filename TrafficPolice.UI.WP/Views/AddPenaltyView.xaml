@@ -64,8 +64,10 @@
                     <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="351" Stroke="Black" VerticalAlignment="Top" Width="635" Opacity="0.5" Margin="0,0,0,0"/>
                     <TextBlock  HorizontalAlignment="Left" Margin="5,-1,0,0" TextWrapping="Wrap" Text="ЕГН на извършителя" VerticalAlignment="Top" FontSize="30" Height="46"/>
                     <TextBox  HorizontalAlignment="Left"  Margin="25,45,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="9403122826" VerticalAlignment="Top" FontSize="35" Width="550" FontWeight="Bold" InputScope="Number" Height="84" MaxLength="10"/>
-                    <TextBlock  HorizontalAlignment="Left" Margin="5,130,0,0" TextWrapping="Wrap" Text="Служебен номер на съставителя" VerticalAlignment="Top" FontSize="30"/>
-                    <TextBlock  HorizontalAlignment="Left" Margin="25,170,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" FontSize="35" Width="550" FontWeight="Bold"  Height="80"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="5,130,0,0" TextWrapping="Wrap" Text="Съставител №" VerticalAlignment="Top" FontSize="30"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="208,125,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" FontSize="35" Width="370" FontWeight="Bold"  Height="52"/>
+                    <TextBlock  HorizontalAlignment="Left" Margin="0,165,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding LocationingInfoMessage}" VerticalAlignment="Top" FontSize="25" Width="630" FontWeight="Bold"  Height="76"/>
+
                     <toolkit:DatePicker Margin="40,238,400,17" Height="110" Value="{Binding DriverOwner.LicenceIssueDate}" HorizontalContentAlignment="Center" Header="Извършено на"   FontSize="20" />
                     <toolkit:DatePicker Margin="366,238,80,17" Height="110" Value="{Binding DriverOwner.LicenceIssueDate}" HorizontalContentAlignment="Center" Header="Регистрирано на"   FontSize="20" />
 
@@ -84,11 +86,11 @@
             <phone:PivotItem Header="Възражение">
 
                 <Grid >
-                    
+
                     <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="351" Stroke="Black" VerticalAlignment="Top" Width="635" Opacity="0.5" Margin="0,0,0,0"/>
                     <TextBlock  HorizontalAlignment="Left" Margin="5,-1,0,0" TextWrapping="Wrap" Text="Възражение на нарушителя" VerticalAlignment="Top" FontSize="30" Height="46"/>
                     <ScrollViewer>
-                    <TextBox  HorizontalAlignment="Left"  Margin="25,45,0,0" TextAlignment="Left" TextWrapping="Wrap" Text="9403122826" VerticalAlignment="Top" FontSize="25" Width="550" InputScope="Text" Height="310" MaxLength="1500"/>
+                        <TextBox  HorizontalAlignment="Left"  Margin="25,45,0,0" TextAlignment="Left" TextWrapping="Wrap" Text="9403122826" VerticalAlignment="Top" FontSize="25" Width="550" InputScope="Text" Height="310" MaxLength="1500"/>
                     </ScrollViewer>
                 </Grid>
             </phone:PivotItem>
