@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using TrafficPolice.Core.ServiceReference1;
 using TrafficPolice.Core.Utilities;
-using static TrafficPolice.Core.Utilities.DriverOwnerParameters;
+using static TrafficPolice.Core.Utilities.DriverOwnerDetailsVMParams;
 
 namespace TrafficPolice.Core.ViewModels
 {
@@ -16,6 +16,7 @@ namespace TrafficPolice.Core.ViewModels
         Service1Client client;
         public DriverOwnerChildViewModel()
         {
+  
             client = new Service1Client();
             client.GetDriverOwnerByIdCompleted += client_GetDriverOwnerByIdCompleted;
         }
@@ -30,7 +31,9 @@ namespace TrafficPolice.Core.ViewModels
                 if (dbResponseValidation(DriverOwner))
                 {
 
-                    ShowViewModel<DriverOwnerDetailsViewModel>(new DriverOwnerParameters() {
+                    ShowViewModel<DriverOwnerDetailsViewModel>(new DriverOwnerDetailsVMParams() {
+                        UserId = User.UserId,
+
                         DriverOwnerId = DriverOwner.DriverOwnerId,
                         FirstName = DriverOwner.FirstName,
                         SecondName = DriverOwner.SecondName,
@@ -125,6 +128,8 @@ namespace TrafficPolice.Core.ViewModels
 
         }
 
+
+
         private DriverOwner _driverOwner;
         public DriverOwner DriverOwner
         {
@@ -183,6 +188,17 @@ namespace TrafficPolice.Core.ViewModels
             {
                 _warningType = value;
                 RaisePropertyChanged(() => WarningType);
+            }
+        }
+
+        private User _user;
+        public User User
+        {
+            private get { return _user; }
+            set
+            {
+                _user = value;
+                RaisePropertyChanged(() => User);
             }
         }
 

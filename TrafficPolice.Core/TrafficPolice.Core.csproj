@@ -43,6 +43,7 @@
     </Compile>
     <Compile Include="Utilities\CoordinatesParameters.cs" />
     <Compile Include="Utilities\DelegateCommand.cs" />
+    <Compile Include="Utilities\DriverOwnerDetailsToPenaltyParams.cs" />
     <Compile Include="Utilities\DriverOwnerParameters.cs" />
     <Compile Include="Utilities\InputValidator.cs" />
     <Compile Include="ViewModels\AddPenaltyViewModel.cs" />

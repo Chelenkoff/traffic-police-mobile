@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using TrafficPolice.Core.ServiceReference1;
 using TrafficPolice.Core.Utilities;
-using static TrafficPolice.Core.Utilities.DriverOwnerParameters;
+using static TrafficPolice.Core.Utilities.DriverOwnerDetailsVMParams;
 
 namespace TrafficPolice.Core.ViewModels
 {
@@ -31,7 +31,7 @@ namespace TrafficPolice.Core.ViewModels
 
 
 
-                    ShowViewModel<DriverOwnerDetailsViewModel>(new DriverOwnerParameters()
+                    ShowViewModel<DriverOwnerDetailsViewModel>(new DriverOwnerDetailsVMParams()
                     {
                         DriverOwnerId = DriverOwner.DriverOwnerId,
                         FirstName = DriverOwner.FirstName,

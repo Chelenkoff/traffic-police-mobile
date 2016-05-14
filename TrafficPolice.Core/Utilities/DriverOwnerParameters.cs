@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace TrafficPolice.Core.Utilities
 {
-    public class DriverOwnerParameters
+    public class DriverOwnerDetailsVMParams
     {
 
-        public DriverOwnerParameters()
+        public DriverOwnerDetailsVMParams()
         {
 
         }
+        public long UserId { get; set; }
+
         public long DriverOwnerId { get; set; }
         public string FirstName { get; set; }
         public string SecondName { get; set; }

@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using TrafficPolice.Core.ServiceReference1;
 using TrafficPolice.Core.Utilities;
-using static TrafficPolice.Core.Utilities.DriverOwnerParameters;
+using static TrafficPolice.Core.Utilities.DriverOwnerDetailsVMParams;
 
 namespace TrafficPolice.Core.ViewModels
 {
     public class DriverOwnerDetailsViewModel : MvxViewModel
     {
+        private  long _userId;
         public DriverOwnerDetailsViewModel()
         {
 
@@ -22,8 +24,10 @@ namespace TrafficPolice.Core.ViewModels
             base.Start();
         }
 
-        public void Init(DriverOwnerParameters drOwnerParams)
+        public void Init(DriverOwnerDetailsVMParams drOwnerParams)
         {
+            _userId = drOwnerParams.UserId;
+
             DriverOwner = new DriverOwner();
             DriverOwner.Categories = new Categories();
             DriverOwner.DriverOwnerId = drOwnerParams.DriverOwnerId;
@@ -109,6 +113,20 @@ namespace TrafficPolice.Core.ViewModels
                   DriverOwner.Categories.mAcquiryDate = drOwnerParams.mAcquiryDate;
                   DriverOwner.Categories.mExpiryDate = drOwnerParams.mAcquiryDate;
                   DriverOwner.Categories.mRestrictions = drOwnerParams.mRestrictions;
+        }
+
+
+        public ICommand CreatePenaltyForDriverCommand
+        {
+            get { return new DelegateCommand(createPenaltyForDriver); }
+        }
+        private void createPenaltyForDriver()
+        {
+            ShowViewModel<AddPenaltyViewModel>(new PenaltyVMParams()
+            {
+                DriverOwnerID = DriverOwner.DriverOwnerId,
+                IssuerID = _userId
+            });
         }
 
 

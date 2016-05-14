@@ -19,13 +19,13 @@
         <bar:BindableApplicationBar IsVisible="True" IsMenuEnabled="True">
             <bar:BindableApplicationBarButton
             Text="Локация"
-            IconUri="{Binding IconUri, FallbackValue=/Resources/Images/Icons/logout_icon.png}"
+            IconUri="{Binding IconUri, FallbackValue=/Resources/Images/Icons/appbar.map.gps.png}"
             IsEnabled="True"
             Command="{Binding ShowLocationCommand}"/>
 
             <bar:BindableApplicationBarButton
-            Text="Нарушение"
-            IconUri="{Binding IconUri, FallbackValue=/Resources/Images/Icons/appbar.clipboard.paper.check.png}"
+            Text="Запиши"
+            IconUri="{Binding IconUri, FallbackValue=/Resources/Images/Icons/appbar.save.png}"
             IsEnabled="True"
             Command="{Binding CreatePenaltyCommand}"/>
         </bar:BindableApplicationBar>

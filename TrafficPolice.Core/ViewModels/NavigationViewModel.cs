@@ -24,7 +24,8 @@ namespace TrafficPolice.Core.ViewModels
         public void Init(User usr)
         {
             User = usr;
-            // use the parameters here
+            //Passing 'User' to DriverOwnerChildVM
+            DriverOwnerChildVM.User = User;
         }
 
         public override void Start()
@@ -68,7 +69,12 @@ namespace TrafficPolice.Core.ViewModels
         }
         private void createPenalty()
         {
-            ShowViewModel<AddPenaltyViewModel>();
+
+            ShowViewModel<AddPenaltyViewModel>(new PenaltyVMParams()
+            {
+                IssuerID = User.UserId
+            });
+
         }
 
 
