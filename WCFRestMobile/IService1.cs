@@ -23,6 +23,9 @@ namespace WCFRestMobile
 
         [OperationContract]
         Registration getRegByRegNum(string regNum);
+
+        [OperationContract]
+        string addPenaltyToDriverOwner(Penalty pen);
     }
 
 

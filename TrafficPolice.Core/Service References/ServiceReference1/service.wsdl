@@ -25,6 +25,12 @@
   <wsdl:message name="IService1_getRegByRegNum_OutputMessage">
     <wsdl:part name="parameters" element="tns:getRegByRegNumResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_addPenaltyToDriverOwner_InputMessage">
+    <wsdl:part name="parameters" element="tns:addPenaltyToDriverOwner" />
+  </wsdl:message>
+  <wsdl:message name="IService1_addPenaltyToDriverOwner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addPenaltyToDriverOwnerResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetUserByIdAndPass">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUserByIdAndPass" message="tns:IService1_GetUserByIdAndPass_InputMessage" />
@@ -37,6 +43,10 @@
     <wsdl:operation name="getRegByRegNum">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRegByRegNum" message="tns:IService1_getRegByRegNum_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRegByRegNumResponse" message="tns:IService1_getRegByRegNum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addPenaltyToDriverOwner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/addPenaltyToDriverOwner" message="tns:IService1_addPenaltyToDriverOwner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/addPenaltyToDriverOwnerResponse" message="tns:IService1_addPenaltyToDriverOwner_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -61,6 +71,15 @@
     </wsdl:operation>
     <wsdl:operation name="getRegByRegNum">
       <soap:operation soapAction="http://tempuri.org/IService1/getRegByRegNum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPenaltyToDriverOwner">
+      <soap:operation soapAction="http://tempuri.org/IService1/addPenaltyToDriverOwner" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

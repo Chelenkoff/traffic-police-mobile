@@ -1185,7 +1185,11 @@ namespace TrafficPolice.Core.ServiceReference1 {
         
         private long IssuerIdField;
         
+        private double LatitudeField;
+        
         private string LocationField;
+        
+        private double LongtitudeField;
         
         private ulong PenaltyIdField;
         
@@ -1268,6 +1272,19 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Latitude {
+            get {
+                return this.LatitudeField;
+            }
+            set {
+                if ((this.LatitudeField.Equals(value) != true)) {
+                    this.LatitudeField = value;
+                    this.RaisePropertyChanged("Latitude");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Location {
             get {
                 return this.LocationField;
@@ -1276,6 +1293,19 @@ namespace TrafficPolice.Core.ServiceReference1 {
                 if ((object.ReferenceEquals(this.LocationField, value) != true)) {
                     this.LocationField = value;
                     this.RaisePropertyChanged("Location");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Longtitude {
+            get {
+                return this.LongtitudeField;
+            }
+            set {
+                if ((this.LongtitudeField.Equals(value) != true)) {
+                    this.LongtitudeField = value;
+                    this.RaisePropertyChanged("Longtitude");
                 }
             }
         }
@@ -1663,6 +1693,11 @@ namespace TrafficPolice.Core.ServiceReference1 {
         System.IAsyncResult BegingetRegByRegNum(string regNum, System.AsyncCallback callback, object asyncState);
         
         TrafficPolice.Core.ServiceReference1.Registration EndgetRegByRegNum(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/addPenaltyToDriverOwner", ReplyAction="http://tempuri.org/IService1/addPenaltyToDriverOwnerResponse")]
+        System.IAsyncResult BeginaddPenaltyToDriverOwner(TrafficPolice.Core.ServiceReference1.Penalty pen, System.AsyncCallback callback, object asyncState);
+        
+        string EndaddPenaltyToDriverOwner(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1728,6 +1763,25 @@ namespace TrafficPolice.Core.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class addPenaltyToDriverOwnerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public addPenaltyToDriverOwnerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Service1Client : System.ServiceModel.ClientBase<TrafficPolice.Core.ServiceReference1.IService1>, TrafficPolice.Core.ServiceReference1.IService1 {
         
         private BeginOperationDelegate onBeginGetUserByIdAndPassDelegate;
@@ -1747,6 +1801,12 @@ namespace TrafficPolice.Core.ServiceReference1 {
         private EndOperationDelegate onEndgetRegByRegNumDelegate;
         
         private System.Threading.SendOrPostCallback ongetRegByRegNumCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginaddPenaltyToDriverOwnerDelegate;
+        
+        private EndOperationDelegate onEndaddPenaltyToDriverOwnerDelegate;
+        
+        private System.Threading.SendOrPostCallback onaddPenaltyToDriverOwnerCompletedDelegate;
         
         private BeginOperationDelegate onBeginOpenDelegate;
         
@@ -1807,6 +1867,8 @@ namespace TrafficPolice.Core.ServiceReference1 {
         public event System.EventHandler<GetDriverOwnerByIdCompletedEventArgs> GetDriverOwnerByIdCompleted;
         
         public event System.EventHandler<getRegByRegNumCompletedEventArgs> getRegByRegNumCompleted;
+        
+        public event System.EventHandler<addPenaltyToDriverOwnerCompletedEventArgs> addPenaltyToDriverOwnerCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
@@ -1952,6 +2014,52 @@ namespace TrafficPolice.Core.ServiceReference1 {
                         regNum}, this.onEndgetRegByRegNumDelegate, this.ongetRegByRegNumCompletedDelegate, userState);
         }
         
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult TrafficPolice.Core.ServiceReference1.IService1.BeginaddPenaltyToDriverOwner(TrafficPolice.Core.ServiceReference1.Penalty pen, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginaddPenaltyToDriverOwner(pen, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        string TrafficPolice.Core.ServiceReference1.IService1.EndaddPenaltyToDriverOwner(System.IAsyncResult result) {
+            return base.Channel.EndaddPenaltyToDriverOwner(result);
+        }
+        
+        private System.IAsyncResult OnBeginaddPenaltyToDriverOwner(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TrafficPolice.Core.ServiceReference1.Penalty pen = ((TrafficPolice.Core.ServiceReference1.Penalty)(inValues[0]));
+            return ((TrafficPolice.Core.ServiceReference1.IService1)(this)).BeginaddPenaltyToDriverOwner(pen, callback, asyncState);
+        }
+        
+        private object[] OnEndaddPenaltyToDriverOwner(System.IAsyncResult result) {
+            string retVal = ((TrafficPolice.Core.ServiceReference1.IService1)(this)).EndaddPenaltyToDriverOwner(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnaddPenaltyToDriverOwnerCompleted(object state) {
+            if ((this.addPenaltyToDriverOwnerCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.addPenaltyToDriverOwnerCompleted(this, new addPenaltyToDriverOwnerCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void addPenaltyToDriverOwnerAsync(TrafficPolice.Core.ServiceReference1.Penalty pen) {
+            this.addPenaltyToDriverOwnerAsync(pen, null);
+        }
+        
+        public void addPenaltyToDriverOwnerAsync(TrafficPolice.Core.ServiceReference1.Penalty pen, object userState) {
+            if ((this.onBeginaddPenaltyToDriverOwnerDelegate == null)) {
+                this.onBeginaddPenaltyToDriverOwnerDelegate = new BeginOperationDelegate(this.OnBeginaddPenaltyToDriverOwner);
+            }
+            if ((this.onEndaddPenaltyToDriverOwnerDelegate == null)) {
+                this.onEndaddPenaltyToDriverOwnerDelegate = new EndOperationDelegate(this.OnEndaddPenaltyToDriverOwner);
+            }
+            if ((this.onaddPenaltyToDriverOwnerCompletedDelegate == null)) {
+                this.onaddPenaltyToDriverOwnerCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnaddPenaltyToDriverOwnerCompleted);
+            }
+            base.InvokeAsync(this.onBeginaddPenaltyToDriverOwnerDelegate, new object[] {
+                        pen}, this.onEndaddPenaltyToDriverOwnerDelegate, this.onaddPenaltyToDriverOwnerCompletedDelegate, userState);
+        }
+        
         private System.IAsyncResult OnBeginOpen(object[] inValues, System.AsyncCallback callback, object asyncState) {
             return ((System.ServiceModel.ICommunicationObject)(this)).BeginOpen(callback, asyncState);
         }
@@ -2090,6 +2198,19 @@ namespace TrafficPolice.Core.ServiceReference1 {
             public TrafficPolice.Core.ServiceReference1.Registration EndgetRegByRegNum(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 TrafficPolice.Core.ServiceReference1.Registration _result = ((TrafficPolice.Core.ServiceReference1.Registration)(base.EndInvoke("getRegByRegNum", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginaddPenaltyToDriverOwner(TrafficPolice.Core.ServiceReference1.Penalty pen, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = pen;
+                System.IAsyncResult _result = base.BeginInvoke("addPenaltyToDriverOwner", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public string EndaddPenaltyToDriverOwner(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                string _result = ((string)(base.EndInvoke("addPenaltyToDriverOwner", _args, result)));
                 return _result;
             }
         }

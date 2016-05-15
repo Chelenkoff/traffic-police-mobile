@@ -14,7 +14,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait"  Orientation="Portrait"
+    SupportedOrientations="Portrait"  Orientation="Landscape"
     shell:SystemTray.IsVisible="False">
 
     <views:MvxPhonePage.Resources>

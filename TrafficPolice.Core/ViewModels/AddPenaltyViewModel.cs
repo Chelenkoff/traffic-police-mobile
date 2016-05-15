@@ -15,6 +15,8 @@ namespace TrafficPolice.Core.ViewModels
 {
     class AddPenaltyViewModel : MvxViewModel
     {
+        Service1Client client;
+
         IMvxLocationWatcher _watcher;
         public AddPenaltyViewModel(IMvxLocationWatcher watcher)
         {
@@ -22,9 +24,64 @@ namespace TrafficPolice.Core.ViewModels
 
             watcher.Start(new MvxLocationOptions(), OnLocation, OnError);
             LocationingInfoMessage = "Позициониране . . .";
-            
+
+            client = new Service1Client();
+            client.addPenaltyToDriverOwnerCompleted += client_addPenaltyToDriverOwnerCompleted;
+
+
 
         }
+
+        void client_addPenaltyToDriverOwnerCompleted(object sender, addPenaltyToDriverOwnerCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                string addPenaltyResponse = e.Result;
+
+                switch (addPenaltyResponse)
+                {
+                    case "SUCCESS":
+                        WarningMessage = "Нарушението бе успешно добавено";
+                        break;
+                    case "QUERY_ERROR":
+                        WarningMessage = "Неуспешно добавяне на нарушението";
+                        break;
+                    case "DB_ERROR":
+                        WarningMessage = "Проблем при връзката с базата";
+                        break;
+                    default:
+                        break;
+                }
+                stopLoading();
+
+            }
+
+        }
+
+        public ICommand AddPenaltyCommand
+        {
+            get { return new DelegateCommand(addPenalty); }
+        }
+        private void addPenalty()
+        {
+            //clearInfoMessage();
+
+            //if (!uiDataValidation(ID)) return;
+            Penalty pen = new Penalty();
+            pen.IssuerId = IssuerId;
+            pen.DriverOwnerId = CriminalId;
+            pen.IssuedDateTime = PenaltyIssuedDate;
+            pen.HappenedDateTime = PenaltyHappenedDate;
+            pen.Location = "";
+            pen.Latitude = Latitude;
+            pen.Longtitude = Longtitude;
+            pen.Description = PenaltyDescription;
+            pen.Disagreement = PenaltyDisagreement;
+            client.addPenaltyToDriverOwnerAsync(pen);
+            startLoading();
+        }
+
+
         public override void Start()
         {
             _penaltyIssuedDate = DateTime.Now;
@@ -39,6 +96,7 @@ namespace TrafficPolice.Core.ViewModels
         {
             IssuerId = parameters.IssuerID;
             CriminalId = parameters.DriverOwnerID;
+            WarningMessage = string.Empty;
             
         }
 
@@ -65,6 +123,13 @@ namespace TrafficPolice.Core.ViewModels
         {
             get { return _latitude; }
             set { _latitude = value; RaisePropertyChanged(() => Latitude); }
+        }
+
+        private string _warningMessage;
+        public string WarningMessage
+        {
+            get { return _warningMessage; }
+            set { _warningMessage = value; RaisePropertyChanged(() => WarningMessage); }
         }
 
         private string _penaltyDescription;
@@ -138,6 +203,37 @@ namespace TrafficPolice.Core.ViewModels
             LocationingInfoMessage =String.Format("Позиционирането е успешно\nДълж: {0} Шир: {1}",Longtitude,Latitude);
 
             _watcher.Stop();
+        }
+
+
+
+        //IsProgressRingVisible property
+        private bool _isProgressRingVisible;
+        public bool IsProgressRingVisible
+        {
+            get { return _isProgressRingVisible; }
+            set
+            {
+                _isProgressRingVisible = value;
+                RaisePropertyChanged(() => IsProgressRingVisible);
+            }
+        }
+        private void startLoading()
+        {
+            IsProgressRingVisible = true;
+
+        }
+        private void stopLoading()
+        {
+            IsProgressRingVisible = false;
+            clearMessageAfterDelay();
+
+        }
+
+        private async void clearMessageAfterDelay()
+        {
+            await Task.Delay(5000);
+            WarningMessage = string.Empty ;
         }
     }
 }

@@ -104,7 +104,9 @@
       <xs:element minOccurs="0" name="HappenedDateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="IssuedDateTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="IssuerId" type="xs:long" />
+      <xs:element minOccurs="0" name="Latitude" type="xs:double" />
       <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Longtitude" type="xs:double" />
       <xs:element minOccurs="0" name="PenaltyId" type="xs:unsignedLong" />
     </xs:sequence>
   </xs:complexType>

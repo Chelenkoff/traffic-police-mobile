@@ -35,6 +35,11 @@ namespace WCFRestMobile.Model
         [DataMember]
         public string Disagreement { get; set; }
 
+        [DataMember]
+        public double Latitude { get; set; }
+        [DataMember]
+        public double Longtitude { get; set; }
+
 
     }
 }

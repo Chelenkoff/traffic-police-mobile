@@ -351,5 +351,62 @@ namespace WCFRestMobile
             }
 
         }
+
+        public string addPenaltyToDriverOwner(Penalty pen)
+        {
+            ////////Test
+            string insertQuery = "CALL add_penalty_to_driverowner(@user_id,@driver_owner_id,@date_time_issued,@penalty_date_time," +
+                                             "@location,@latitude,@longtitude,@description,@disagreement)";
+            //DB - Connected
+            if (this.OpenConnection() == true)
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
+
+                    ///////////////////////////Test
+                    //Declaring query params
+                    cmd.Parameters.Add("@user_id", MySqlDbType.UInt64, 10);
+                    cmd.Parameters.Add("@driver_owner_id", MySqlDbType.UInt64, 10);
+                    cmd.Parameters.Add("@date_time_issued", MySqlDbType.DateTime);
+                    cmd.Parameters.Add("@penalty_date_time", MySqlDbType.DateTime);
+                    cmd.Parameters.Add("@location", MySqlDbType.VarChar,100);
+                    cmd.Parameters.Add("@latitude", MySqlDbType.Double);
+                    cmd.Parameters.Add("@longtitude", MySqlDbType.Double);
+                    cmd.Parameters.Add("@description", MySqlDbType.TinyText);
+                    cmd.Parameters.Add("@disagreement", MySqlDbType.MediumText);
+
+
+                    //Setting params
+                    cmd.Parameters["@user_id"].Value = pen.IssuerId;
+                    cmd.Parameters["@driver_owner_id"].Value = pen.DriverOwnerId;
+                    cmd.Parameters["@date_time_issued"].Value = pen.IssuedDateTime;
+                    cmd.Parameters["@penalty_date_time"].Value = pen.HappenedDateTime;
+                    cmd.Parameters["@location"].Value = pen.Location;
+                    cmd.Parameters["@latitude"].Value = pen.Latitude;
+                    cmd.Parameters["@longtitude"].Value = pen.Longtitude;
+                    cmd.Parameters["@description"].Value = pen.Description;
+                    cmd.Parameters["@disagreement"].Value = pen.Disagreement;
+
+                    cmd.ExecuteNonQuery();
+                    return "SUCCESS";
+                }
+                catch
+                {
+
+                    return "QUERY_ERROR";
+                }
+                finally
+                {
+                    this.CloseConnection();
+                }
+
+            }
+            else
+            {
+                //DB - Not connected
+                return "DB_ERROR";
+            }
+        }
     }
 }

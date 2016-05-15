@@ -44,4 +44,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="addPenaltyToDriverOwner">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCFRestMobile.Model" minOccurs="0" name="pen" nillable="true" type="q4:Penalty" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addPenaltyToDriverOwnerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addPenaltyToDriverOwnerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

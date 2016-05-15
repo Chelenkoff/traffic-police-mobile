@@ -7,6 +7,7 @@
     xmlns:bar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar"
     xmlns:views="clr-namespace:MvvmCross.WindowsPhone.Views;assembly=MvvmCross.WindowsPhone"
     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:converters ="clr-namespace:TrafficPolice.UI.WP.Utilities"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
@@ -15,6 +16,11 @@
     SupportedOrientations="Landscape" Orientation="Landscape"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
+
+    <views:MvxPhonePage.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </views:MvxPhonePage.Resources>
+
     <bar:Bindable.ApplicationBar>
         <bar:BindableApplicationBar IsVisible="True" IsMenuEnabled="True">
             <bar:BindableApplicationBarButton
@@ -27,7 +33,7 @@
             Text="Запиши"
             IconUri="{Binding IconUri, FallbackValue=/Resources/Images/Icons/appbar.save.png}"
             IsEnabled="True"
-            Command="{Binding CreatePenaltyCommand}"/>
+            Command="{Binding AddPenaltyCommand}"/>
         </bar:BindableApplicationBar>
     </bar:Bindable.ApplicationBar>
     <!--LayoutRoot is the root grid where all page content is placed-->
@@ -35,13 +41,13 @@
 
 
         <!--Pivot Control-->
-        <phone:Pivot Title="{Binding Title}">
+        <phone:Pivot Title="{Binding WarningMessage}">
 
             <!--Pivot title design-->
             <phone:Pivot.TitleTemplate>
                 <DataTemplate>
                     <Grid>
-                        <TextBlock Text="{Binding}" FontSize="25"  Foreground="#FF00A2FF" Margin="0,0,-670,0" />
+                        <TextBlock Text="{Binding}" FontSize="20"  Foreground="#FF00A2FF" Margin="0,0,-411,0" />
 
                     </Grid>
                 </DataTemplate>
@@ -58,9 +64,13 @@
                 </DataTemplate>
             </phone:Pivot.HeaderTemplate>
             <!--Pivot item one-->
+
             <phone:PivotItem Header="Обща информация">
 
                 <Grid >
+                    <ProgressBar 
+                           Visibility="{Binding IsProgressRingVisible, Converter={StaticResource BoolToVis}}"
+                             HorizontalAlignment="Left"  Margin="319,7,0,0" VerticalAlignment="Top"  IsIndeterminate="True" FontSize="36" Width="307" Height="28"/>
                     <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="351" Stroke="Black" VerticalAlignment="Top" Width="635" Opacity="0.5" Margin="0,0,0,0"/>
                     <TextBlock  HorizontalAlignment="Left" Margin="5,-1,0,0" TextWrapping="Wrap" Text="ЕГН на извършителя" VerticalAlignment="Top" FontSize="30" Height="46"/>
                     <TextBox  HorizontalAlignment="Left"  Margin="25,45,0,0" TextAlignment="Center" TextWrapping="Wrap" Text="{Binding CriminalId, Mode=TwoWay}" VerticalAlignment="Top" FontSize="35" Width="550" FontWeight="Bold" InputScope="Number" Height="84" MaxLength="10"/>
@@ -76,6 +86,9 @@
             <phone:PivotItem Header="Описание">
 
                 <Grid >
+                    <ProgressBar 
+                           Visibility="{Binding IsProgressRingVisible, Converter={StaticResource BoolToVis}}"
+                             HorizontalAlignment="Left"  Margin="412,7,0,0" VerticalAlignment="Top"  IsIndeterminate="True" FontSize="36" Width="214" Height="28"/>
                     <!--Description data-->
                     <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="351" Stroke="Black" VerticalAlignment="Top" Width="635" Opacity="0.5" Margin="0,0,0,0"/>
                     <TextBlock  HorizontalAlignment="Left" Margin="5,-1,0,0" TextWrapping="Wrap" Text="Описание на нарушението" VerticalAlignment="Top" FontSize="30" Height="46"/>
@@ -86,7 +99,9 @@
             <phone:PivotItem Header="Възражение">
 
                 <Grid >
-
+                    <ProgressBar 
+                           Visibility="{Binding IsProgressRingVisible, Converter={StaticResource BoolToVis}}"
+                             HorizontalAlignment="Left"  Margin="412,7,0,0" VerticalAlignment="Top"  IsIndeterminate="True" FontSize="36" Width="214" Height="28"/>
                     <Rectangle Fill="#FF00A2FF" HorizontalAlignment="Left" Height="351" Stroke="Black" VerticalAlignment="Top" Width="635" Opacity="0.5" Margin="0,0,0,0"/>
                     <TextBlock  HorizontalAlignment="Left" Margin="5,-1,0,0" TextWrapping="Wrap" Text="Възражение на нарушителя" VerticalAlignment="Top" FontSize="30" Height="46"/>
                     <TextBox  HorizontalAlignment="Left"  Margin="25,45,0,0" TextAlignment="Left" TextWrapping="Wrap" Text="{Binding PenaltyDisagreement,Mode=TwoWay}" VerticalAlignment="Top" FontSize="25" Width="550" InputScope="Text" Height="310" MaxLength="1500" VerticalScrollBarVisibility="Auto"/>
