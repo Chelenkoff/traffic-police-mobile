@@ -22,14 +22,21 @@ namespace TrafficPolice.Core.ViewModels
         {
             _watcher = watcher;
 
-            watcher.Start(new MvxLocationOptions(), OnLocation, OnError);
-            LocationingInfoMessage = "Позициониране . . .";
+            //watcher.Start(new MvxLocationOptions(), OnLocation, OnError);
+            //LocationingInfoMessage = "Позициониране . . .";
+            Relocate();
 
             client = new Service1Client();
             client.addPenaltyToDriverOwnerCompleted += client_addPenaltyToDriverOwnerCompleted;
 
 
 
+        }
+
+        private void Relocate()
+        {
+            _watcher.Start(new MvxLocationOptions(), OnLocation, OnError);
+            LocationingInfoMessage = "Позициониране . . .";
         }
 
         void client_addPenaltyToDriverOwnerCompleted(object sender, addPenaltyToDriverOwnerCompletedEventArgs e)
@@ -117,6 +124,13 @@ namespace TrafficPolice.Core.ViewModels
 
 
         }
+
+        public ICommand RelocateCommand
+        {
+            get { return new DelegateCommand(Relocate); }
+        }
+
+
 
         private double _latitude;
         public double Latitude
