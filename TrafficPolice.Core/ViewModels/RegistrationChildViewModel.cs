@@ -1,6 +1,12 @@
 ﻿using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
+using MvvmCross.Plugins.PictureChooser;
+using RestSharp.Portable;
+using RestSharp.Portable.HttpClient;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +24,15 @@ namespace TrafficPolice.Core.ViewModels
             client = new Service1Client();
             client.getRegByRegNumCompleted += client_getRegByRegNumCompleted;
 
+        }
+
+        private  IMvxPictureChooserTask _pictureChooserTask;
+
+        public RegistrationChildViewModel(IMvxPictureChooserTask pictureChooserTask)
+        {
+            client = new Service1Client();
+            client.getRegByRegNumCompleted += client_getRegByRegNumCompleted;
+            _pictureChooserTask = pictureChooserTask;
         }
 
         public override void Start()
@@ -81,6 +96,22 @@ namespace TrafficPolice.Core.ViewModels
 
             client.getRegByRegNumAsync(RegNum);
             startLoading();
+        }
+
+        private async void scanRegistration(String base64Image)
+        {
+            clearInfoMessage();
+
+            using (var client = new RestClient(new Uri(Constants.OCR_API_ENDPOINT)))
+            {
+
+                var request = new RestRequest(Method.POST);
+
+                request.AddHeader("apikey", Constants.OCR_API_KEY);
+                request.AddParameter("base64Image", base64Image, ParameterType.GetOrPost);
+
+                IRestResponse response = await client.Execute(request);
+            }
         }
 
         private bool uiDataValidation(string regNum)
@@ -164,17 +195,74 @@ namespace TrafficPolice.Core.ViewModels
         private void startLoading()
         {
             IsProgressRingVisible = true;
-            //IsLoginAvailable = false;
-            //IsClearAvailable = false;
-
         }
         private void stopLoading()
         {
             IsProgressRingVisible = false;
-            //IsLoginAvailable = true;
-            //IsClearAvailable = true;
-
         }
+
+
+        //TESTS
+        private MvxCommand _takePictureCommand;
+        public ICommand TakePictureCommand
+        {
+            get
+            {
+                _takePictureCommand = _takePictureCommand ?? new MvxCommand(DoTakePicture);
+                return _takePictureCommand;
+            }
+        }
+
+        private void DoTakePicture()
+        {
+            _pictureChooserTask = Mvx.Resolve<IMvxPictureChooserTask>();
+            _pictureChooserTask.TakePicture(400, 95, OnPicture, () => { });
+        }
+
+        private MvxCommand _choosePictureCommand;
+        public ICommand ChoosePictureCommand
+        {
+            get
+            {
+                _choosePictureCommand = _choosePictureCommand ?? new MvxCommand(DoChoosePicture);
+                return _choosePictureCommand;
+            }
+        }
+
+        private void DoChoosePicture()
+        {
+            _pictureChooserTask = Mvx.Resolve<IMvxPictureChooserTask>();
+            _pictureChooserTask.ChoosePictureFromLibrary(400, 95, OnPicture, () => { });
+        }
+
+        private byte[] _bytes;
+        public byte[] Bytes
+        {
+            get { return _bytes; }
+            set { _bytes = value; RaisePropertyChanged(() => Bytes); }
+        }
+
+
+        private void OnPicture(Stream pictureStream)
+        {
+            var memoryStream = new MemoryStream();
+            pictureStream.CopyTo(memoryStream);
+            Bytes = memoryStream.ToArray();
+
+            String base64Image = "";
+            try
+            {
+                base64Image = "data:image/jpeg;base64," + Convert.ToBase64String(Bytes);
+
+                scanRegistration(base64Image);
+            }
+            catch (ArgumentNullException)
+            {
+
+            }
+        }
+
+
 
 
 

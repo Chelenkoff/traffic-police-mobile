@@ -26,10 +26,10 @@ namespace WCFRestMobile
 
         void ConnectToDb()
         {
-            server = "sql7.freemysqlhosting.net";
+            server = "localhost";
             database = "sql7112557";
-            uid = "sql7112557";
-            password = "Fwg8uEkpT1";
+            uid = "root";
+            password = "root";
             charset = "utf8";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +

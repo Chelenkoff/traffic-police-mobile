@@ -14,8 +14,8 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait"  Orientation="Landscape"
-    shell:SystemTray.IsVisible="False">
+    SupportedOrientations="Portrait"  
+    shell:SystemTray.IsVisible="False" Orientation="Portrait">
 
     <views:MvxPhonePage.Resources>
         <converters:BooleanToVisibilityConverter x:Key="BoolToVis" />
@@ -59,14 +59,15 @@
             <phone:PanoramaItem  Header="Регистрация"  DataContext="{Binding RegistrationChildVM}">
                 <Grid>
                     <TextBlock Text="Справка по номер на превозното средство" FontSize="30" Margin="0,-520,0,0" Height="90" TextWrapping="Wrap" TextAlignment="Center"/>
-                    <TextBlock Text="Регистрационен номер" FontSize="39" Margin="0,-250,0,0" Height="60" TextWrapping="Wrap" TextAlignment="Center"/>
-                    <TextBox x:Name="textBox" Text="{Binding RegNum,Mode=TwoWay}" TextAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" ToolTipService.ToolTip="Въведете рег. номер" Height="104" Margin="0,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="420" MaxLength="13" FontSize="39" />
-                    <TextBlock x:Name="textBlock" Text="{Binding WarningMessage}" HorizontalAlignment="Left" Margin="0,376,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="91" Width="420" FontSize="20"/>
-                    <TextBlock x:Name="textBlock_Copy" Text="{Binding WarningType}" HorizontalAlignment="Left" Margin="0,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="420" FontSize="30" Foreground="Red"/>
+                    <TextBlock Text="Регистрационен номер" FontSize="39" Margin="0,-350,0,0" Height="60" TextWrapping="Wrap" TextAlignment="Center"/>
+                    <TextBox x:Name="textBox" Text="{Binding RegNum,Mode=TwoWay}" TextAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" ToolTipService.ToolTip="Въведете рег. номер" Height="104" Margin="0,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="420" MaxLength="13" FontSize="39" />
+                    <TextBlock x:Name="textBlock" Text="{Binding WarningMessage}" HorizontalAlignment="Left" Margin="0,400,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="91" Width="420" FontSize="20"/>
+                    <TextBlock x:Name="textBlock_Copy" Text="{Binding WarningType}" HorizontalAlignment="Left" Margin="0,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="420" FontSize="30" Foreground="Red"/>
                     <ProgressBar 
                            Visibility="{Binding IsProgressRingVisible, Converter={StaticResource BoolToVis}}"
-                             HorizontalAlignment="Left" Height="25"  Margin="0,450,0,0" VerticalAlignment="Top" Width="420"  IsIndeterminate="True" FontSize="36"/>
-                    <Button   Content="Търси" Height="90" HorizontalAlignment="Left" Margin="0,480,0,0" VerticalAlignment="Top"  Width="420" Command="{Binding ShowRegCommand}" FontSize="40" IsHitTestVisible="{Binding IsLoginAvailable}"/>
+                             HorizontalAlignment="Left" Height="25"  Margin="0,470,0,0" VerticalAlignment="Top" Width="420"  IsIndeterminate="True" FontSize="36"/>
+                    <Button   Content="Търси" Height="90" HorizontalAlignment="Left" Margin="0,490,0,0" VerticalAlignment="Top"  Width="420" Command="{Binding ShowRegCommand}" FontSize="40" />
+                    <Button   Content="Сканирай" Height="70" HorizontalAlignment="Left" Margin="0,280,0,0" VerticalAlignment="Top"  Width="420" Command="{Binding ChoosePictureCommand}" FontSize="25" />
 
                 </Grid>
             </phone:PanoramaItem>
@@ -75,14 +76,14 @@
             <phone:PanoramaItem Header="Водач"  DataContext="{Binding DriverOwnerChildVM}">
                 <Grid>
                     <TextBlock Text="Справка по ЕГН на водач" FontSize="30" Margin="0,-520,0,0" Height="90" TextWrapping="Wrap" TextAlignment="Center"/>
-                    <TextBlock Text="ЕГН" FontSize="39" Margin="0,-250,0,0" Height="60" TextWrapping="Wrap" TextAlignment="Center"/>
-                    <TextBox  Text="{Binding ID,Mode=TwoWay}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" ToolTipService.ToolTip="Въведете рег. номер" Height="104" Margin="0,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="420" MaxLength="10" TextAlignment="Center" FontSize="39" InputScope="Number" />
-                    <TextBlock  Text="{Binding WarningMessage}" HorizontalAlignment="Left" Margin="0,376,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="91" Width="420" FontSize="20"/>
-                    <TextBlock  Text="{Binding WarningType}" HorizontalAlignment="Left" Margin="0,323,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="420" FontSize="30" Foreground="Red"/>
+                    <TextBlock Text="ЕГН" FontSize="39" Margin="0,-350,0,0" Height="60" TextWrapping="Wrap" TextAlignment="Center"/>
+                    <TextBox  Text="{Binding ID,Mode=TwoWay}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" ToolTipService.ToolTip="Въведете рег. номер" Height="104" Margin="0,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="420" MaxLength="10" TextAlignment="Center" FontSize="39" InputScope="Number" />
+                    <TextBlock  Text="{Binding WarningMessage}" HorizontalAlignment="Left" Margin="0,400,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="91" Width="420" FontSize="20"/>
+                    <TextBlock  Text="{Binding WarningType}" HorizontalAlignment="Left" Margin="0,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="420" FontSize="30" Foreground="Red"/>
                     <ProgressBar 
                            Visibility="{Binding IsProgressRingVisible, Converter={StaticResource BoolToVis}}"
-                             HorizontalAlignment="Left" Height="25"  Margin="0,450,0,0" VerticalAlignment="Top" Width="420"  IsIndeterminate="True" FontSize="36"/>
-                    <Button   Content="Търси" Height="90" HorizontalAlignment="Left" Margin="0,480,0,0" VerticalAlignment="Top"  Width="420" Command="{Binding ShowDriverOwnerCommand}" FontSize="40" />
+                             HorizontalAlignment="Left" Height="25"  Margin="0,470,0,0" VerticalAlignment="Top" Width="420"  IsIndeterminate="True" FontSize="36"/>
+                    <Button   Content="Търси" Height="90" HorizontalAlignment="Left" Margin="0,490,0,0" VerticalAlignment="Top"  Width="420" Command="{Binding ShowDriverOwnerCommand}" FontSize="40" />
 
                 </Grid>
             </phone:PanoramaItem>

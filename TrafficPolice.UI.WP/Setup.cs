@@ -1,6 +1,7 @@
 ﻿using Microsoft.Phone.Controls;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.WindowsPhone.Platform;
+using MvvmCross.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;

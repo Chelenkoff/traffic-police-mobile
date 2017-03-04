@@ -9,6 +9,8 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using MvvmCross.WindowsPhone.Views;
 
+
+
 namespace TrafficPolice.UI.WP.Views
 {
     public partial class DriverOwnerDetailsView : MvxPhonePage

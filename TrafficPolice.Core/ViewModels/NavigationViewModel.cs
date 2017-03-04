@@ -16,8 +16,11 @@ namespace TrafficPolice.Core.ViewModels
         {
             DriverOwnerChildVM = new DriverOwnerChildViewModel();
             RegistrationChildVM = new RegistrationChildViewModel();
+
+
+
             //PenaltyChildVM = new PenaltyChildViewModel();
-           
+
         }
 
         //VM with parameters
