@@ -181,8 +181,11 @@
     </Content>
     <Content Include="Assets\WideLogo.png" />
     <Content Include="README_FIRST.txt" />
+    <Content Include="Resources\Images\Icons\appbar.camera.png" />
+    <Content Include="Resources\Images\Icons\appbar.clear.inverse.reflect.horizontal.png" />
     <Content Include="Resources\Images\Icons\appbar.clipboard.paper.check.png" />
     <Content Include="Resources\Images\Icons\appbar.delete.png" />
+    <Content Include="Resources\Images\Icons\appbar.image.gallery.png" />
     <Content Include="Resources\Images\Icons\appbar.location.circle.png" />
     <Content Include="Resources\Images\Icons\appbar.map.gps.png" />
     <Content Include="Resources\Images\Icons\appbar.phone.png" />

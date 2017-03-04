@@ -67,7 +67,21 @@
                            Visibility="{Binding IsProgressRingVisible, Converter={StaticResource BoolToVis}}"
                              HorizontalAlignment="Left" Height="25"  Margin="0,470,0,0" VerticalAlignment="Top" Width="420"  IsIndeterminate="True" FontSize="36"/>
                     <Button   Content="Търси" Height="90" HorizontalAlignment="Left" Margin="0,490,0,0" VerticalAlignment="Top"  Width="420" Command="{Binding ShowRegCommand}" FontSize="40" />
-                    <Button   Content="Сканирай" Height="70" HorizontalAlignment="Left" Margin="0,280,0,0" VerticalAlignment="Top"  Width="420" Command="{Binding ChoosePictureCommand}" FontSize="25" />
+                    <Button   Content="" Height="90" HorizontalAlignment="Left" Margin="0,270,0,0" VerticalAlignment="Top"  Width="140" Command="{Binding ChoosePictureCommand}" FontSize="25" Style="{StaticResource RoundButtonStyle}" >
+                        <Button.Background >
+                            <ImageBrush Stretch="UniformToFill"  ImageSource="/Resources/Images/Icons/appbar.image.gallery.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button   Content="" Height="90" HorizontalAlignment="Left" Margin="140,270,0,0" VerticalAlignment="Top"  Width="140" Command="{Binding TakePictureCommand}" FontSize="25" Style="{StaticResource RoundButtonStyle}" >
+                        <Button.Background >
+                            <ImageBrush Stretch="UniformToFill"  ImageSource="/Resources/Images/Icons/appbar.camera.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button   Content="" Height="90" HorizontalAlignment="Left" Margin="280,270,0,0" VerticalAlignment="Top"  Width="140" Command="{Binding TakePictureCommand}" FontSize="25" Style="{StaticResource RoundButtonStyle}" >
+                        <Button.Background >
+                            <ImageBrush Stretch="UniformToFill"  ImageSource="/Resources/Images/Icons/appbar.clear.inverse.reflect.horizontal.png"/>
+                        </Button.Background>
+                    </Button>
 
                 </Grid>
             </phone:PanoramaItem>
