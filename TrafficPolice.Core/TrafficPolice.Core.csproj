@@ -54,6 +54,7 @@
     <Compile Include="Utilities\OCR\OCRSpaceLine.cs" />
     <Compile Include="Utilities\OCR\OCRSpaceTextOverlay.cs" />
     <Compile Include="Utilities\OCR\OCRSpaceWord.cs" />
+    <Compile Include="Utilities\OCR\RegNumOCRValidator.cs" />
     <Compile Include="ViewModels\AddPenaltyViewModel.cs" />
     <Compile Include="ViewModels\DriverOwnerChildViewModel.cs" />
     <Compile Include="ViewModels\DriverOwnerDetailsViewModel.cs" />

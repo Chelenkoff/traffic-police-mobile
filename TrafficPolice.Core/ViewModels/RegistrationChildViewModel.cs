@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using TrafficPolice.Core.ServiceReference1;
 using TrafficPolice.Core.Utilities;
+using TrafficPolice.Core.Utilities.OCR;
 
 namespace TrafficPolice.Core.ViewModels
 {
@@ -54,8 +55,6 @@ namespace TrafficPolice.Core.ViewModels
                 if (dbResponseValidation(Registration))
                 {
                     
-
-
                     ShowViewModel<RegistrationDetailsViewModel>(Registration);
 
                 }
@@ -102,16 +101,68 @@ namespace TrafficPolice.Core.ViewModels
         {
             clearInfoMessage();
 
+
             using (var client = new RestClient(new Uri(Constants.OCR_API_ENDPOINT)))
             {
+                try
+                {
+                    var request = new RestRequest(Method.POST);
 
-                var request = new RestRequest(Method.POST);
+                    request.AddHeader("apikey", Constants.OCR_API_KEY);
+                    request.AddParameter("base64Image", base64Image, ParameterType.GetOrPost);
 
-                request.AddHeader("apikey", Constants.OCR_API_KEY);
-                request.AddParameter("base64Image", base64Image, ParameterType.GetOrPost);
 
-                IRestResponse response = await client.Execute(request);
+                    //IRestResponse response = await client.Execute(request);
+                    startLoading();
+
+                    IRestResponse<OCRSpaceResponse> response2 = await client.Execute<OCRSpaceResponse>(request);
+
+                    if (response2.Data.IsErroredOnProcessing == true)
+                    {
+                        WarningType = "Внимание";
+                        WarningMessage = "Възникнаха грешки при обработката на изображението.";
+                        stopLoading();
+                        return;
+                    }
+
+                    if (response2.Data.ParsedResults.Count > 0)
+                    {
+                        switch (response2.Data.ParsedResults.ElementAt(0).FileParseExitCode)
+                        {
+                            case 0:
+                                WarningType = "Внимание";
+                                WarningMessage = "Файлът не беше открит.";
+                                stopLoading();
+                                return;
+                            case -10:
+                            case -20:
+                            case -30:
+                            case -99:
+                                WarningType = "Внимание";
+                                WarningMessage = "Възникна проблем при анализирането на изображението.";
+                                stopLoading();
+                                return;
+                        }
+
+                        //Parsed text
+                        string numText = response2.Data.ParsedResults.ElementAt(0).ParsedText;
+                        RegNumOCRValidator.validate(ref numText);
+                        RegNum = numText;
+
+
+                    }
+                }
+                catch (Exception)
+                {
+
+                    WarningType = "Внимание";
+                    WarningMessage = "Възникна проблем при с OCR услугата.";
+                }
+
+
             }
+            stopLoading();
+
         }
 
         private bool uiDataValidation(string regNum)
@@ -154,6 +205,23 @@ namespace TrafficPolice.Core.ViewModels
         {
             WarningType = string.Empty;
             WarningMessage = string.Empty;
+        }
+
+        private void clearRegistrationInfo()
+        {
+            clearInfoMessage();
+            RegNum = string.Empty;
+        }
+
+        //Clearing registration input
+        private MvxCommand _clearRegistration;
+        public ICommand ClearRegistrationCommand
+        {
+            get
+            {
+                _clearRegistration = _clearRegistration ?? new MvxCommand(clearRegistrationInfo);
+                return _clearRegistration;
+            }
         }
 
         //WarningType property
@@ -215,8 +283,20 @@ namespace TrafficPolice.Core.ViewModels
 
         private void DoTakePicture()
         {
-            _pictureChooserTask = Mvx.Resolve<IMvxPictureChooserTask>();
-            _pictureChooserTask.TakePicture(400, 95, OnPicture, () => { });
+            try
+            {
+                clearRegistrationInfo();
+                _pictureChooserTask = Mvx.Resolve<IMvxPictureChooserTask>();
+                _pictureChooserTask.TakePicture(1000, 100, OnPicture, () => { });
+            }
+            catch (Exception)
+            {
+
+                WarningType = "Внимание";
+                WarningMessage = "Възникна проблем при избора на изображение.";
+                stopLoading();
+            }
+
         }
 
         private MvxCommand _choosePictureCommand;
@@ -231,8 +311,20 @@ namespace TrafficPolice.Core.ViewModels
 
         private void DoChoosePicture()
         {
-            _pictureChooserTask = Mvx.Resolve<IMvxPictureChooserTask>();
-            _pictureChooserTask.ChoosePictureFromLibrary(400, 95, OnPicture, () => { });
+            try
+            {
+                clearRegistrationInfo();
+                _pictureChooserTask = Mvx.Resolve<IMvxPictureChooserTask>();
+                _pictureChooserTask.ChoosePictureFromLibrary(1000, 100, OnPicture, () => { });
+            }
+            catch (Exception)
+            {
+
+                WarningType = "Внимание";
+                WarningMessage = "Възникна проблем при избора на изображение.";
+                stopLoading();
+            }
+
         }
 
         private byte[] _bytes;
@@ -245,21 +337,29 @@ namespace TrafficPolice.Core.ViewModels
 
         private void OnPicture(Stream pictureStream)
         {
+
+
             var memoryStream = new MemoryStream();
-            pictureStream.CopyTo(memoryStream);
-            Bytes = memoryStream.ToArray();
+
 
             String base64Image = "";
             try
             {
+                pictureStream.CopyTo(memoryStream);
+                Bytes = memoryStream.ToArray();
+
                 base64Image = "data:image/jpeg;base64," + Convert.ToBase64String(Bytes);
 
                 scanRegistration(base64Image);
             }
             catch (ArgumentNullException)
             {
-
+                WarningType = "Внимание";
+                WarningMessage = "Неправилен формат на изображението.";
+                stopLoading();
             }
+
+            stopLoading();
         }
 
 
