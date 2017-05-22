@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TrafficPolice.Core.ServiceReference1;
+using TrafficPolice.Core.TrafficPoliceReference;
 using TrafficPolice.Core.Utilities;
 using static TrafficPolice.Core.Utilities.DriverOwnerDetailsVMParams;
 
@@ -13,11 +13,11 @@ namespace TrafficPolice.Core.ViewModels
 {
     public class RegistrationDetailsViewModel : MvxViewModel
     {
-        Service1Client client;
+       TrafficPoliceServiceClient client;
 
         public RegistrationDetailsViewModel()
         {
-            client = new Service1Client();
+            client = new TrafficPoliceServiceClient();
             client.GetDriverOwnerByIdCompleted += client_GetDriverOwnerByIdCompleted;
 
         }

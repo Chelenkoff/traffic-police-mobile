@@ -5,17 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TrafficPolice.Core.ServiceReference1;
+using TrafficPolice.Core.TrafficPoliceReference;
 using TrafficPolice.Core.Utilities;
 
 namespace TrafficPolice.Core.ViewModels
 {
     public class LoginViewModel : MvxViewModel
     {
-        Service1Client client;
+        //Service1Client client;
+
+        TrafficPoliceServiceClient client;
+
+
         public LoginViewModel()
         {
-            client = new Service1Client();
+            client = new TrafficPoliceServiceClient();
+
 
         }
 
@@ -23,7 +28,7 @@ namespace TrafficPolice.Core.ViewModels
         {
 
             client.GetUserByIdAndPassCompleted += client_GetUserByIdAndPassCompleted;
-            
+
             stopLoading();
 
 
@@ -32,7 +37,8 @@ namespace TrafficPolice.Core.ViewModels
             base.Start();
         }
 
-         void client_GetUserByIdAndPassCompleted(object sender, GetUserByIdAndPassCompletedEventArgs e)
+
+        void client_GetUserByIdAndPassCompleted(object sender, GetUserByIdAndPassCompletedEventArgs e)
         {
             if (e.Error == null)
             {
@@ -49,13 +55,7 @@ namespace TrafficPolice.Core.ViewModels
             }
         }
 
-
-
-
-
-
-
-
+        
         public ICommand LoginCommand
         {
             get { return new DelegateCommand(login); }
@@ -69,8 +69,7 @@ namespace TrafficPolice.Core.ViewModels
 
             startLoading();
             client.GetUserByIdAndPassAsync(UserId, Password);
-
-
+                       
         }
 
         public ICommand ClearCommand
@@ -85,6 +84,7 @@ namespace TrafficPolice.Core.ViewModels
             Password = string.Empty;
             clearInfoMessage();
          }
+
 
         private bool dbResponseValidation(User usr)
         {
@@ -199,7 +199,8 @@ namespace TrafficPolice.Core.ViewModels
             }
         }
 
-        //User property
+
+
         private User _user;
         public User User
         {

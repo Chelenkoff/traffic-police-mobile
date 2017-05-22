@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TrafficPolice.Core.ServiceReference1;
+using TrafficPolice.Core.TrafficPoliceReference;
 using TrafficPolice.Core.Utilities;
 using TrafficPolice.Core.Utilities.OCR;
 
@@ -19,10 +19,10 @@ namespace TrafficPolice.Core.ViewModels
 {
     public class RegistrationChildViewModel : MvxViewModel
     {
-        Service1Client client;
+        TrafficPoliceServiceClient client;
         public RegistrationChildViewModel()
         {
-            client = new Service1Client();
+            client = new TrafficPoliceServiceClient();
             client.getRegByRegNumCompleted += client_getRegByRegNumCompleted;
 
         }
@@ -31,7 +31,7 @@ namespace TrafficPolice.Core.ViewModels
 
         public RegistrationChildViewModel(IMvxPictureChooserTask pictureChooserTask)
         {
-            client = new Service1Client();
+            client = new TrafficPoliceServiceClient();
             client.getRegByRegNumCompleted += client_getRegByRegNumCompleted;
             _pictureChooserTask = pictureChooserTask;
         }

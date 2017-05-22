@@ -8,14 +8,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TrafficPolice.Core.ServiceReference1 {
+namespace TrafficPolice.Core.TrafficPoliceServiceReference {
     using System.Runtime.Serialization;
     using System;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/WCFRestMobile.Model")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="http://schemas.datacontract.org/2004/07/TrafficPoliceWcfHost.Model")]
     public partial class User : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string FirstNameField;
@@ -120,14 +120,14 @@ namespace TrafficPolice.Core.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DriverOwner", Namespace="http://schemas.datacontract.org/2004/07/WCFRestMobile.Model")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DriverOwner", Namespace="http://schemas.datacontract.org/2004/07/TrafficPoliceWcfHost.Model")]
     public partial class DriverOwner : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.DateTime BirthDateField;
         
         private string BirthPlaceField;
         
-        private TrafficPolice.Core.ServiceReference1.Categories CategoriesField;
+        private TrafficPolice.Core.TrafficPoliceServiceReference.Categories CategoriesField;
         
         private long DriverOwnerIdField;
         
@@ -145,7 +145,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         
         private string NationalityField;
         
-        private System.Collections.ObjectModel.ObservableCollection<TrafficPolice.Core.ServiceReference1.Penalty> PenaltiesField;
+        private System.Collections.ObjectModel.ObservableCollection<TrafficPolice.Core.TrafficPoliceServiceReference.Penalty> PenaltiesField;
         
         private int RemainingPtsField;
         
@@ -153,7 +153,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         
         private string SecondNameField;
         
-        private TrafficPolice.Core.ServiceReference1.Sex SexField;
+        private TrafficPolice.Core.TrafficPoliceServiceReference.Sex SexField;
         
         private string TelNumField;
         
@@ -184,7 +184,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TrafficPolice.Core.ServiceReference1.Categories Categories {
+        public TrafficPolice.Core.TrafficPoliceServiceReference.Categories Categories {
             get {
                 return this.CategoriesField;
             }
@@ -301,7 +301,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.ObjectModel.ObservableCollection<TrafficPolice.Core.ServiceReference1.Penalty> Penalties {
+        public System.Collections.ObjectModel.ObservableCollection<TrafficPolice.Core.TrafficPoliceServiceReference.Penalty> Penalties {
             get {
                 return this.PenaltiesField;
             }
@@ -353,7 +353,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public TrafficPolice.Core.ServiceReference1.Sex Sex {
+        public TrafficPolice.Core.TrafficPoliceServiceReference.Sex Sex {
             get {
                 return this.SexField;
             }
@@ -390,7 +390,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Categories", Namespace="http://schemas.datacontract.org/2004/07/WCFRestMobile.Model")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Categories", Namespace="http://schemas.datacontract.org/2004/07/TrafficPoliceWcfHost.Model")]
     public partial class Categories : object, System.ComponentModel.INotifyPropertyChanged {
         
         private System.DateTime a1AcquiryDateField;
@@ -1170,7 +1170,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Penalty", Namespace="http://schemas.datacontract.org/2004/07/WCFRestMobile.Model")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Penalty", Namespace="http://schemas.datacontract.org/2004/07/TrafficPoliceWcfHost.Model")]
     public partial class Penalty : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string DescriptionField;
@@ -1335,7 +1335,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.FlagsAttribute()]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Sex", Namespace="http://schemas.datacontract.org/2004/07/WCFRestMobile.Model")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Sex", Namespace="http://schemas.datacontract.org/2004/07/TrafficPoliceWcfHost.Model")]
     public enum Sex : int {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
@@ -1347,7 +1347,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Registration", Namespace="http://schemas.datacontract.org/2004/07/WCFRestMobile.Model")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Registration", Namespace="http://schemas.datacontract.org/2004/07/TrafficPoliceWcfHost.Model")]
     public partial class Registration : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string CarColorField;
@@ -1676,32 +1676,32 @@ namespace TrafficPolice.Core.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
-    public interface IService1 {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TrafficPoliceServiceReference.ITrafficPoliceService")]
+    public interface ITrafficPoliceService {
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetUserByIdAndPass", ReplyAction="http://tempuri.org/IService1/GetUserByIdAndPassResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ITrafficPoliceService/GetUserByIdAndPass", ReplyAction="http://tempuri.org/ITrafficPoliceService/GetUserByIdAndPassResponse")]
         System.IAsyncResult BeginGetUserByIdAndPass(string id, string password, System.AsyncCallback callback, object asyncState);
         
-        TrafficPolice.Core.ServiceReference1.User EndGetUserByIdAndPass(System.IAsyncResult result);
+        TrafficPolice.Core.TrafficPoliceServiceReference.User EndGetUserByIdAndPass(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetDriverOwnerById", ReplyAction="http://tempuri.org/IService1/GetDriverOwnerByIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ITrafficPoliceService/GetDriverOwnerById", ReplyAction="http://tempuri.org/ITrafficPoliceService/GetDriverOwnerByIdResponse")]
         System.IAsyncResult BeginGetDriverOwnerById(string id, System.AsyncCallback callback, object asyncState);
         
-        TrafficPolice.Core.ServiceReference1.DriverOwner EndGetDriverOwnerById(System.IAsyncResult result);
+        TrafficPolice.Core.TrafficPoliceServiceReference.DriverOwner EndGetDriverOwnerById(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/getRegByRegNum", ReplyAction="http://tempuri.org/IService1/getRegByRegNumResponse")]
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ITrafficPoliceService/getRegByRegNum", ReplyAction="http://tempuri.org/ITrafficPoliceService/getRegByRegNumResponse")]
         System.IAsyncResult BegingetRegByRegNum(string regNum, System.AsyncCallback callback, object asyncState);
         
-        TrafficPolice.Core.ServiceReference1.Registration EndgetRegByRegNum(System.IAsyncResult result);
+        TrafficPolice.Core.TrafficPoliceServiceReference.Registration EndgetRegByRegNum(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/addPenaltyToDriverOwner", ReplyAction="http://tempuri.org/IService1/addPenaltyToDriverOwnerResponse")]
-        System.IAsyncResult BeginaddPenaltyToDriverOwner(TrafficPolice.Core.ServiceReference1.Penalty pen, System.AsyncCallback callback, object asyncState);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ITrafficPoliceService/addPenaltyToDriverOwner", ReplyAction="http://tempuri.org/ITrafficPoliceService/addPenaltyToDriverOwnerResponse")]
+        System.IAsyncResult BeginaddPenaltyToDriverOwner(TrafficPolice.Core.TrafficPoliceServiceReference.Penalty pen, System.AsyncCallback callback, object asyncState);
         
         string EndaddPenaltyToDriverOwner(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : TrafficPolice.Core.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
+    public interface ITrafficPoliceServiceChannel : TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1715,10 +1715,10 @@ namespace TrafficPolice.Core.ServiceReference1 {
             this.results = results;
         }
         
-        public TrafficPolice.Core.ServiceReference1.User Result {
+        public TrafficPolice.Core.TrafficPoliceServiceReference.User Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((TrafficPolice.Core.ServiceReference1.User)(this.results[0]));
+                return ((TrafficPolice.Core.TrafficPoliceServiceReference.User)(this.results[0]));
             }
         }
     }
@@ -1734,10 +1734,10 @@ namespace TrafficPolice.Core.ServiceReference1 {
             this.results = results;
         }
         
-        public TrafficPolice.Core.ServiceReference1.DriverOwner Result {
+        public TrafficPolice.Core.TrafficPoliceServiceReference.DriverOwner Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((TrafficPolice.Core.ServiceReference1.DriverOwner)(this.results[0]));
+                return ((TrafficPolice.Core.TrafficPoliceServiceReference.DriverOwner)(this.results[0]));
             }
         }
     }
@@ -1753,10 +1753,10 @@ namespace TrafficPolice.Core.ServiceReference1 {
             this.results = results;
         }
         
-        public TrafficPolice.Core.ServiceReference1.Registration Result {
+        public TrafficPolice.Core.TrafficPoliceServiceReference.Registration Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((TrafficPolice.Core.ServiceReference1.Registration)(this.results[0]));
+                return ((TrafficPolice.Core.TrafficPoliceServiceReference.Registration)(this.results[0]));
             }
         }
     }
@@ -1782,7 +1782,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<TrafficPolice.Core.ServiceReference1.IService1>, TrafficPolice.Core.ServiceReference1.IService1 {
+    public partial class TrafficPoliceServiceClient : System.ServiceModel.ClientBase<TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService>, TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService {
         
         private BeginOperationDelegate onBeginGetUserByIdAndPassDelegate;
         
@@ -1820,23 +1820,23 @@ namespace TrafficPolice.Core.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onCloseCompletedDelegate;
         
-        public Service1Client() : 
-                base(Service1Client.GetDefaultBinding(), Service1Client.GetDefaultEndpointAddress()) {
+        public TrafficPoliceServiceClient() : 
+                base(TrafficPoliceServiceClient.GetDefaultBinding(), TrafficPoliceServiceClient.GetDefaultEndpointAddress()) {
         }
         
-        public Service1Client(EndpointConfiguration endpointConfiguration) : 
-                base(Service1Client.GetBindingForEndpoint(endpointConfiguration), Service1Client.GetEndpointAddress(endpointConfiguration)) {
+        public TrafficPoliceServiceClient(EndpointConfiguration endpointConfiguration) : 
+                base(TrafficPoliceServiceClient.GetBindingForEndpoint(endpointConfiguration), TrafficPoliceServiceClient.GetEndpointAddress(endpointConfiguration)) {
         }
         
-        public Service1Client(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
-                base(Service1Client.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress)) {
+        public TrafficPoliceServiceClient(EndpointConfiguration endpointConfiguration, string remoteAddress) : 
+                base(TrafficPoliceServiceClient.GetBindingForEndpoint(endpointConfiguration), new System.ServiceModel.EndpointAddress(remoteAddress)) {
         }
         
-        public Service1Client(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(Service1Client.GetBindingForEndpoint(endpointConfiguration), remoteAddress) {
+        public TrafficPoliceServiceClient(EndpointConfiguration endpointConfiguration, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(TrafficPoliceServiceClient.GetBindingForEndpoint(endpointConfiguration), remoteAddress) {
         }
         
-        public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public TrafficPoliceServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
@@ -1875,23 +1875,23 @@ namespace TrafficPolice.Core.ServiceReference1 {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult TrafficPolice.Core.ServiceReference1.IService1.BeginGetUserByIdAndPass(string id, string password, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService.BeginGetUserByIdAndPass(string id, string password, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetUserByIdAndPass(id, password, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TrafficPolice.Core.ServiceReference1.User TrafficPolice.Core.ServiceReference1.IService1.EndGetUserByIdAndPass(System.IAsyncResult result) {
+        TrafficPolice.Core.TrafficPoliceServiceReference.User TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService.EndGetUserByIdAndPass(System.IAsyncResult result) {
             return base.Channel.EndGetUserByIdAndPass(result);
         }
         
         private System.IAsyncResult OnBeginGetUserByIdAndPass(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string id = ((string)(inValues[0]));
             string password = ((string)(inValues[1]));
-            return ((TrafficPolice.Core.ServiceReference1.IService1)(this)).BeginGetUserByIdAndPass(id, password, callback, asyncState);
+            return ((TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService)(this)).BeginGetUserByIdAndPass(id, password, callback, asyncState);
         }
         
         private object[] OnEndGetUserByIdAndPass(System.IAsyncResult result) {
-            TrafficPolice.Core.ServiceReference1.User retVal = ((TrafficPolice.Core.ServiceReference1.IService1)(this)).EndGetUserByIdAndPass(result);
+            TrafficPolice.Core.TrafficPoliceServiceReference.User retVal = ((TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService)(this)).EndGetUserByIdAndPass(result);
             return new object[] {
                     retVal};
         }
@@ -1923,22 +1923,22 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult TrafficPolice.Core.ServiceReference1.IService1.BeginGetDriverOwnerById(string id, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService.BeginGetDriverOwnerById(string id, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetDriverOwnerById(id, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TrafficPolice.Core.ServiceReference1.DriverOwner TrafficPolice.Core.ServiceReference1.IService1.EndGetDriverOwnerById(System.IAsyncResult result) {
+        TrafficPolice.Core.TrafficPoliceServiceReference.DriverOwner TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService.EndGetDriverOwnerById(System.IAsyncResult result) {
             return base.Channel.EndGetDriverOwnerById(result);
         }
         
         private System.IAsyncResult OnBeginGetDriverOwnerById(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string id = ((string)(inValues[0]));
-            return ((TrafficPolice.Core.ServiceReference1.IService1)(this)).BeginGetDriverOwnerById(id, callback, asyncState);
+            return ((TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService)(this)).BeginGetDriverOwnerById(id, callback, asyncState);
         }
         
         private object[] OnEndGetDriverOwnerById(System.IAsyncResult result) {
-            TrafficPolice.Core.ServiceReference1.DriverOwner retVal = ((TrafficPolice.Core.ServiceReference1.IService1)(this)).EndGetDriverOwnerById(result);
+            TrafficPolice.Core.TrafficPoliceServiceReference.DriverOwner retVal = ((TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService)(this)).EndGetDriverOwnerById(result);
             return new object[] {
                     retVal};
         }
@@ -1969,22 +1969,22 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult TrafficPolice.Core.ServiceReference1.IService1.BegingetRegByRegNum(string regNum, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService.BegingetRegByRegNum(string regNum, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BegingetRegByRegNum(regNum, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TrafficPolice.Core.ServiceReference1.Registration TrafficPolice.Core.ServiceReference1.IService1.EndgetRegByRegNum(System.IAsyncResult result) {
+        TrafficPolice.Core.TrafficPoliceServiceReference.Registration TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService.EndgetRegByRegNum(System.IAsyncResult result) {
             return base.Channel.EndgetRegByRegNum(result);
         }
         
         private System.IAsyncResult OnBegingetRegByRegNum(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string regNum = ((string)(inValues[0]));
-            return ((TrafficPolice.Core.ServiceReference1.IService1)(this)).BegingetRegByRegNum(regNum, callback, asyncState);
+            return ((TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService)(this)).BegingetRegByRegNum(regNum, callback, asyncState);
         }
         
         private object[] OnEndgetRegByRegNum(System.IAsyncResult result) {
-            TrafficPolice.Core.ServiceReference1.Registration retVal = ((TrafficPolice.Core.ServiceReference1.IService1)(this)).EndgetRegByRegNum(result);
+            TrafficPolice.Core.TrafficPoliceServiceReference.Registration retVal = ((TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService)(this)).EndgetRegByRegNum(result);
             return new object[] {
                     retVal};
         }
@@ -2015,22 +2015,22 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult TrafficPolice.Core.ServiceReference1.IService1.BeginaddPenaltyToDriverOwner(TrafficPolice.Core.ServiceReference1.Penalty pen, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService.BeginaddPenaltyToDriverOwner(TrafficPolice.Core.TrafficPoliceServiceReference.Penalty pen, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginaddPenaltyToDriverOwner(pen, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        string TrafficPolice.Core.ServiceReference1.IService1.EndaddPenaltyToDriverOwner(System.IAsyncResult result) {
+        string TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService.EndaddPenaltyToDriverOwner(System.IAsyncResult result) {
             return base.Channel.EndaddPenaltyToDriverOwner(result);
         }
         
         private System.IAsyncResult OnBeginaddPenaltyToDriverOwner(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            TrafficPolice.Core.ServiceReference1.Penalty pen = ((TrafficPolice.Core.ServiceReference1.Penalty)(inValues[0]));
-            return ((TrafficPolice.Core.ServiceReference1.IService1)(this)).BeginaddPenaltyToDriverOwner(pen, callback, asyncState);
+            TrafficPolice.Core.TrafficPoliceServiceReference.Penalty pen = ((TrafficPolice.Core.TrafficPoliceServiceReference.Penalty)(inValues[0]));
+            return ((TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService)(this)).BeginaddPenaltyToDriverOwner(pen, callback, asyncState);
         }
         
         private object[] OnEndaddPenaltyToDriverOwner(System.IAsyncResult result) {
-            string retVal = ((TrafficPolice.Core.ServiceReference1.IService1)(this)).EndaddPenaltyToDriverOwner(result);
+            string retVal = ((TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService)(this)).EndaddPenaltyToDriverOwner(result);
             return new object[] {
                     retVal};
         }
@@ -2042,11 +2042,11 @@ namespace TrafficPolice.Core.ServiceReference1 {
             }
         }
         
-        public void addPenaltyToDriverOwnerAsync(TrafficPolice.Core.ServiceReference1.Penalty pen) {
+        public void addPenaltyToDriverOwnerAsync(TrafficPolice.Core.TrafficPoliceServiceReference.Penalty pen) {
             this.addPenaltyToDriverOwnerAsync(pen, null);
         }
         
-        public void addPenaltyToDriverOwnerAsync(TrafficPolice.Core.ServiceReference1.Penalty pen, object userState) {
+        public void addPenaltyToDriverOwnerAsync(TrafficPolice.Core.TrafficPoliceServiceReference.Penalty pen, object userState) {
             if ((this.onBeginaddPenaltyToDriverOwnerDelegate == null)) {
                 this.onBeginaddPenaltyToDriverOwnerDelegate = new BeginOperationDelegate(this.OnBeginaddPenaltyToDriverOwner);
             }
@@ -2126,12 +2126,12 @@ namespace TrafficPolice.Core.ServiceReference1 {
             base.InvokeAsync(this.onBeginCloseDelegate, null, this.onEndCloseDelegate, this.onCloseCompletedDelegate, userState);
         }
         
-        protected override TrafficPolice.Core.ServiceReference1.IService1 CreateChannel() {
-            return new Service1ClientChannel(this);
+        protected override TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService CreateChannel() {
+            return new TrafficPoliceServiceClientChannel(this);
         }
         
         private static System.ServiceModel.Channels.Binding GetBindingForEndpoint(EndpointConfiguration endpointConfiguration) {
-            if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IService1)) {
+            if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_ITrafficPoliceService)) {
                 System.ServiceModel.BasicHttpBinding result = new System.ServiceModel.BasicHttpBinding();
                 result.MaxBufferSize = int.MaxValue;
                 result.MaxReceivedMessageSize = int.MaxValue;
@@ -2141,23 +2141,23 @@ namespace TrafficPolice.Core.ServiceReference1 {
         }
         
         private static System.ServiceModel.EndpointAddress GetEndpointAddress(EndpointConfiguration endpointConfiguration) {
-            if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_IService1)) {
-                return new System.ServiceModel.EndpointAddress("http://localhost:8733/Design_Time_Addresses/WCFRestMobile/Service1/");
+            if ((endpointConfiguration == EndpointConfiguration.BasicHttpBinding_ITrafficPoliceService)) {
+                return new System.ServiceModel.EndpointAddress("http://localhost:9607/TrafficPoliceService.svc");
             }
             throw new System.InvalidOperationException(string.Format("Could not find endpoint with name \'{0}\'.", endpointConfiguration));
         }
         
         private static System.ServiceModel.Channels.Binding GetDefaultBinding() {
-            return Service1Client.GetBindingForEndpoint(EndpointConfiguration.BasicHttpBinding_IService1);
+            return TrafficPoliceServiceClient.GetBindingForEndpoint(EndpointConfiguration.BasicHttpBinding_ITrafficPoliceService);
         }
         
         private static System.ServiceModel.EndpointAddress GetDefaultEndpointAddress() {
-            return Service1Client.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_IService1);
+            return TrafficPoliceServiceClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_ITrafficPoliceService);
         }
         
-        private class Service1ClientChannel : ChannelBase<TrafficPolice.Core.ServiceReference1.IService1>, TrafficPolice.Core.ServiceReference1.IService1 {
+        private class TrafficPoliceServiceClientChannel : ChannelBase<TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService>, TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService {
             
-            public Service1ClientChannel(System.ServiceModel.ClientBase<TrafficPolice.Core.ServiceReference1.IService1> client) : 
+            public TrafficPoliceServiceClientChannel(System.ServiceModel.ClientBase<TrafficPolice.Core.TrafficPoliceServiceReference.ITrafficPoliceService> client) : 
                     base(client) {
             }
             
@@ -2169,9 +2169,9 @@ namespace TrafficPolice.Core.ServiceReference1 {
                 return _result;
             }
             
-            public TrafficPolice.Core.ServiceReference1.User EndGetUserByIdAndPass(System.IAsyncResult result) {
+            public TrafficPolice.Core.TrafficPoliceServiceReference.User EndGetUserByIdAndPass(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                TrafficPolice.Core.ServiceReference1.User _result = ((TrafficPolice.Core.ServiceReference1.User)(base.EndInvoke("GetUserByIdAndPass", _args, result)));
+                TrafficPolice.Core.TrafficPoliceServiceReference.User _result = ((TrafficPolice.Core.TrafficPoliceServiceReference.User)(base.EndInvoke("GetUserByIdAndPass", _args, result)));
                 return _result;
             }
             
@@ -2182,9 +2182,9 @@ namespace TrafficPolice.Core.ServiceReference1 {
                 return _result;
             }
             
-            public TrafficPolice.Core.ServiceReference1.DriverOwner EndGetDriverOwnerById(System.IAsyncResult result) {
+            public TrafficPolice.Core.TrafficPoliceServiceReference.DriverOwner EndGetDriverOwnerById(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                TrafficPolice.Core.ServiceReference1.DriverOwner _result = ((TrafficPolice.Core.ServiceReference1.DriverOwner)(base.EndInvoke("GetDriverOwnerById", _args, result)));
+                TrafficPolice.Core.TrafficPoliceServiceReference.DriverOwner _result = ((TrafficPolice.Core.TrafficPoliceServiceReference.DriverOwner)(base.EndInvoke("GetDriverOwnerById", _args, result)));
                 return _result;
             }
             
@@ -2195,13 +2195,13 @@ namespace TrafficPolice.Core.ServiceReference1 {
                 return _result;
             }
             
-            public TrafficPolice.Core.ServiceReference1.Registration EndgetRegByRegNum(System.IAsyncResult result) {
+            public TrafficPolice.Core.TrafficPoliceServiceReference.Registration EndgetRegByRegNum(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                TrafficPolice.Core.ServiceReference1.Registration _result = ((TrafficPolice.Core.ServiceReference1.Registration)(base.EndInvoke("getRegByRegNum", _args, result)));
+                TrafficPolice.Core.TrafficPoliceServiceReference.Registration _result = ((TrafficPolice.Core.TrafficPoliceServiceReference.Registration)(base.EndInvoke("getRegByRegNum", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginaddPenaltyToDriverOwner(TrafficPolice.Core.ServiceReference1.Penalty pen, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginaddPenaltyToDriverOwner(TrafficPolice.Core.TrafficPoliceServiceReference.Penalty pen, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
                 _args[0] = pen;
                 System.IAsyncResult _result = base.BeginInvoke("addPenaltyToDriverOwner", _args, callback, asyncState);
@@ -2217,7 +2217,7 @@ namespace TrafficPolice.Core.ServiceReference1 {
         
         public enum EndpointConfiguration {
             
-            BasicHttpBinding_IService1,
+            BasicHttpBinding_ITrafficPoliceService,
         }
     }
 }

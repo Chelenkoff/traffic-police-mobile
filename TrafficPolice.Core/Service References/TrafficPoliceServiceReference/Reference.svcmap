@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a0db2d0d-30fc-4531-bb2e-df3ebc16ecd8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9607/TrafficPoliceService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TrafficPoliceService.xsd" MetadataType="Schema" ID="d1ac5271-8904-4531-9c41-b700968af9be" SourceId="1" SourceUrl="http://localhost:9607/TrafficPoliceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TrafficPoliceService.disco" MetadataType="Disco" ID="9d72577e-431a-4927-9707-dcd06bc50465" SourceId="1" SourceUrl="http://localhost:9607/TrafficPoliceService.svc?disco" />
+    <MetadataFile FileName="TrafficPoliceService1.xsd" MetadataType="Schema" ID="011fe7dd-8127-456e-8d6a-8edfb242089e" SourceId="1" SourceUrl="http://localhost:9607/TrafficPoliceService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TrafficPoliceService2.xsd" MetadataType="Schema" ID="1aeb29de-e0a4-4b18-bedc-a75beedd167e" SourceId="1" SourceUrl="http://localhost:9607/TrafficPoliceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TrafficPoliceService.wsdl" MetadataType="Wsdl" ID="af21be32-8e01-4f10-a9f5-f885bd4942b9" SourceId="1" SourceUrl="http://localhost:9607/TrafficPoliceService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

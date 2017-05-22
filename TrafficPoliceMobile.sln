@@ -5,6 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficPolice.Core", "TrafficPolice.Core\TrafficPolice.Core.csproj", "{D74DBC14-0756-48DE-BC4C-66FBBC466F5B}"
 	ProjectSection(ProjectDependencies) = postProject
+		{2C0B33B0-2B68-49F0-AD30-D2884DDE4245} = {2C0B33B0-2B68-49F0-AD30-D2884DDE4245}
 		{0A09BCD2-5B1A-4820-B2C5-1B496958D87C} = {0A09BCD2-5B1A-4820-B2C5-1B496958D87C}
 	EndProjectSection
 EndProject
@@ -13,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFRestMobile", "WCFRestMobile\WCFRestMobile.csproj", "{0A09BCD2-5B1A-4820-B2C5-1B496958D87C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficPolice.UI.Droid", "TrafficPolice.UI.Droid\TrafficPolice.UI.Droid.csproj", "{682525A7-0BE4-43FF-A2EF-02ECB7E3EB9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrafficPoliceWcfHost", "TrafficPoliceWcfHost\TrafficPoliceWcfHost.csproj", "{2C0B33B0-2B68-49F0-AD30-D2884DDE4245}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -84,6 +87,18 @@ Global
 		{682525A7-0BE4-43FF-A2EF-02ECB7E3EB9B}.Release|x86.ActiveCfg = Release|Any CPU
 		{682525A7-0BE4-43FF-A2EF-02ECB7E3EB9B}.Release|x86.Build.0 = Release|Any CPU
 		{682525A7-0BE4-43FF-A2EF-02ECB7E3EB9B}.Release|x86.Deploy.0 = Release|Any CPU
+		{2C0B33B0-2B68-49F0-AD30-D2884DDE4245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C0B33B0-2B68-49F0-AD30-D2884DDE4245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C0B33B0-2B68-49F0-AD30-D2884DDE4245}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{2C0B33B0-2B68-49F0-AD30-D2884DDE4245}.Debug|ARM.Build.0 = Debug|Any CPU
+		{2C0B33B0-2B68-49F0-AD30-D2884DDE4245}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2C0B33B0-2B68-49F0-AD30-D2884DDE4245}.Debug|x86.Build.0 = Debug|Any CPU
+		{2C0B33B0-2B68-49F0-AD30-D2884DDE4245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C0B33B0-2B68-49F0-AD30-D2884DDE4245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C0B33B0-2B68-49F0-AD30-D2884DDE4245}.Release|ARM.ActiveCfg = Release|Any CPU
+		{2C0B33B0-2B68-49F0-AD30-D2884DDE4245}.Release|ARM.Build.0 = Release|Any CPU
+		{2C0B33B0-2B68-49F0-AD30-D2884DDE4245}.Release|x86.ActiveCfg = Release|Any CPU
+		{2C0B33B0-2B68-49F0-AD30-D2884DDE4245}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
