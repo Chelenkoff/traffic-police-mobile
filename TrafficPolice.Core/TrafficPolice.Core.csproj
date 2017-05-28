@@ -38,11 +38,12 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\TrafficPoliceReference\Reference.cs">
+    <Compile Include="Service References\TrafficPoliceServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Configuration.cs" />
     <Compile Include="Utilities\Constants.cs" />
     <Compile Include="Utilities\CoordinatesParameters.cs" />
     <Compile Include="Utilities\DelegateCommand.cs" />
@@ -119,6 +120,9 @@
       <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Configuration">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="System.Device">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\WindowsPhone\v8.1\System.Device.dll</HintPath>
     </Reference>
@@ -139,26 +143,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
-    <None Include="Service References\TrafficPoliceReference\TrafficPolice.Core.TrafficPoliceReference.DriverOwner.datasource">
+    <None Include="Service References\TrafficPoliceServiceReference\TrafficPolice.Core.TrafficPoliceServiceReference.DriverOwner.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TrafficPoliceReference\TrafficPolice.Core.TrafficPoliceReference.Registration.datasource">
+    <None Include="Service References\TrafficPoliceServiceReference\TrafficPolice.Core.TrafficPoliceServiceReference.Registration.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TrafficPoliceReference\TrafficPolice.Core.TrafficPoliceReference.User.datasource">
+    <None Include="Service References\TrafficPoliceServiceReference\TrafficPolice.Core.TrafficPoliceServiceReference.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\TrafficPoliceReference\TrafficPoliceService.wsdl" />
-    <None Include="Service References\TrafficPoliceReference\TrafficPoliceService.xsd">
+    <None Include="Service References\TrafficPoliceServiceReference\TrafficPoliceService.wsdl" />
+    <None Include="Service References\TrafficPoliceServiceReference\TrafficPoliceService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\TrafficPoliceReference\TrafficPoliceService1.xsd">
+    <None Include="Service References\TrafficPoliceServiceReference\TrafficPoliceService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\TrafficPoliceReference\TrafficPoliceService2.xsd">
+    <None Include="Service References\TrafficPoliceServiceReference\TrafficPoliceService2.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -166,19 +172,19 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\TrafficPoliceReference\" />
+    <WCFMetadataStorage Include="Service References\TrafficPoliceServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\TrafficPoliceReference\TrafficPoliceService.disco" />
+    <None Include="Service References\TrafficPoliceServiceReference\TrafficPoliceService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\TrafficPoliceReference\configuration91.svcinfo" />
+    <None Include="Service References\TrafficPoliceServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\TrafficPoliceReference\configuration.svcinfo" />
+    <None Include="Service References\TrafficPoliceServiceReference\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\TrafficPoliceReference\Reference.svcmap">
+    <None Include="Service References\TrafficPoliceServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

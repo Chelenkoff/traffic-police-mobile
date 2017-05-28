@@ -8,10 +8,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TrafficPolice.Core.TrafficPoliceReference;
+using TrafficPolice.Core.TrafficPoliceServiceReference;
 using TrafficPolice.Core.Utilities;
 using TrafficPolice.Core.Utilities.OCR;
 
@@ -20,9 +21,32 @@ namespace TrafficPolice.Core.ViewModels
     public class RegistrationChildViewModel : MvxViewModel
     {
         TrafficPoliceServiceClient client;
+
+        public static readonly EndpointAddress EndPoint = new EndpointAddress(Utilities.Configuration.Endpoint);
+
+        private static BasicHttpBinding CreateBasicHttp()
+        {
+            BasicHttpBinding binding = new BasicHttpBinding
+            {
+                Name = "basicHttpBinding",
+                MaxBufferSize = 2147483647,
+                MaxReceivedMessageSize = 2147483647
+            };
+            TimeSpan timeout = new TimeSpan(0, 0, 30);
+            binding.SendTimeout = timeout;
+            binding.OpenTimeout = timeout;
+            binding.ReceiveTimeout = timeout;
+            return binding;
+        }
+
         public RegistrationChildViewModel()
         {
-            client = new TrafficPoliceServiceClient();
+            //client = new TrafficPoliceServiceClient();
+
+            BasicHttpBinding binding = CreateBasicHttp();
+
+            client = new TrafficPoliceServiceClient(binding, EndPoint);
+
             client.getRegByRegNumCompleted += client_getRegByRegNumCompleted;
 
         }
@@ -306,6 +330,14 @@ namespace TrafficPolice.Core.ViewModels
             {
                 _choosePictureCommand = _choosePictureCommand ?? new MvxCommand(DoChoosePicture);
                 return _choosePictureCommand;
+            }
+        }
+
+        public ICommand Logout
+        {
+            get
+            {
+                return new MvxCommand(() => Close(this));
             }
         }
 

@@ -1,0 +1,56 @@
+https://developer.xamarin.com/guides/cross-platform/application_fundamentals/web_services/walkthrough_working_with_WCF/
+
+Configuring Remote Access to IIS Express
+
+0. !! Run VISUAL STUDIO as administrator and then open project
+	!! Remove antivirus, firewall, defender
+
+1. IPCONFIG -> get your address
+
+Let's begin by configuring IIS Express to listen for external requests. We can do this by editing the configuration file for IIS Express at 
+[solutiondirectory]\.vs\config\applicationhost.config, as shown in the following screenshot:
+
+
+
+Locate the site element with the name HelloWorldWcfHost. It should look something like the following XML snippet:
+
+<site name="HelloWorldWcfHost" id="2">
+    <application path="/" applicationPool="Clr4IntegratedAppPool">
+        <virtualDirectory path="/" physicalPath="\\vmware-host\Shared Folders\tom\work\xamarin\code\private-samples\webservices\HelloWorld\HelloWorldWcfHost" />
+    </application>
+    <bindings>
+        <binding protocol="http" bindingInformation="*:9607:localhost" />
+    </bindings>
+</site>
+We will need to add another binding to open up port 9608 to outside traffic. Add the following XML to the bindings element, replacing the IP address with your own IP address:
+
+<binding protocol="http" bindingInformation="*:9608:192.168.1.143" />
+This will configure IIS Express to accept HTTP traffic from any remote IP address on port 9608 on the external IP address of the computer. This above snippet assumes the IP address of the computer running IIS Express is 192.168.1.143. 
+
+2.
+
+Next, we need to configure IIS Express accept incoming connections on port 9608. Startup up an administrative command prompt, and run this command:
+
+> netsh http add urlacl url=http://192.168.1.143:9608/ user=everyone
+
+
+
+3.
+
+The final step is to configure Windows Firewall to permit external traffic on port 9608. From an administrative command prompt, run the following command:
+
+> netsh advfirewall firewall add rule name="IISExpressXamarin" dir=in protocol=tcp localport=9608 profile=private remoteip=localsubnet action=allow
+
+4. Test services on PC and IP service on emulator
+
+At this point we have created a very basic WCF service hosted in IIS Express that will accept incoming connections from other devices or computers on our subnet. You can test this out by running your application and visiting http://localhost:9607/HelloWorldService.svc on your workstation and http://192.168.1.143:9608/HelloWorldService.svc from another computer on your subnet.
+
+5. TrafficPoliceWcfHost Porject --> Web.config
+
+        <host>
+          <baseAddresses>
+            <add baseAddress="http://192.168.0.101:9608/TrafficPoliceService.svc" />
+          </baseAddresses>
+        </host>
+
+6. TrafficPolice.Core -> Utilities -> Configuration.cs class -> change address to your IP

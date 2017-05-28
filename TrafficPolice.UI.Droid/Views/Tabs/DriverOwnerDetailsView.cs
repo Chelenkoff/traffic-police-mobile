@@ -10,25 +10,19 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Views;
-using System.ServiceModel;
 
-
-namespace TrafficPolice.UI.Droid.Views
+namespace TrafficPolice.UI.Droid.Views.Tabs
 {
-    [Activity(Label = "КАТ - Пътна полиция", MainLauncher = true)]
-    public class LoginView : MvxActivity
+    [Activity(Label = "Справкаа за водач")]
+
+    public class DriverOwnerDetailsView : MvxActivity
     {
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
-            SetContentView(Resource.Layout.View_Login);
+            SetContentView(Resource.Layout.View_DriverOwnerDetails);
         }
 
-        protected override void OnViewModelSet()
-        {
-            SetContentView(Resource.Layout.View_Login);
-        }
     }
 }

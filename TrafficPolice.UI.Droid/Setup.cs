@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,16 +9,17 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Android.Content;
-using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Platform;
+using MvvmCross.Core.ViewModels;
 using TrafficPolice.Core;
 
-namespace TrafficPolice.UI.Droid 
+namespace TrafficPolice.UI.Droid
 {
     class Setup : MvxAndroidSetup
     {
-        public Setup(Context applicationContext) : base(applicationContext)
+
+        public Setup(Context applicationContext)
+                 :  base(applicationContext)
         {
         }
 

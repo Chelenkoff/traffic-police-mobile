@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TrafficPolice.Core.TrafficPoliceReference;
+using TrafficPolice.Core.TrafficPoliceServiceReference;
 using TrafficPolice.Core.Utilities;
 using static TrafficPolice.Core.Utilities.DriverOwnerDetailsVMParams;
 

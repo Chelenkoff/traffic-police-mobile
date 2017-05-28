@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TrafficPolice.Core.TrafficPoliceServiceReference;
+
 using System.Windows.Input;
-using TrafficPolice.Core.TrafficPoliceReference;
 using TrafficPolice.Core.Utilities;
 
 namespace TrafficPolice.Core.ViewModels

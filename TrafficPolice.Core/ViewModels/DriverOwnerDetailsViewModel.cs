@@ -5,8 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TrafficPolice.Core.TrafficPoliceReference;
 using TrafficPolice.Core.Utilities;
+using TrafficPolice.Core.TrafficPoliceServiceReference;
+
 using static TrafficPolice.Core.Utilities.DriverOwnerDetailsVMParams;
 
 namespace TrafficPolice.Core.ViewModels

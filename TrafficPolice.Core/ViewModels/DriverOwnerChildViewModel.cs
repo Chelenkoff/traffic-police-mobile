@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TrafficPolice.Core.TrafficPoliceReference;
+using TrafficPolice.Core.TrafficPoliceServiceReference;
 using TrafficPolice.Core.Utilities;
 using static TrafficPolice.Core.Utilities.DriverOwnerDetailsVMParams;
 
@@ -14,12 +15,38 @@ namespace TrafficPolice.Core.ViewModels
     public class DriverOwnerChildViewModel : MvxViewModel
     {
         TrafficPoliceServiceClient client;
+
+        public static readonly EndpointAddress EndPoint = new EndpointAddress(Utilities.Configuration.Endpoint);
+
+        private static BasicHttpBinding CreateBasicHttp()
+        {
+            BasicHttpBinding binding = new BasicHttpBinding
+            {
+                Name = "basicHttpBinding",
+                MaxBufferSize = 2147483647,
+                MaxReceivedMessageSize = 2147483647
+            };
+            TimeSpan timeout = new TimeSpan(0, 0, 30);
+            binding.SendTimeout = timeout;
+            binding.OpenTimeout = timeout;
+            binding.ReceiveTimeout = timeout;
+            return binding;
+        }
+
         public DriverOwnerChildViewModel()
         {
-  
-            client = new TrafficPoliceServiceClient();
+
+            //client = new TrafficPoliceServiceClient();
+            BasicHttpBinding binding = CreateBasicHttp();
+
+            client = new TrafficPoliceServiceClient(binding, EndPoint);
+
             client.GetDriverOwnerByIdCompleted += client_GetDriverOwnerByIdCompleted;
+
+
         }
+
+
 
 
         void client_GetDriverOwnerByIdCompleted(object sender, GetDriverOwnerByIdCompletedEventArgs e)
@@ -249,6 +276,14 @@ namespace TrafficPolice.Core.ViewModels
             }
 
             return true;
+        }
+
+        public ICommand Logout
+        {
+            get
+            {
+                return new MvxCommand(() => Close(this));
+            }
         }
 
         private bool dbResponseValidation(DriverOwner drOwner)

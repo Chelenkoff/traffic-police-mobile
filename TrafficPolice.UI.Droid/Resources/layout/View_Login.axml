@@ -56,8 +56,8 @@
             android:inputType="number"
             android:maxLines="1"
             android:maxLength="10"
-            android:hint="Въведете административния си номер"
-            local:MvxBind="Text UserId"/>
+            android:hint="Въведете административен номер"
+            local:MvxBind="Text UserId" />
         <TextView
             android:id="@+id/password_label"
             android:layout_width="match_parent"
@@ -71,12 +71,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="50px"
+            android:password="true"
             android:maxLength="12"
             android:paddingTop="20px"
             android:gravity="center"
-            android:hint="Въведете административната си парола"
+            android:hint="Въведете административна парола"
             android:maxLines="1"
-            local:MvxBind="Text Password"/>
+            local:MvxBind="Text Password" />
         <TextView
             android:id="@+id/error_lbl"
             android:layout_width="match_parent"
@@ -85,7 +86,7 @@
             android:textSize="60px"
             android:gravity="left"
             android:textColor="@android:color/holo_red_light"
-            local:MvxBind="Text WarningType"/>
+            local:MvxBind="Text WarningType" />
         <TextView
             android:id="@+id/error_info_lbl"
             android:layout_width="match_parent"
@@ -93,17 +94,31 @@
             android:paddingTop="20px"
             android:textSize="50px"
             android:gravity="left"
-            local:MvxBind="Text WarningMessage"/>
+            local:MvxBind="Text WarningMessage" />
+
+      <LinearLayout
+    android:id="@+id/progress_bar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="140px"
+    android:paddingTop="35px"
+    android:paddingLeft="10px"
+    android:paddingRight="10px"
+    android:minWidth="25px"
+    android:minHeight="25px">
+
         <ProgressBar xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/progressBar"
-            android:layout_width="fill_parent"
-            android:layout_height="130px"
-            android:gravity="right"
-            android:indeterminateOnly="true"
-            android:paddingTop="60px"
-            android:visibility="visible"
-            tools:visibility="visible"
-            android:layout_marginTop="0.0dp" />
+      android:id="@+id/progressBar"
+      android:layout_width="fill_parent"
+      android:layout_height="match_parent"
+      android:indeterminateOnly="true"
+      android:layout_marginTop="0.0dp"
+      local:MvxBind="Visibility Visibility(IsProgressRingVisible)" />
+
+      </LinearLayout>
+
+
+      
+      
         <LinearLayout
             android:id="@+id/buttons_layout"
             android:layout_width="match_parent"
@@ -120,14 +135,14 @@
                 android:layout_width="0dp"
                 android:textSize="30dp"
                 android:text="Вход"
-                local:MvxBind="Click LoginCommand"/>
+                local:MvxBind="Click LoginCommand; Enabled IsLoginAvailable" />
             <ImageButton
                 android:id="@+id/clear_btn"
                 android:layout_weight="1"
                 android:layout_height="200px"
                 android:layout_width="0dp"
                 android:src="@drawable/appbar_delete"
-                local:MvxBind="Click ClearCommand"/>
+                local:MvxBind="Click ClearCommand; Enabled IsClearAvailable" />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

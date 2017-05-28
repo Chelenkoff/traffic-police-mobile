@@ -5,23 +5,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TrafficPolice.Core.TrafficPoliceReference;
 using TrafficPolice.Core.Utilities;
+using System.ServiceModel;
+using TrafficPolice.Core.TrafficPoliceServiceReference;
 
 namespace TrafficPolice.Core.ViewModels
 {
     public class LoginViewModel : MvxViewModel
     {
-        //Service1Client client;
-
         TrafficPoliceServiceClient client;
+
+        public static readonly EndpointAddress EndPoint = new EndpointAddress(Utilities.Configuration.Endpoint);
+        
+        private static BasicHttpBinding CreateBasicHttp()
+        {
+            BasicHttpBinding binding = new BasicHttpBinding
+            {
+                Name = "basicHttpBinding",
+                MaxBufferSize = 2147483647,
+                MaxReceivedMessageSize = 2147483647
+            };
+            TimeSpan timeout = new TimeSpan(0, 0, 30);
+            binding.SendTimeout = timeout;
+            binding.OpenTimeout = timeout;
+            binding.ReceiveTimeout = timeout;
+            return binding;
+        }
 
 
         public LoginViewModel()
         {
-            client = new TrafficPoliceServiceClient();
 
+            BasicHttpBinding binding = CreateBasicHttp();
 
+            client = new TrafficPoliceServiceClient(binding,EndPoint);
+            
         }
 
         public override void Start()
@@ -29,10 +47,12 @@ namespace TrafficPolice.Core.ViewModels
 
             client.GetUserByIdAndPassCompleted += client_GetUserByIdAndPassCompleted;
 
+            //TODO uncomment in debug
+            Password = "qwerty";
+            UserId = "4";
+
             stopLoading();
-
-
-            
+                       
             
             base.Start();
         }
@@ -50,12 +70,12 @@ namespace TrafficPolice.Core.ViewModels
                     ShowViewModel<NavigationViewModel>(User);
 
                 }
-                stopLoading();
-
             }
+            stopLoading();
+
         }
 
-        
+
         public ICommand LoginCommand
         {
             get { return new DelegateCommand(login); }

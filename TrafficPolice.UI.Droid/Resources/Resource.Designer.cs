@@ -47,6 +47,27 @@ namespace TrafficPolice.UI.Droid
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxListView;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::MvvmCross.Droid.FullFragging.Resource.Attribute.MvxBind = global::TrafficPolice.UI.Droid.Resource.Attribute.MvxBind;
+			global::MvvmCross.Droid.FullFragging.Resource.Attribute.MvxDropDownItemTemplate = global::TrafficPolice.UI.Droid.Resource.Attribute.MvxDropDownItemTemplate;
+			global::MvvmCross.Droid.FullFragging.Resource.Attribute.MvxGroupItemTemplate = global::TrafficPolice.UI.Droid.Resource.Attribute.MvxGroupItemTemplate;
+			global::MvvmCross.Droid.FullFragging.Resource.Attribute.MvxItemTemplate = global::TrafficPolice.UI.Droid.Resource.Attribute.MvxItemTemplate;
+			global::MvvmCross.Droid.FullFragging.Resource.Attribute.MvxLang = global::TrafficPolice.UI.Droid.Resource.Attribute.MvxLang;
+			global::MvvmCross.Droid.FullFragging.Resource.Attribute.MvxSource = global::TrafficPolice.UI.Droid.Resource.Attribute.MvxSource;
+			global::MvvmCross.Droid.FullFragging.Resource.Attribute.MvxTemplate = global::TrafficPolice.UI.Droid.Resource.Attribute.MvxTemplate;
+			global::MvvmCross.Droid.FullFragging.Resource.Id.MvvmCrossTagId = global::TrafficPolice.UI.Droid.Resource.Id.MvvmCrossTagId;
+			global::MvvmCross.Droid.FullFragging.Resource.Id.MvxBindingTagUnique = global::TrafficPolice.UI.Droid.Resource.Id.MvxBindingTagUnique;
+			global::MvvmCross.Droid.FullFragging.Resource.Styleable.MvxBinding = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxBinding;
+			global::MvvmCross.Droid.FullFragging.Resource.Styleable.MvxBinding_MvxBind = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxBinding_MvxBind;
+			global::MvvmCross.Droid.FullFragging.Resource.Styleable.MvxBinding_MvxLang = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxBinding_MvxLang;
+			global::MvvmCross.Droid.FullFragging.Resource.Styleable.MvxControl = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxControl;
+			global::MvvmCross.Droid.FullFragging.Resource.Styleable.MvxControl_MvxTemplate = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxControl_MvxTemplate;
+			global::MvvmCross.Droid.FullFragging.Resource.Styleable.MvxExpandableListView = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxExpandableListView;
+			global::MvvmCross.Droid.FullFragging.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate;
+			global::MvvmCross.Droid.FullFragging.Resource.Styleable.MvxImageView = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxImageView;
+			global::MvvmCross.Droid.FullFragging.Resource.Styleable.MvxImageView_MvxSource = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxImageView_MvxSource;
+			global::MvvmCross.Droid.FullFragging.Resource.Styleable.MvxListView = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxListView;
+			global::MvvmCross.Droid.FullFragging.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
+			global::MvvmCross.Droid.FullFragging.Resource.Styleable.MvxListView_MvxItemTemplate = global::TrafficPolice.UI.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
 		}
 		
 		public partial class Attribute
@@ -95,6 +116,9 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f020002
 			public const int kat = 2130837506;
 			
+			// aapt resource value: 0x7f020003
+			public const int navigation_background = 2130837507;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -114,44 +138,68 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f040001
 			public const int MvxBindingTagUnique = 2130968577;
 			
-			// aapt resource value: 0x7f04000c
-			public const int buttons_layout = 2130968588;
+			// aapt resource value: 0x7f040011
+			public const int buttons_layout = 2130968593;
 			
-			// aapt resource value: 0x7f04000e
-			public const int clear_btn = 2130968590;
-			
-			// aapt resource value: 0x7f04000d
-			public const int enter_btn = 2130968589;
+			// aapt resource value: 0x7f040012
+			public const int clear_btn = 2130968594;
 			
 			// aapt resource value: 0x7f04000a
-			public const int error_info_lbl = 2130968586;
-			
-			// aapt resource value: 0x7f040009
-			public const int error_lbl = 2130968585;
-			
-			// aapt resource value: 0x7f040004
-			public const int kat = 2130968580;
+			public const int enter_btn = 2130968586;
 			
 			// aapt resource value: 0x7f040007
-			public const int password_label = 2130968583;
-			
-			// aapt resource value: 0x7f040008
-			public const int password_txt = 2130968584;
-			
-			// aapt resource value: 0x7f040005
-			public const int private_number_label = 2130968581;
-			
-			// aapt resource value: 0x7f04000b
-			public const int progressBar = 2130968587;
-			
-			// aapt resource value: 0x7f040002
-			public const int title_layout = 2130968578;
+			public const int error_info_lbl = 2130968583;
 			
 			// aapt resource value: 0x7f040006
-			public const int user_id_txt = 2130968582;
+			public const int error_lbl = 2130968582;
+			
+			// aapt resource value: 0x7f040004
+			public const int info_label = 2130968580;
+			
+			// aapt resource value: 0x7f04000d
+			public const int kat = 2130968589;
+			
+			// aapt resource value: 0x7f040015
+			public const int logout = 2130968597;
 			
 			// aapt resource value: 0x7f040003
-			public const int vhod = 2130968579;
+			public const int main_layout = 2130968579;
+			
+			// aapt resource value: 0x7f04000f
+			public const int password_label = 2130968591;
+			
+			// aapt resource value: 0x7f040010
+			public const int password_txt = 2130968592;
+			
+			// aapt resource value: 0x7f040016
+			public const int penalty = 2130968598;
+			
+			// aapt resource value: 0x7f04000e
+			public const int private_number_label = 2130968590;
+			
+			// aapt resource value: 0x7f040009
+			public const int progressBar = 2130968585;
+			
+			// aapt resource value: 0x7f040008
+			public const int progress_bar_layout = 2130968584;
+			
+			// aapt resource value: 0x7f040014
+			public const int reg_num_txt = 2130968596;
+			
+			// aapt resource value: 0x7f040002
+			public const int searchImageButton = 2130968578;
+			
+			// aapt resource value: 0x7f04000b
+			public const int title_layout = 2130968587;
+			
+			// aapt resource value: 0x7f040005
+			public const int user_id_txt = 2130968581;
+			
+			// aapt resource value: 0x7f040013
+			public const int user_info_label = 2130968595;
+			
+			// aapt resource value: 0x7f04000c
+			public const int vhod = 2130968588;
 			
 			static Id()
 			{
@@ -167,7 +215,25 @@ namespace TrafficPolice.UI.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int LoginView = 2130903040;
+			public const int Navigation_Toolbar = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int View_DriverOwnerChild = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int View_DriverOwnerDetails = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int View_Login = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int View_Navigation = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int View_RegistrationChild = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int View_RegistrationDetails = 2130903046;
 			
 			static Layout()
 			{
@@ -175,6 +241,22 @@ namespace TrafficPolice.UI.Droid
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int navigation_menu = 2131099648;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
 			{
 			}
 		}
