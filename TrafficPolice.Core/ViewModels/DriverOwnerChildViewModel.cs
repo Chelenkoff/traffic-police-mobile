@@ -43,6 +43,9 @@ namespace TrafficPolice.Core.ViewModels
 
             client.GetDriverOwnerByIdCompleted += client_GetDriverOwnerByIdCompleted;
 
+            //TODO Uncomment in debug
+            ID = "9403122826";
+
 
         }
 

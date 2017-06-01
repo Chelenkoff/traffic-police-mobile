@@ -1,29 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/navigation_background">
+    <TabHost
+        android:id="@+id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+          >
+            <TextView
+                android:id="@+id/user_info_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="30px"
+                android:textSize="50px"
+                android:textColor="@color/dark_blue"
+                android:gravity="center"
+                local:MvxBind="Text Title" />
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent">
+            <!--Licence tab -->
+                <LinearLayout
+                    android:id="@+id/tab_licence"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background ="#3200A2FF">
+                <!--Doc issued  lbl-->
+                    <TextView
+                        android:id="@+id/doc_issued_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="30px"
+                        android:textSize="70px"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:text="Документът е издаден от" />
+                <!--Doc issued BY lbl-->
+                    <TextView
+                        android:id="@+id/doc_issued_by_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:paddingTop="30px"
+                        android:textSize="80px"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        local:MvxBind="Text DriverOwner.LicenceIssuedBy" />
+                <!-- Horizontal validity dates info-->
+                    <LinearLayout
+                        android:id="@+id/validity_dates_layout"
+                        android:layout_width="match_parent"
+                        android:paddingTop="40px"
+                        android:layout_height="300px">
+                    <!-- Issued date info -->
+                        <LinearLayout
+                            android:id="@+id/issued_date_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/valid_from_lbl"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="30px"
+                                android:textSize="60px"
+                                android:textColor="@color/white"
+                                android:gravity="center"
+                                android:text="Издаден на" />
+                            <EditText
+                                android:id="@+id/issued_date_txt"
+                                android:inputType="date"
+                                android:layout_width="match_parent"
+                                android:focusable="false"
+                                android:textSize="50px"
+                                android:editable="false"
+                                android:textColor="@color/white"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                local:MvxBind="Text DriverOwner.LicenceIssueDate" />
+                        </LinearLayout>
+                    <!-- Validity date info -->
+                        <LinearLayout
+                            android:id="@+id/issued_date_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/doc_issued_by_lbl"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:paddingTop="30px"
+                                android:textSize="60px"
+                                android:gravity="center"
+                                android:text="Валиден до" />
+                            <EditText
+                                android:id="@+id/expiry_date_txt"
+                                android:inputType="date"
+                                android:textSize="50px"
+                                android:editable="false"
+                                android:textColor="@color/white"
+                                android:focusable="false"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                local:MvxBind="Text DriverOwner.LicenceExpiryDate" />
+                        </LinearLayout>
+                    </LinearLayout>
+                <!--Remaining points info lbl-->
+                    <TextView
+                        android:id="@+id/remaining_points_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="100px"
+                        android:textColor="@color/white"
+                        android:textSize="80px"
+                        android:gravity="center"
+                        android:text="Налични контролни точки" />
+                <!--Remaining points value lbl-->
+                    <TextView
+                        android:id="@+id/doc_issued_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="30px"
+                        android:textSize="150px"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        local:MvxBind="Text DriverOwner.RemainingPts"
+                        android:textStyle="bold" />
 
-  <TextView
-       android:id="@+id/info_label"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:paddingTop="40px"
-       android:textSize="70px"
-       android:gravity="center"
-       android:text="Справка по ЕГН на водач" />
 
-  <EditText
-      android:id="@+id/user_id_txt"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:textSize="80px"
-      android:paddingTop="120px"
-      android:gravity="center"
-      android:inputType="number"
-      android:maxLines="1"
-      android:maxLength="10"
-      android:hint="Въведете ЕГН"/>
+                    <ProgressBar
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:max="39" 
+                        android:id="@+id/progressBar2"
+                        local:MvxBind="Progress DriverOwner.RemainingPts"/>
+                  
+                </LinearLayout>
+            <!-- Categories tab -->
+                <LinearLayout
+                    android:id="@+id/tab_categories"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background ="#3200A2FF">
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Test2" />
+                </LinearLayout>
+            <!-- Personal data tab-->
+                <LinearLayout
+                    android:id="@+id/tab_personal_data"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background ="#3200A2FF">
 
-
+                  
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
 </LinearLayout>

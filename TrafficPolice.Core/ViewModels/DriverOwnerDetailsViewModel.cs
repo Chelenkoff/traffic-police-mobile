@@ -19,6 +19,8 @@ namespace TrafficPolice.Core.ViewModels
         {
 
         }
+
+
         public override void Start()
         {
             Title = string.Format("Водач с ЕГН: {0}", DriverOwner.DriverOwnerId);

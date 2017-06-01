@@ -15,7 +15,8 @@
       android:paddingLeft="20px"
       android:paddingRight="20px"
       android:minWidth="25px"
-      android:minHeight="25px">
+      android:minHeight="25px"
+      android:background ="#3200A2FF">
     <TextView
         android:id="@+id/info_label"
         android:layout_width="match_parent"

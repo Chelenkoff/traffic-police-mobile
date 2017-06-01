@@ -5,90 +5,111 @@
     android:layout_height="fill_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-
-  <LinearLayout
-      android:id="@+id/main_layout"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:orientation="vertical"
-      android:paddingTop="100px"
-      android:paddingLeft="20px"
-      android:paddingRight="20px"
-      android:minWidth="25px"
-      android:minHeight="25px">
-    <TextView
-        android:id="@+id/info_label"
-        android:layout_width="match_parent"
-        android:layout_height="220px"
-        android:paddingTop="30px"
-        android:textSize="70px"
-        android:gravity="center"
-        android:text="Справка по номер на превозното средство" />
-
-    <EditText
-        android:id="@+id/reg_num_txt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#3859ff"
-        android:textSize="80px"
-        android:paddingTop="160px"
-        android:gravity="center"
-        android:inputType="number"
-        android:maxLines="1"
-        android:maxLength="10"
-        android:textColorHint="#3859ff"
-        android:hint="Въведете Рег. Номер"
-        local:MvxBind="Text RegNum" />
-
-    <TextView
-        android:id="@+id/error_lbl"
-        android:layout_width="match_parent"
-        android:layout_height="200px"
-        android:paddingTop="50px"
-        android:textSize="70px"
-        android:gravity="left"
-        android:textColor="@android:color/holo_red_light"
-        android:textStyle="bold"
-        local:MvxBind="Text WarningType" />
-    <TextView
-        android:id="@+id/error_info_lbl"
-        android:layout_width="match_parent"
-        android:layout_height="150px"
-        android:textSize="60px"
-        android:gravity="left"
-        android:textStyle="bold"
-        local:MvxBind="Text WarningMessage" />
-
     <LinearLayout
-  android:id="@+id/progress_bar_layout"
-  android:layout_width="match_parent"
-  android:layout_height="140px"
-  android:paddingTop="35px"
-  android:paddingLeft="10px"
-  android:paddingRight="10px"
-  android:minWidth="25px"
-  android:minHeight="25px">
-
-      <ProgressBar xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/progressBar"
-    android:layout_width="fill_parent"
-    android:layout_height="match_parent"
-    android:indeterminateOnly="true"
-    android:layout_marginTop="0.0dp"
-    local:MvxBind="Visibility Visibility(IsProgressRingVisible)" />
-
-    </LinearLayout>
-
-
-    <Button
-        android:id="@+id/enter_btn"
-        android:layout_height="200px"
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
-        android:paddingTop="50px"
-        android:textSize="25dp"
-        android:text="Търси"
-    local:MvxBind="Click ShowRegCommand" />
-
-
-  </LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="10px"
+        android:paddingLeft="20px"
+        android:paddingRight="20px"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:background ="#3200A2FF">
+        <TextView
+            android:id="@+id/info_label"
+            android:layout_width="match_parent"
+            android:layout_height="200px"
+            android:paddingTop="10px"
+            android:textSize="60px"
+            android:gravity="center"
+            android:text="Справка по номер на превозното средство" />
+        <EditText
+            android:id="@+id/reg_num_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#3859ff"
+            android:textSize="80px"
+            android:paddingTop="40px"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLines="1"
+            android:maxLength="10"
+            android:textColorHint="#3859ff"
+            android:hint="Въведете Рег. Номер"
+            local:MvxBind="Text RegNum" />
+        <LinearLayout
+            android:id="@+id/registration_buttons_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="30px"
+            android:paddingLeft="20px"
+            android:paddingRight="20px"
+            android:minWidth="25px"
+            android:minHeight="25px">
+            <ImageButton
+                android:id="@+id/choose_pic_btn"
+                android:layout_weight="1"
+                android:layout_height="200px"
+                android:layout_width="wrap_content"
+                android:src="@drawable/appbar_image_gallery" />
+            <ImageButton
+                android:id="@+id/take_pic_btn"
+                android:layout_weight="2"
+                android:layout_height="200px"
+                android:layout_width="wrap_content"
+                android:src="@drawable/appbar_camera" />
+            <ImageButton
+                android:id="@+id/clear_btn"
+                android:layout_weight="3"
+                android:layout_height="200px"
+                android:layout_width="wrap_content"
+                android:src="@drawable/appbar_clear_inverse_reflect_horizontal"
+                 local:MvxBind="Click ClearRegistrationCommand"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/error_lbl"
+            android:layout_width="match_parent"
+            android:layout_height="200px"
+            android:paddingTop="50px"
+            android:textSize="70px"
+            android:gravity="left"
+            android:textColor="@android:color/holo_red_light"
+            android:textStyle="bold"
+            local:MvxBind="Text WarningType" />
+        <TextView
+            android:id="@+id/error_info_lbl"
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:textSize="60px"
+            android:gravity="left"
+            android:textStyle="bold"
+            local:MvxBind="Text WarningMessage" />
+        <LinearLayout
+            android:id="@+id/progress_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="140px"
+            android:paddingTop="35px"
+            android:paddingLeft="10px"
+            android:paddingRight="10px"
+            android:minWidth="25px"
+            android:minHeight="25px">
+            <ProgressBar xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/progressBar"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:indeterminateOnly="true"
+                android:layout_marginTop="0.0dp"
+                local:MvxBind="Visibility Visibility(IsProgressRingVisible)" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/enter_btn"
+            android:layout_height="200px"
+            android:layout_width="match_parent"
+            android:paddingTop="50px"
+            android:textSize="25dp"
+            android:text="Търси"
+            local:MvxBind="Click ShowRegCommand" />
+    </LinearLayout>
 </RelativeLayout>

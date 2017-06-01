@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="white">#FFFFFF</color>
+  <color name="blue_background">#3200A2FF</color>
+  <color name="dark_blue">#FF00A2FF</color>
+  <color name="verde_claro_fundo_lista">#CFDBC5</color>
+  <color name="branco">#ffffff</color>
+  <color name="amarelo_corrige">#cccc00</color>
+  <color name="verde_confirma">#66b266</color>
+</resources>
