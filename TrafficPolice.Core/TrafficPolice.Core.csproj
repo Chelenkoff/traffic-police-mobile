@@ -37,12 +37,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Converters\DateTimeValueConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\TrafficPoliceServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\CategoryItem.cs" />
     <Compile Include="Utilities\Configuration.cs" />
     <Compile Include="Utilities\Constants.cs" />
     <Compile Include="Utilities\CoordinatesParameters.cs" />

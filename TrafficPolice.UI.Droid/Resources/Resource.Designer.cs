@@ -107,23 +107,29 @@ namespace TrafficPolice.UI.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f050005
-			public const int amarelo_corrige = 2131034117;
+			// aapt resource value: 0x7f050007
+			public const int amarelo_corrige = 2131034119;
 			
 			// aapt resource value: 0x7f050001
-			public const int blue_background = 2131034113;
-			
-			// aapt resource value: 0x7f050004
-			public const int branco = 2131034116;
-			
-			// aapt resource value: 0x7f050002
-			public const int dark_blue = 2131034114;
+			public const int black = 2131034113;
 			
 			// aapt resource value: 0x7f050003
-			public const int verde_claro_fundo_lista = 2131034115;
+			public const int blue_background = 2131034115;
 			
 			// aapt resource value: 0x7f050006
-			public const int verde_confirma = 2131034118;
+			public const int branco = 2131034118;
+			
+			// aapt resource value: 0x7f050004
+			public const int dark_blue = 2131034116;
+			
+			// aapt resource value: 0x7f050002
+			public const int semi_transparent_white = 2131034114;
+			
+			// aapt resource value: 0x7f050005
+			public const int verde_claro_fundo_lista = 2131034117;
+			
+			// aapt resource value: 0x7f050008
+			public const int verde_confirma = 2131034120;
 			
 			// aapt resource value: 0x7f050000
 			public const int white = 2131034112;
@@ -154,13 +160,19 @@ namespace TrafficPolice.UI.Droid
 			public const int appbar_image_gallery = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int Icon = 2130837508;
+			public const int appbar_phone = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int kat = 2130837509;
+			public const int Icon = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int navigation_background = 2130837510;
+			public const int kat = 2130837510;
+			
+			// aapt resource value: 0x7f020007
+			public const int navigation_background = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int semi_transp_edit_text = 2130837512;
 			
 			static Drawable()
 			{
@@ -181,20 +193,47 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f040001
 			public const int MvxBindingTagUnique = 2130968577;
 			
-			// aapt resource value: 0x7f04001f
-			public const int buttons_layout = 2130968607;
+			// aapt resource value: 0x7f040022
+			public const int address_label = 2130968610;
 			
-			// aapt resource value: 0x7f040023
-			public const int choose_pic_btn = 2130968611;
+			// aapt resource value: 0x7f040021
+			public const int address_static_label = 2130968609;
 			
-			// aapt resource value: 0x7f040020
-			public const int clear_btn = 2130968608;
+			// aapt resource value: 0x7f040029
+			public const int buttons_layout = 2130968617;
+			
+			// aapt resource value: 0x7f04002e
+			public const int choose_pic_btn = 2130968622;
+			
+			// aapt resource value: 0x7f04001e
+			public const int citizenship_label = 2130968606;
+			
+			// aapt resource value: 0x7f04001d
+			public const int citizenship_static_label = 2130968605;
+			
+			// aapt resource value: 0x7f04002a
+			public const int clear_btn = 2130968618;
 			
 			// aapt resource value: 0x7f04000f
 			public const int doc_issued_by_lbl = 2130968591;
 			
 			// aapt resource value: 0x7f04000e
 			public const int doc_issued_label = 2130968590;
+			
+			// aapt resource value: 0x7f04001a
+			public const int driver_firstname_lbl = 2130968602;
+			
+			// aapt resource value: 0x7f040019
+			public const int driver_label = 2130968601;
+			
+			// aapt resource value: 0x7f04001c
+			public const int driver_lastname_lbl = 2130968604;
+			
+			// aapt resource value: 0x7f04001f
+			public const int driver_phone_number_layout = 2130968607;
+			
+			// aapt resource value: 0x7f04001b
+			public const int driver_secondname_lbl = 2130968603;
 			
 			// aapt resource value: 0x7f04000a
 			public const int enter_btn = 2130968586;
@@ -217,26 +256,29 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f040013
 			public const int issued_date_txt = 2130968595;
 			
-			// aapt resource value: 0x7f04001b
-			public const int kat = 2130968603;
+			// aapt resource value: 0x7f040025
+			public const int kat = 2130968613;
 			
-			// aapt resource value: 0x7f040026
-			public const int logout = 2130968614;
+			// aapt resource value: 0x7f040031
+			public const int logout = 2130968625;
 			
 			// aapt resource value: 0x7f040003
 			public const int main_layout = 2130968579;
 			
-			// aapt resource value: 0x7f04001d
-			public const int password_label = 2130968605;
+			// aapt resource value: 0x7f040027
+			public const int password_label = 2130968615;
 			
-			// aapt resource value: 0x7f04001e
-			public const int password_txt = 2130968606;
+			// aapt resource value: 0x7f040028
+			public const int password_txt = 2130968616;
 			
-			// aapt resource value: 0x7f040025
-			public const int penalty = 2130968613;
+			// aapt resource value: 0x7f040030
+			public const int penalty = 2130968624;
 			
-			// aapt resource value: 0x7f04001c
-			public const int private_number_label = 2130968604;
+			// aapt resource value: 0x7f040020
+			public const int phone_number_label = 2130968608;
+			
+			// aapt resource value: 0x7f040026
+			public const int private_number_label = 2130968614;
 			
 			// aapt resource value: 0x7f040009
 			public const int progressBar = 2130968585;
@@ -247,11 +289,14 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f040008
 			public const int progress_bar_layout = 2130968584;
 			
-			// aapt resource value: 0x7f040021
-			public const int reg_num_txt = 2130968609;
+			// aapt resource value: 0x7f04002b
+			public const int reg_num_static_label = 2130968619;
 			
-			// aapt resource value: 0x7f040022
-			public const int registration_buttons_layout = 2130968610;
+			// aapt resource value: 0x7f04002c
+			public const int reg_num_txt = 2130968620;
+			
+			// aapt resource value: 0x7f04002d
+			public const int registration_buttons_layout = 2130968621;
 			
 			// aapt resource value: 0x7f040015
 			public const int remaining_points_lbl = 2130968597;
@@ -271,11 +316,11 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f04000b
 			public const int tabhost = 2130968587;
 			
-			// aapt resource value: 0x7f040024
-			public const int take_pic_btn = 2130968612;
+			// aapt resource value: 0x7f04002f
+			public const int take_pic_btn = 2130968623;
 			
-			// aapt resource value: 0x7f040019
-			public const int title_layout = 2130968601;
+			// aapt resource value: 0x7f040023
+			public const int title_layout = 2130968611;
 			
 			// aapt resource value: 0x7f040005
 			public const int user_id_txt = 2130968581;
@@ -289,8 +334,8 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f040010
 			public const int validity_dates_layout = 2130968592;
 			
-			// aapt resource value: 0x7f04001a
-			public const int vhod = 2130968602;
+			// aapt resource value: 0x7f040024
+			public const int vhod = 2130968612;
 			
 			static Id()
 			{
@@ -306,25 +351,28 @@ namespace TrafficPolice.UI.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Navigation_Toolbar = 2130903040;
+			public const int Category_Item = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int View_DriverOwnerChild = 2130903041;
+			public const int Navigation_Toolbar = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int View_DriverOwnerDetails = 2130903042;
+			public const int View_DriverOwnerChild = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int View_Login = 2130903043;
+			public const int View_DriverOwnerDetails = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int View_Navigation = 2130903044;
+			public const int View_Login = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int View_RegistrationChild = 2130903045;
+			public const int View_Navigation = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int View_RegistrationDetails = 2130903046;
+			public const int View_RegistrationChild = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int View_RegistrationDetails = 2130903047;
 			
 			static Layout()
 			{

@@ -12,16 +12,16 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-          >
+            android:layout_height="fill_parent">
             <TextView
                 android:id="@+id/user_info_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="30px"
+                android:paddingLeft="20px"
                 android:textSize="50px"
                 android:textColor="@color/dark_blue"
-                android:gravity="center"
+                android:gravity="left"
                 local:MvxBind="Text Title" />
             <TabWidget
                 android:id="@android:id/tabs"
@@ -37,8 +37,8 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background ="#3200A2FF">
-                <!--Doc issued  lbl-->
+                    android:background="#8000A2FF">
+                <!--Doc issued static label-->
                     <TextView
                         android:id="@+id/doc_issued_label"
                         android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                         android:gravity="center"
                         android:textColor="@color/white"
                         android:text="Документът е издаден от" />
-                <!--Doc issued BY lbl-->
+                <!--Doc issued BY label-->
                     <TextView
                         android:id="@+id/doc_issued_by_lbl"
                         android:layout_width="match_parent"
@@ -78,7 +78,6 @@
                                 android:layout_height="wrap_content"
                                 android:paddingTop="30px"
                                 android:textSize="60px"
-                                android:textColor="@color/white"
                                 android:gravity="center"
                                 android:text="Издаден на" />
                             <EditText
@@ -91,7 +90,7 @@
                                 android:textColor="@color/white"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
-                                local:MvxBind="Text DriverOwner.LicenceIssueDate" />
+                                local:MvxBind="Text DriverOwner.LicenceIssueDate, Converter=DateTime" />
                         </LinearLayout>
                     <!-- Validity date info -->
                         <LinearLayout
@@ -104,7 +103,6 @@
                                 android:id="@+id/doc_issued_by_lbl"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:textColor="@color/white"
                                 android:paddingTop="30px"
                                 android:textSize="60px"
                                 android:gravity="center"
@@ -118,7 +116,8 @@
                                 android:focusable="false"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                local:MvxBind="Text DriverOwner.LicenceExpiryDate" />
+                                android:gravity="center_horizontal"
+                                local:MvxBind="Text DriverOwner.LicenceExpiryDate, Converter=DateTime" />
                         </LinearLayout>
                     </LinearLayout>
                 <!--Remaining points info lbl-->
@@ -142,16 +141,13 @@
                         android:textColor="@color/white"
                         local:MvxBind="Text DriverOwner.RemainingPts"
                         android:textStyle="bold" />
-
-
                     <ProgressBar
                         style="?android:attr/progressBarStyleHorizontal"
                         android:layout_width="match_parent"
                         android:layout_height="200px"
-                        android:max="39" 
+                        android:max="39"
                         android:id="@+id/progressBar2"
-                        local:MvxBind="Progress DriverOwner.RemainingPts"/>
-                  
+                        local:MvxBind="Progress DriverOwner.RemainingPts" />
                 </LinearLayout>
             <!-- Categories tab -->
                 <LinearLayout
@@ -159,11 +155,14 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background ="#3200A2FF">
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Test2" />
+                    android:background="#8000A2FF">
+                  <Mvx.MvxListView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    local:MvxBind="ItemsSource Categories"
+                    local:MvxItemTemplate="@layout/category_item"
+                    />
+                    
                 </LinearLayout>
             <!-- Personal data tab-->
                 <LinearLayout
@@ -171,9 +170,112 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background ="#3200A2FF">
-
-                  
+                    android:background="#8000A2FF">
+                <!-- Driver static label -->
+                    <TextView
+                        android:id="@+id/driver_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="30px"
+                        android:paddingLeft="30px"
+                        android:textSize="70px"
+                        android:textColor="@color/white"
+                        android:gravity="left"
+                        android:text="Водач" />
+                <!-- Driver Firstname label -->
+                    <TextView
+                        android:id="@+id/driver_firstname_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="90px"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        local:MvxBind="Text DriverOwner.FirstName" />
+                <!-- Driver SecondName label -->
+                    <TextView
+                        android:id="@+id/driver_secondname_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="90px"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        local:MvxBind="Text DriverOwner.SecondName" />
+                <!-- Driver Lastname label -->
+                    <TextView
+                        android:id="@+id/driver_lastname_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="90px"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        local:MvxBind="Text DriverOwner.LastName" />
+                <!-- Citizenship static label -->
+                    <TextView
+                        android:id="@+id/citizenship_static_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="30px"
+                        android:paddingLeft="30px"
+                        android:textColor="@color/white"
+                        android:textSize="70px"
+                        android:gravity="left"
+                        android:text="Гражданство" />
+                <!-- Driver's Citizenship label -->
+                    <TextView
+                        android:id="@+id/citizenship_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="90px"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        local:MvxBind="Text DriverOwner.Nationality" />
+                <!-- Driver's phone number layout -->
+                    <LinearLayout
+                        android:id="@+id/driver_phone_number_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="200px"
+                        android:paddingTop="10px">
+                    <!-- Phone icon -->
+                        <ImageView
+                            android:layout_width="300px"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/appbar_phone" />
+                    <!-- Driver's Phone number label -->
+                        <TextView
+                            android:id="@+id/phone_number_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="40px"
+                            android:textSize="80px"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            local:MvxBind="Text DriverOwner.TelNum" />
+                    </LinearLayout>
+                <!-- Driver address static label -->
+                    <TextView
+                        android:id="@+id/address_static_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="30px"
+                        android:paddingLeft="30px"
+                        android:textSize="70px"
+                        android:textColor="@color/white"
+                        android:gravity="left"
+                        android:text="Постоянен адрес" />
+                <!-- Driver address  label -->
+                    <TextView
+                        android:id="@+id/address_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="65px"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        local:MvxBind="Text DriverOwner.Residence" />
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>

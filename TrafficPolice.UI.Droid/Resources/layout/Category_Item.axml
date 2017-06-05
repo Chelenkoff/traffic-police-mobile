@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<!-- Category name label -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:textSize="90px"
+        android:gravity="center"
+        android:textColor="@color/white"
+        local:MvxBind="Text Name" />
+<!-- Category additional info layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+    <!-- Dates layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <!-- Issued date layout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Издадена на:" />
+              <EditText
+                  android:layout_width="match_parent"
+                  android:inputType="date"
+                  android:focusable="false"
+                  android:textSize="50px"
+                  android:editable="false"
+                  android:textColor="@color/white"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_horizontal"
+                  local:MvxBind="Text AcquiryDate, Converter=DateTime" />
+            </LinearLayout>
+        <!-- Valid until date layout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Валидна до:" />
+                <EditText
+                  android:layout_width="match_parent"
+                  android:inputType="date"
+                  android:focusable="false"
+                  android:textSize="50px"
+                  android:editable="false"
+                  android:textColor="@color/white"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_horizontal"
+                  local:MvxBind="Text ExpiryDate, Converter=DateTime" />
+            </LinearLayout>
+        </LinearLayout>
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center_horizontal"
+          android:text="Ограничение:" />
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center_horizontal"
+          android:textSize="50px"
+          android:textColor="@color/white"
+          local:MvxBind="Text Restrictions" />
+    </LinearLayout>
+</LinearLayout>

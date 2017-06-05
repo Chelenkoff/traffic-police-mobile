@@ -11,60 +11,67 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:orientation="vertical"
-      android:paddingTop="100px"
+      android:paddingTop="10px"
       android:paddingLeft="20px"
       android:paddingRight="20px"
       android:minWidth="25px"
-      android:minHeight="25px"
-      android:background ="#3200A2FF">
+      android:minHeight="25px">
     <TextView
         android:id="@+id/info_label"
         android:layout_width="match_parent"
-        android:layout_height="220px"
-        android:paddingTop="30px"
+        android:layout_height="140px"
+        android:textColor="@color/white"
         android:textSize="70px"
         android:gravity="center"
         android:text="Справка по ЕГН на водач" />
+    
+        <TextView
+        android:id="@+id/info_label"
+        android:layout_width="match_parent"
+        android:layout_height="280px"
+        android:textColor="@color/white"
+        android:textSize="80px"
+        android:gravity="center"
+        android:text="ЕГН" />
    
     <EditText
         android:id="@+id/user_id_txt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#3859ff"
-        android:textSize="80px"
-        android:paddingTop="160px"
+        android:layout_height="200px"
+        android:paddingLeft="50px"
+        android:paddingRight="50px"
+        android:textColor="#000000"
+        android:textSize="100px"
         android:gravity="center"
         android:inputType="number"
         android:maxLines="1"
         android:maxLength="10"
-        android:textColorHint="#3859ff"
-        android:hint="Въведете ЕГН"
+        android:background="@color/semi_transparent_white"
         local:MvxBind="Text ID" />
    
     <TextView
         android:id="@+id/error_lbl"
         android:layout_width="match_parent"
-        android:layout_height="200px"
+        android:layout_height="150px"
         android:paddingTop="50px"
-        android:textSize="70px"
+        android:textSize="60px"
         android:gravity="left"
-        android:textColor="@android:color/holo_red_light"
-        android:textStyle="bold" 
+        android:textColor="#FF0000"
         local:MvxBind="Text WarningType" />
     <TextView
         android:id="@+id/error_info_lbl"
         android:layout_width="match_parent"
         android:layout_height="150px"
-        android:textSize="60px"
+        android:paddingTop="20px"
+        android:textSize="50px"
         android:gravity="left"
-        android:textStyle="bold" 
+        android:textColor="@color/white"
         local:MvxBind="Text WarningMessage" />
 
     <LinearLayout
   android:id="@+id/progress_bar_layout"
   android:layout_width="match_parent"
-  android:layout_height="140px"
-  android:paddingTop="35px"
+  android:layout_height="180px"
   android:paddingLeft="10px"
   android:paddingRight="10px"
   android:minWidth="25px"
@@ -85,7 +92,6 @@
         android:id="@+id/enter_btn"
         android:layout_height="200px"
         android:layout_width="match_parent"
-        android:paddingTop="50px"
         android:textSize="25dp"
         android:text="Търси"
     local:MvxBind="Click ShowDriverOwnerCommand" />

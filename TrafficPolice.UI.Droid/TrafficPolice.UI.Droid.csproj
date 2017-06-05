@@ -156,6 +156,9 @@
     <AndroidResource Include="Resources\layout\View_RegistrationDetails.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\Category_Item.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <None Include="Web References\TrafficPoliceService\DriverOwner.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -242,6 +245,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\colors.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\appbar_phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\semi_transp_edit_text.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
