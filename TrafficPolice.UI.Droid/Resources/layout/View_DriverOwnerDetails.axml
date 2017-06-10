@@ -81,7 +81,7 @@
                                 android:gravity="center"
                                 android:text="Издаден на" />
                             <EditText
-                                android:id="@+id/issued_date_txt"
+                                android:id="@+id/validity_date_txt"
                                 android:inputType="date"
                                 android:layout_width="match_parent"
                                 android:focusable="false"
@@ -155,10 +155,12 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#8000A2FF">
+                    >
                   <Mvx.MvxListView
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="10dp"
                     local:MvxBind="ItemsSource Categories"
                     local:MvxItemTemplate="@layout/category_item"
                     />

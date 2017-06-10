@@ -49,6 +49,9 @@ namespace TrafficPolice.Core.ViewModels
 
             client.getRegByRegNumCompleted += client_getRegByRegNumCompleted;
 
+            //TODO: delete in release
+            RegNum = "KH6666AH";
+
         }
 
         private  IMvxPictureChooserTask _pictureChooserTask;

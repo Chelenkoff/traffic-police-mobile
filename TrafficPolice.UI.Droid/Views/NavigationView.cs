@@ -34,15 +34,17 @@ namespace TrafficPolice.UI.Droid.Views
             TabHost.TabSpec spec;
             Intent intent;
 
+            spec = TabHost.NewTabSpec("Регистрация");
+            spec.SetIndicator("Регистрация");
+            spec.SetContent(this.CreateIntentFor(NavigationViewModel.RegistrationChildVM));
+            TabHost.AddTab(spec);
+
             spec = TabHost.NewTabSpec("Водач");
             spec.SetIndicator("Водач" );
             spec.SetContent(this.CreateIntentFor(NavigationViewModel.DriverOwnerChildVM));
             TabHost.AddTab(spec);
 
-            spec = TabHost.NewTabSpec("Регистрация");
-            spec.SetIndicator("Регистрация");
-            spec.SetContent(this.CreateIntentFor(NavigationViewModel.RegistrationChildVM));
-            TabHost.AddTab(spec);
+
 
 
         }

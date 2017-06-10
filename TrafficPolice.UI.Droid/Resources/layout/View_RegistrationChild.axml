@@ -44,8 +44,8 @@
             android:textSize="100px"
             android:paddingTop="20px"
             android:gravity="center"
-            android:inputType="number"
             android:maxLines="1"
+            android:singleLine="true"
             android:maxLength="10"
             android:background="@color/semi_transparent_white"
             local:MvxBind="Text RegNum" />

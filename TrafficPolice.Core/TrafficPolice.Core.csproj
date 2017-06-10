@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Converters\DateTimeDayFirstValueConverter.cs" />
     <Compile Include="Converters\DateTimeValueConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\TrafficPoliceServiceReference\Reference.cs">
