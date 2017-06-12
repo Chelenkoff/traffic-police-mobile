@@ -11,10 +11,11 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Views;
 using TrafficPolice.Core.ViewModels;
+using Android.Content.PM;
 
 namespace TrafficPolice.UI.Droid.Views.Tabs
 {
-    [Activity(Label = "Справка за регистрация")]
+    [Activity(Label = "Справка за регистрация", ScreenOrientation = ScreenOrientation.SensorPortrait)]
 
     public class RegistrationDetailsView : MvxActivity
     {
@@ -57,6 +58,20 @@ namespace TrafficPolice.UI.Droid.Views.Tabs
         {
             MenuInflater.Inflate(Resource.Menu.registration_navigation_menu, menu);
             return true;
+        }
+
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.driverowner:
+                    RegistrationDetailsViewModel.ShowDriverOwnerCommand.Execute(null);
+                    return true;
+
+                default:
+                    return false;
+            }
         }
 
 

@@ -13,10 +13,11 @@ using MvvmCross.Droid.Views;
 using TrafficPolice.Core.ViewModels;
 using Android.Icu.Text;
 using Java.Sql;
+using Android.Content.PM;
 
 namespace TrafficPolice.UI.Droid.Views.Tabs
 {
-    [Activity(Label = "Справка за водач")]
+    [Activity(Label = "Справка за водач", ScreenOrientation = ScreenOrientation.SensorPortrait)]
     public class DriverOwnerDetailsView : MvxActivity
     {
 

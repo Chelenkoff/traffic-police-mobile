@@ -12,10 +12,11 @@ using Android.Widget;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V4;
 using MvvmCross.Droid.Views;
+using Android.Content.PM;
 
 namespace TrafficPolice.UI.Droid.Views.Tabs
 {
-    [Activity(Label ="Регистрация")]
+    [Activity(Label ="Регистрация", ScreenOrientation = ScreenOrientation.SensorPortrait)]
     public class RegistrationChildView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)

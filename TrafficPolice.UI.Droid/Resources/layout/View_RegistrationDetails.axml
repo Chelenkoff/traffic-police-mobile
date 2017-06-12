@@ -660,118 +660,103 @@
                   
                   
                 </LinearLayout>
-            <!-- Personal data tab-->
+            <!-- Common data tab-->
                 <LinearLayout
                     android:id="@+id/tab_common_data"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#8000A2FF">
-                <!-- Driver static label -->
-                    <TextView
-                        android:id="@+id/driver_label"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="30px"
-                        android:paddingLeft="30px"
-                        android:textSize="70px"
-                        android:textColor="@color/white"
-                        android:gravity="left"
-                        android:text="Водач" />
-                <!-- Driver Firstname label -->
-                    <TextView
-                        android:id="@+id/driver_firstname_lbl"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="90px"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        local:MvxBind="Text DriverOwner.FirstName" />
-                <!-- Driver SecondName label -->
-                    <TextView
-                        android:id="@+id/driver_secondname_lbl"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="90px"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        local:MvxBind="Text DriverOwner.SecondName" />
-                <!-- Driver Lastname label -->
-                    <TextView
-                        android:id="@+id/driver_lastname_lbl"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="90px"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        local:MvxBind="Text DriverOwner.LastName" />
-                <!-- Citizenship static label -->
-                    <TextView
-                        android:id="@+id/citizenship_static_label"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="30px"
-                        android:paddingLeft="30px"
-                        android:textColor="@color/white"
-                        android:textSize="70px"
-                        android:gravity="left"
-                        android:text="Гражданство" />
-                <!-- Driver's Citizenship label -->
-                    <TextView
-                        android:id="@+id/citizenship_label"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="90px"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        local:MvxBind="Text DriverOwner.Nationality" />
-                <!-- Driver's phone number layout -->
-                    <LinearLayout
-                        android:id="@+id/driver_phone_number_layout"
-                        android:layout_width="match_parent"
-                        android:layout_height="200px"
-                        android:paddingTop="10px">
-                    <!-- Phone icon -->
-                        <ImageView
-                            android:layout_width="300px"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/appbar_phone" />
-                    <!-- Driver's Phone number label -->
-                        <TextView
-                            android:id="@+id/phone_number_label"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20px"
+                    android:layout_marginRight="20px"
+                    android:layout_marginTop="70px"
+                    android:orientation="vertical">
+                  
+                                    <LinearLayout
+                     android:id="@+id/field_tech_details"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:orientation="vertical"
+                     android:layout_marginTop="60px"
+                     android:background="#8000A2FF">
+                  
+                        <!-- ID of owner static label-->
+                            <TextView
+                             android:id="@+id/ownerid_static_label"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="20dp"
+                             android:layout_gravity="center"
+                             android:textSize="70px"
+                             android:gravity="center"
+                             android:textColor="@color/white"
+                             android:text="ЕГН на собственика:" />
+                        <!-- ID of owner info label -->
+                           <TextView
+                             android:id="@+id/ownerid_info_label"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center"
+                             android:textSize="90px"
+                             android:gravity="center"
+                             android:textStyle="bold"
+                             android:textColor="@color/white"
+                             local:MvxBind="Text Registration.DriverOwnerId" />
+                                      
+                            <!--First reg static label-->
+                            <TextView
+                             android:id="@+id/firstreg_static_label"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="20dp"
+                             android:layout_gravity="center"
+                             android:textSize="70px"
+                             android:gravity="center"
+                             android:textColor="@color/white"
+                             android:text="Първа регистрация:" />
+                                  
+                             <!-- First reg date -->
+                            <EditText
+                            android:id="@+id/firstreg_date_txt"
+                            android:inputType="date"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:paddingTop="40px"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:focusable="false"
                             android:textSize="80px"
+                            android:editable="false"
                             android:textColor="@color/white"
-                            android:textStyle="bold"
-                            local:MvxBind="Text DriverOwner.TelNum" />
-                    </LinearLayout>
-                <!-- Driver address static label -->
-                    <TextView
-                        android:id="@+id/address_static_label"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="30px"
-                        android:paddingLeft="30px"
-                        android:textSize="70px"
-                        android:textColor="@color/white"
-                        android:gravity="left"
-                        android:text="Постоянен адрес" />
-                <!-- Driver address  label -->
-                    <TextView
-                        android:id="@+id/address_label"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="65px"
-                        android:gravity="center"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        local:MvxBind="Text DriverOwner.Residence" />
+                            android:gravity="center_horizontal"
+                            local:MvxBind="Text Registration.FirstRegDate, Converter=DateTimeDayFirst" />
+                                      
+                            <!--Current reg static label-->
+                            <TextView
+                             android:id="@+id/currentreg_static_label"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="center"
+                             android:layout_marginTop="20dp"
+                             android:textSize="70px"
+                             android:gravity="center"
+                             android:textColor="@color/white"
+                             android:text="Настояща регистрация:" />
+                                  
+                             <!-- Current reg date -->
+                            <EditText
+                            android:id="@+id/currentreg_date_txt"
+                            android:inputType="date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:focusable="false"
+                            android:textSize="80px"
+                            android:editable="false"
+                            android:textColor="@color/white"
+                            android:gravity="center_horizontal"
+                            local:MvxBind="Text Registration.RecentRegDate, Converter=DateTimeDayFirst" />
+                                      
+                     </LinearLayout>
+                  
+                
+              
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>

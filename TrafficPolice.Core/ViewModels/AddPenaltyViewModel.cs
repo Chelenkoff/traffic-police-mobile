@@ -13,17 +13,32 @@ using static TrafficPolice.Core.Utilities.DriverOwnerDetailsVMParams;
 
 namespace TrafficPolice.Core.ViewModels
 {
-    class AddPenaltyViewModel : MvxViewModel
+    public class AddPenaltyViewModel : MvxViewModel
     {
         TrafficPoliceServiceClient client;
 
         IMvxLocationWatcher _watcher;
-        public AddPenaltyViewModel(IMvxLocationWatcher watcher)
-        {
-            _watcher = watcher;
+        //public AddPenaltyViewModel(IMvxLocationWatcher watcher)
+        //{
+        //    _watcher = watcher;
 
-            //watcher.Start(new MvxLocationOptions(), OnLocation, OnError);
-            //LocationingInfoMessage = "Позициониране . . .";
+        //    //watcher.Start(new MvxLocationOptions(), OnLocation, OnError);
+        //    //LocationingInfoMessage = "Позициониране . . .";
+        //    Relocate();
+
+        //    client = new TrafficPoliceServiceClient();
+        //    client.addPenaltyToDriverOwnerCompleted += client_addPenaltyToDriverOwnerCompleted;
+
+
+
+        //}
+
+        public AddPenaltyViewModel()
+        {
+            _watcher = Mvx.Resolve<IMvxLocationWatcher>();
+
+
+
             Relocate();
 
             client = new TrafficPoliceServiceClient();
@@ -32,6 +47,8 @@ namespace TrafficPolice.Core.ViewModels
 
 
         }
+
+
 
         private void Relocate()
         {

@@ -12,10 +12,11 @@ using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.FullFragging.Fragments;
 using MvvmCross.Droid.Views;
 using Android.App;
+using Android.Content.PM;
 
 namespace TrafficPolice.UI.Droid.Views.Tabs
 {
-    [Activity(Label = "Водач")]
+    [Activity(Label = "Водач", ScreenOrientation = ScreenOrientation.SensorPortrait)]
 
     public class DriverOwnerChildView : MvxActivity
     {

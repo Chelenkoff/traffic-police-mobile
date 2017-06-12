@@ -11,11 +11,11 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Views;
 using System.ServiceModel;
-
+using Android.Content.PM;
 
 namespace TrafficPolice.UI.Droid.Views
 {
-    [Activity(Label = "КАТ - Пътна полиция", MainLauncher = true)]
+    [Activity(Label = "КАТ - Пътна полиция", MainLauncher = true, ScreenOrientation = ScreenOrientation.SensorPortrait)]
     public class LoginView : MvxActivity
     {
 

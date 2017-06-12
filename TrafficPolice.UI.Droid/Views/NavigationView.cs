@@ -14,10 +14,11 @@ using TrafficPolice.Core.ViewModels;
 using TrafficPolice.UI.Droid.Views.Tabs;
 using MvvmCross.Droid.Support.V4;
 using Android.Support.V4.Content;
+using Android.Content.PM;
 
 namespace TrafficPolice.UI.Droid.Views
 {
-    [Activity(Label = "Справки")]
+    [Activity(Label = "Справки", ScreenOrientation = ScreenOrientation.SensorPortrait)]
     public class NavigationView : MvxTabActivity
     {
         protected NavigationViewModel NavigationViewModel
@@ -66,7 +67,7 @@ namespace TrafficPolice.UI.Droid.Views
                     NavigationViewModel.RegistrationChildVM.Logout.Execute(null);
                     return true;
                 case Resource.Id.penalty:
-                    //Do stuff for item2
+                    NavigationViewModel.CreatePenaltyCommand.Execute(null);
                     return true;
                 default:
                     return false;
