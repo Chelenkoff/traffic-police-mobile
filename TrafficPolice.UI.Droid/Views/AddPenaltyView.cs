@@ -63,5 +63,22 @@ namespace TrafficPolice.UI.Droid.Views
             return true;
         }
 
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.relocation:
+                    AddPenaltyViewModel.RelocateCommand.Execute(null);
+                    return true;
+                case Resource.Id.save:
+                    AddPenaltyViewModel.AddPenaltyCommand.Execute(null);
+                    return true;
+
+                default:
+                    return false;
+            }
+        }
+
     }
 }

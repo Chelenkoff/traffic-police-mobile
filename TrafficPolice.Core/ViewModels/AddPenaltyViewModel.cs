@@ -4,6 +4,7 @@ using MvvmCross.Plugins.Location;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -16,6 +17,24 @@ namespace TrafficPolice.Core.ViewModels
     public class AddPenaltyViewModel : MvxViewModel
     {
         TrafficPoliceServiceClient client;
+
+        public static readonly EndpointAddress EndPoint = new EndpointAddress(Utilities.Configuration.Endpoint);
+
+
+        private static BasicHttpBinding CreateBasicHttp()
+        {
+            BasicHttpBinding binding = new BasicHttpBinding
+            {
+                Name = "basicHttpBinding",
+                MaxBufferSize = 2147483647,
+                MaxReceivedMessageSize = 2147483647
+            };
+            TimeSpan timeout = new TimeSpan(0, 0, 30);
+            binding.SendTimeout = timeout;
+            binding.OpenTimeout = timeout;
+            binding.ReceiveTimeout = timeout;
+            return binding;
+        }
 
         IMvxLocationWatcher _watcher;
         //public AddPenaltyViewModel(IMvxLocationWatcher watcher)
@@ -41,7 +60,11 @@ namespace TrafficPolice.Core.ViewModels
 
             Relocate();
 
-            client = new TrafficPoliceServiceClient();
+            BasicHttpBinding binding = CreateBasicHttp();
+
+            client = new TrafficPoliceServiceClient(binding, EndPoint);
+
+            //client = new TrafficPoliceServiceClient();
             client.addPenaltyToDriverOwnerCompleted += client_addPenaltyToDriverOwnerCompleted;
 
 

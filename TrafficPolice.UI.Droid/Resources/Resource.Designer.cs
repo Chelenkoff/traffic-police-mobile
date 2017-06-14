@@ -259,8 +259,8 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f040012
 			public const int doc_issued_by_lbl = 2130968594;
 			
-			// aapt resource value: 0x7f040023
-			public const int doc_issued_label = 2130968611;
+			// aapt resource value: 0x7f040022
+			public const int doc_issued_label = 2130968610;
 			
 			// aapt resource value: 0x7f04002d
 			public const int driver_firstname_lbl = 2130968621;
@@ -280,17 +280,17 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f040078
 			public const int driverowner = 2130968696;
 			
-			// aapt resource value: 0x7f040020
-			public const int enter_btn = 2130968608;
-			
-			// aapt resource value: 0x7f04001d
-			public const int error_info_lbl = 2130968605;
+			// aapt resource value: 0x7f04001f
+			public const int enter_btn = 2130968607;
 			
 			// aapt resource value: 0x7f04001c
-			public const int error_lbl = 2130968604;
+			public const int error_info_lbl = 2130968604;
 			
-			// aapt resource value: 0x7f040013
-			public const int expiry_date_txt = 2130968595;
+			// aapt resource value: 0x7f04001b
+			public const int error_lbl = 2130968603;
+			
+			// aapt resource value: 0x7f040027
+			public const int expiry_date_txt = 2130968615;
 			
 			// aapt resource value: 0x7f040050
 			public const int field_car_insurance = 2130968656;
@@ -313,14 +313,14 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f04000e
 			public const int happened_penalty_date_layout = 2130968590;
 			
-			// aapt resource value: 0x7f04001b
-			public const int info_label = 2130968603;
+			// aapt resource value: 0x7f04001a
+			public const int info_label = 2130968602;
 			
 			// aapt resource value: 0x7f040052
 			public const int insurer_static_label = 2130968658;
 			
-			// aapt resource value: 0x7f040025
-			public const int issued_date_layout = 2130968613;
+			// aapt resource value: 0x7f040024
+			public const int issued_date_layout = 2130968612;
 			
 			// aapt resource value: 0x7f04004d
 			public const int issued_date_txt = 2130968653;
@@ -358,8 +358,8 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f040077
 			public const int logout = 2130968695;
 			
-			// aapt resource value: 0x7f04001a
-			public const int main_layout = 2130968602;
+			// aapt resource value: 0x7f040019
+			public const int main_layout = 2130968601;
 			
 			// aapt resource value: 0x7f040055
 			public const int manufacturer_field = 2130968661;
@@ -400,20 +400,20 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f040006
 			public const int penalty_data_layout = 2130968582;
 			
-			// aapt resource value: 0x7f040016
-			public const int penalty_desc_info_txt = 2130968598;
-			
 			// aapt resource value: 0x7f040015
-			public const int penalty_desc_layout = 2130968597;
+			public const int penalty_desc_info_txt = 2130968597;
+			
+			// aapt resource value: 0x7f040014
+			public const int penalty_desc_layout = 2130968596;
 			
 			// aapt resource value: 0x7f040007
 			public const int penalty_desc_static_label = 2130968583;
 			
-			// aapt resource value: 0x7f040018
-			public const int penalty_protest_layout = 2130968600;
+			// aapt resource value: 0x7f040017
+			public const int penalty_protest_layout = 2130968599;
 			
-			// aapt resource value: 0x7f040019
-			public const int penalty_protest_static_label = 2130968601;
+			// aapt resource value: 0x7f040018
+			public const int penalty_protest_static_label = 2130968600;
 			
 			// aapt resource value: 0x7f040033
 			public const int phone_number_label = 2130968627;
@@ -433,14 +433,14 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f040039
 			public const int private_number_label = 2130968633;
 			
-			// aapt resource value: 0x7f04001f
-			public const int progressBar = 2130968607;
+			// aapt resource value: 0x7f04001e
+			public const int progressBar = 2130968606;
 			
 			// aapt resource value: 0x7f040029
 			public const int progressBar2 = 2130968617;
 			
-			// aapt resource value: 0x7f04001e
-			public const int progress_bar_layout = 2130968606;
+			// aapt resource value: 0x7f04001d
+			public const int progress_bar_layout = 2130968605;
 			
 			// aapt resource value: 0x7f04003e
 			public const int reg_num_static_label = 2130968638;
@@ -481,17 +481,17 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f040048
 			public const int tab_liability = 2130968648;
 			
-			// aapt resource value: 0x7f040022
-			public const int tab_licence = 2130968610;
+			// aapt resource value: 0x7f040021
+			public const int tab_licence = 2130968609;
 			
 			// aapt resource value: 0x7f040005
 			public const int tab_penalty_data = 2130968581;
 			
-			// aapt resource value: 0x7f040014
-			public const int tab_penalty_description = 2130968596;
+			// aapt resource value: 0x7f040013
+			public const int tab_penalty_description = 2130968595;
 			
-			// aapt resource value: 0x7f040017
-			public const int tab_penalty_protest = 2130968599;
+			// aapt resource value: 0x7f040016
+			public const int tab_penalty_protest = 2130968598;
 			
 			// aapt resource value: 0x7f04002b
 			public const int tab_personal_data = 2130968619;
@@ -520,23 +520,23 @@ namespace TrafficPolice.UI.Droid
 			// aapt resource value: 0x7f040008
 			public const int user_id_txt = 2130968584;
 			
-			// aapt resource value: 0x7f040021
-			public const int user_info_label = 2130968609;
+			// aapt resource value: 0x7f040020
+			public const int user_info_label = 2130968608;
 			
 			// aapt resource value: 0x7f04004f
 			public const int valid_date_txt = 2130968655;
 			
-			// aapt resource value: 0x7f040026
-			public const int valid_from_lbl = 2130968614;
+			// aapt resource value: 0x7f040025
+			public const int valid_from_lbl = 2130968613;
 			
 			// aapt resource value: 0x7f040047
 			public const int valid_until_static_label = 2130968647;
 			
-			// aapt resource value: 0x7f040027
-			public const int validity_date_txt = 2130968615;
+			// aapt resource value: 0x7f040026
+			public const int validity_date_txt = 2130968614;
 			
-			// aapt resource value: 0x7f040024
-			public const int validity_dates_layout = 2130968612;
+			// aapt resource value: 0x7f040023
+			public const int validity_dates_layout = 2130968611;
 			
 			// aapt resource value: 0x7f040037
 			public const int vhod = 2130968631;

@@ -14,6 +14,7 @@ namespace TrafficPolice.Core.Utilities.OCR
             {
                 regNumText = regNumText.Replace(" ", "");
                 regNumText = regNumText.Replace("\r\n", "");
+                regNumText = regNumText.Replace("!", "");
             }
             catch (Exception)
             {

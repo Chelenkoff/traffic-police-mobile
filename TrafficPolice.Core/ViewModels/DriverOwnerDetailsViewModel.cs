@@ -9,12 +9,16 @@ using TrafficPolice.Core.Utilities;
 using TrafficPolice.Core.TrafficPoliceServiceReference;
 
 using static TrafficPolice.Core.Utilities.DriverOwnerDetailsVMParams;
+using System.ServiceModel;
 
 namespace TrafficPolice.Core.ViewModels
 {
     public class DriverOwnerDetailsViewModel : MvxViewModel
     {
-        private  long _userId;
+
+
+
+        private long _userId;
         public DriverOwnerDetailsViewModel()
         {
 

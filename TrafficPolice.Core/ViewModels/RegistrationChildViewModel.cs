@@ -39,9 +39,13 @@ namespace TrafficPolice.Core.ViewModels
             return binding;
         }
 
+
+        private IMvxPictureChooserTask _pictureChooserTask;
+
         public RegistrationChildViewModel()
         {
-            //client = new TrafficPoliceServiceClient();
+            _pictureChooserTask = Mvx.Resolve<IMvxPictureChooserTask>();
+
 
             BasicHttpBinding binding = CreateBasicHttp();
 
@@ -51,16 +55,6 @@ namespace TrafficPolice.Core.ViewModels
 
             //TODO: delete in release
             RegNum = "KH6666AH";
-
-        }
-
-        private  IMvxPictureChooserTask _pictureChooserTask;
-
-        public RegistrationChildViewModel(IMvxPictureChooserTask pictureChooserTask)
-        {
-            client = new TrafficPoliceServiceClient();
-            client.getRegByRegNumCompleted += client_getRegByRegNumCompleted;
-            _pictureChooserTask = pictureChooserTask;
         }
 
         public override void Start()
@@ -124,6 +118,77 @@ namespace TrafficPolice.Core.ViewModels
             startLoading();
         }
 
+        //private async void scanRegistration(String base64Image)
+        //{
+        //    clearInfoMessage();
+
+
+        //    using (var client = new RestClient(new Uri(Constants.OCR_API_ENDPOINT)))
+        //    {
+        //        try
+        //        {
+        //            var request = new RestRequest(Method.POST);
+
+        //            request.AddHeader("apikey", Constants.OCR_API_KEY);
+        //            request.AddParameter("base64Image", base64Image, ParameterType.GetOrPost);
+        //            request.AddParameter("language", "bul", ParameterType.GetOrPost);
+
+
+        //            //IRestResponse response = await client.Execute(request);
+        //            startLoading();
+
+        //            IRestResponse<OCRSpaceResponse> response2 = await client.Execute<OCRSpaceResponse>(request);
+
+        //            if (response2.Data.IsErroredOnProcessing == true)
+        //            {
+        //                WarningType = "Внимание";
+        //                WarningMessage = "Възникнаха грешки при обработката на изображението.";
+        //                stopLoading();
+        //                return;
+        //            }
+
+        //            if (response2.Data.ParsedResults.Count > 0)
+        //            {
+        //                switch (response2.Data.ParsedResults.ElementAt(0).FileParseExitCode)
+        //                {
+        //                    case 0:
+        //                        WarningType = "Внимание";
+        //                        WarningMessage = "Файлът не беше открит.";
+        //                        stopLoading();
+        //                        return;
+        //                    case -10:
+        //                    case -20:
+        //                    case -30:
+        //                    case -99:
+        //                        WarningType = "Внимание";
+        //                        WarningMessage = "Възникна проблем при анализирането на изображението.";
+        //                        stopLoading();
+        //                        return;
+        //                }
+
+        //                //Parsed text
+        //                string numText = response2.Data.ParsedResults.ElementAt(0).ParsedText;
+        //                RegNumOCRValidator.validate(ref numText);
+        //                RegNum = numText;
+
+
+        //            }
+        //        }
+        //        catch (Exception e)
+        //        {
+
+        //            WarningType = "Внимание";
+        //            WarningMessage = "Възникна проблем с OCR услугата.";
+        //        }
+
+
+        //    }
+        //    stopLoading();
+
+        //}
+
+
+
         private async void scanRegistration(String base64Image)
         {
             clearInfoMessage();
@@ -137,12 +202,16 @@ namespace TrafficPolice.Core.ViewModels
 
                     request.AddHeader("apikey", Constants.OCR_API_KEY);
                     request.AddParameter("base64Image", base64Image, ParameterType.GetOrPost);
+                    request.AddParameter("language", "bul", ParameterType.GetOrPost);
 
 
                     //IRestResponse response = await client.Execute(request);
                     startLoading();
 
+                    //IRestResponse<OCRSpaceResponse> response2 =   client.Execute<OCRSpaceResponse>(request);
+
                     IRestResponse<OCRSpaceResponse> response2 = await client.Execute<OCRSpaceResponse>(request);
+
 
                     if (response2.Data.IsErroredOnProcessing == true)
                     {
@@ -179,7 +248,7 @@ namespace TrafficPolice.Core.ViewModels
 
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
 
                     WarningType = "Внимание";
@@ -191,6 +260,8 @@ namespace TrafficPolice.Core.ViewModels
             stopLoading();
 
         }
+
+
 
         private bool uiDataValidation(string regNum)
         {
@@ -350,7 +421,9 @@ namespace TrafficPolice.Core.ViewModels
             {
                 clearRegistrationInfo();
                 _pictureChooserTask = Mvx.Resolve<IMvxPictureChooserTask>();
-                _pictureChooserTask.ChoosePictureFromLibrary(1000, 100, OnPicture, () => { });
+                _pictureChooserTask.ChoosePictureFromLibrary(500, 100, OnPicture, () => { });
+
+
             }
             catch (Exception)
             {

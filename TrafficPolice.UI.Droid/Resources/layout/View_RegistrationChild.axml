@@ -63,7 +63,8 @@
                 android:layout_weight="1"
                 android:layout_height="150px"
                 android:layout_width="wrap_content"
-                android:src="@drawable/appbar_image_gallery" />
+                android:src="@drawable/appbar_image_gallery"
+                local:MvxBind="Click ChoosePictureCommand"/>
             <ImageButton
                 android:id="@+id/take_pic_btn"
                 android:layout_weight="1"

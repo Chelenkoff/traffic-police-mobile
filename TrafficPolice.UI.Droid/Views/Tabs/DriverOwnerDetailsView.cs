@@ -64,6 +64,20 @@ namespace TrafficPolice.UI.Droid.Views.Tabs
             return true;
         }
 
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.penalty:
+                    DriverOwnerDetailsViewModel.CreatePenaltyForDriverCommand.Execute(null);
+                    return true;
+
+
+                default:
+                    return false;
+            }
+        }
+
 
 
     }

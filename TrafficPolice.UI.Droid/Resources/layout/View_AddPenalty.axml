@@ -39,114 +39,118 @@
             android:layout_marginRight="20px"
             android:orientation="vertical">
 
-          <!-- Penalty data layout -->
-          <LinearLayout
-            android:id="@+id/penalty_data_layout"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:background="#8000A2FF"
-            android:orientation="vertical">
 
-            <!-- Penalty data static label-->
-            <TextView
-            android:id="@+id/penalty_desc_static_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="left"
-            android:textSize="60px"
-            android:gravity="left"
-            android:textColor="@color/white"
-            android:text="ЕГН на извършителя" />
-
-            <!-- Id of criminal-->
-            <EditText
-            android:id="@+id/user_id_txt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:textColor="#000000"
-            android:textSize="70px"
-            android:gravity="center"
-            android:inputType="number"
-            android:textStyle="bold"
-            android:maxLines="1"
-            android:maxLength="10"
-            android:background="@color/semi_transparent_white"
-            local:MvxBind="Text CriminalId" />
-
-            <!-- Issuer details layout-->
+          <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+            <!-- Penalty data layout -->
             <LinearLayout
-              android:id="@+id/issuer_details_layout"
+              android:id="@+id/penalty_data_layout"
+              android:layout_width="match_parent"
+              android:layout_height="250dp"
+              android:background="#8000A2FF"
+              android:orientation="vertical">
+
+              <!-- Penalty data static label-->
+              <TextView
+              android:id="@+id/penalty_desc_static_label"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:layout_marginTop="10dp">
+              android:layout_marginLeft="10dp"
+              android:layout_gravity="left"
+              android:textSize="60px"
+              android:gravity="left"
+              android:textColor="@color/white"
+              android:text="ЕГН на извършителя" />
 
-              <!-- Issuer static label Id-->
-              <TextView
-                android:id="@+id/issuer_id_static_label"
-                android:layout_width="0dp"
+              <!-- Id of criminal-->
+              <EditText
+              android:id="@+id/user_id_txt"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="30dp"
+              android:layout_marginRight="30dp"
+              android:layout_marginTop="10dp"
+              android:textColor="#000000"
+              android:textSize="70px"
+              android:gravity="center"
+              android:inputType="number"
+              android:textStyle="bold"
+              android:maxLines="1"
+              android:maxLength="10"
+              android:background="@color/semi_transparent_white"
+              local:MvxBind="Text CriminalId" />
+
+              <!-- Issuer details layout-->
+              <LinearLayout
+                android:id="@+id/issuer_details_layout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginLeft="10dp"
-                android:layout_gravity="left"
-                android:textSize="70px"
-                android:gravity="left"
-                android:textColor="@color/white"
-                android:text="Съставител №" />
+                android:layout_marginTop="10dp">
 
-              <!-- Issuer label Id-->
+                <!-- Issuer static label Id-->
+                <TextView
+                  android:id="@+id/issuer_id_static_label"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:layout_marginLeft="10dp"
+                  android:layout_gravity="left"
+                  android:textSize="70px"
+                  android:gravity="left"
+                  android:textColor="@color/white"
+                  android:text="Съставител №" />
+
+                <!-- Issuer label Id-->
+                <TextView
+                  android:id="@+id/issuer_id_label"
+                  android:layout_width="0dp"
+                  android:layout_weight="1"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="100dp"
+                  android:textStyle="bold"
+                  android:layout_gravity="left"
+                  android:textSize="80px"
+                  android:gravity="left"
+                  android:textColor="@color/white"
+                  local:MvxBind="Text IssuerId" />
+
+
+              </LinearLayout>
+
+              <!-- Location info label-->
               <TextView
-                android:id="@+id/issuer_id_label"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
-                android:textStyle="bold"
-                android:layout_gravity="left"
-                android:textSize="80px"
-                android:gravity="left"
-                android:textColor="@color/white"
-                local:MvxBind="Text IssuerId" />
-              
+              android:id="@+id/location_info_label"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="10dp"
+              android:layout_gravity="center"
+              android:textSize="60px"
+              android:gravity="center"
+              android:textColor="#FFFFE800"
+              local:MvxBind="Text LocationingInfoMessage" />
 
-            </LinearLayout>
 
-            <!-- Location info label-->
-            <TextView
-            android:id="@+id/location_info_label"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_gravity="center"
-            android:textSize="60px"
-            android:gravity="center"
-            android:textColor="#FFFFE800"
-            local:MvxBind="Text LocationingInfoMessage" />
-          
-            
-                     <!-- Horizontal issued/registered dates info-->
-                    <LinearLayout
-                        android:id="@+id/issued_registered_dates_dates_layout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                    <!-- Happened penalty date info -->
-                        <LinearLayout
-                            android:id="@+id/happened_penalty_date_layout"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:id="@+id/happened_date_label"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:textSize="40px"
-                                android:gravity="center"
-                                android:text="Извършено на" />
-                            <EditText
+              <!-- Horizontal issued/registered dates info-->
+              <LinearLayout
+                  android:id="@+id/issued_registered_dates_dates_layout"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+                <!-- Happened penalty date info -->
+                <LinearLayout
+                    android:id="@+id/happened_penalty_date_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                  <TextView
+                      android:id="@+id/happened_date_label"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textSize="40px"
+                      android:gravity="center"
+                      android:text="Извършено на" />
+                  <!--<EditText
                                 android:id="@+id/happened_date_txt"
                                 android:inputType="date"
                                 android:layout_width="match_parent"
@@ -154,37 +158,60 @@
                                 android:textColor="@color/white"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
-                                local:MvxBind="Text PenaltyHappenedDate, Converter=DateTime" />
-                        </LinearLayout>
-                    <!-- Registered date info -->
-                        <LinearLayout
-                            android:id="@+id/registered_date_layout"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <TextView
-                                android:id="@+id/doc_issued_by_lbl"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:textSize="40px"
-                                android:gravity="center"
-                                android:text="Регистрирано на" />
-                            <EditText
-                                android:id="@+id/expiry_date_txt"
-                                android:inputType="date"
-                                android:textSize="50px"
-                                android:textColor="@color/white"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal"
-                                local:MvxBind="Text PenaltyIssuedDate, Converter=DateTime" />
-                        </LinearLayout>
-                    </LinearLayout>
-          
-          
-          </LinearLayout>
+                                local:MvxBind="Text PenaltyHappenedDate, Converter=DateTime" />-->
 
+                  <MvxDatePicker
+                      android:id="@+id/happened_date_txt"
+                      android:inputType="date"
+                      android:layout_width="wrap_content"
+                      android:textSize="50px"
+                      android:textColor="@color/white"
+                      android:layout_height="wrap_content"
+                      android:gravity="center_horizontal"
+                      local:MvxBind="Value PenaltyHappenedDate"
+                      android:calendarViewShown="false" />
+                </LinearLayout>
+                <!-- Registered date info -->
+                <LinearLayout
+                    android:id="@+id/registered_date_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                  <TextView
+                      android:id="@+id/doc_issued_by_lbl"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textSize="40px"
+                      android:gravity="center"
+                      android:text="Регистрирано на" />
+                  <!--<EditText
+                      android:id="@+id/expiry_date_txt"
+                      android:inputType="date"
+                      android:textSize="50px"
+                      android:textColor="@color/white"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:gravity="center_horizontal"
+                      local:MvxBind="Text PenaltyIssuedDate, Converter=DateTime" />-->
+                  <MvxDatePicker
+                      android:id="@+id/happened_date_txt"
+                      android:inputType="date"
+                      android:layout_width="wrap_content"
+                      android:textSize="50px"
+                      android:textColor="@color/white"
+                      android:layout_height="wrap_content"
+                      android:gravity="center_horizontal"
+                      local:MvxBind="Value PenaltyIssuedDate"
+                      android:calendarViewShown="false" />
+                  
+                  
+                </LinearLayout>
+              </LinearLayout>
+
+
+            </LinearLayout>
+          </ScrollView>
 
 
         </LinearLayout>
