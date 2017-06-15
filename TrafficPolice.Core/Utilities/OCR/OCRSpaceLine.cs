@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrafficPolice.Core.Utilities.OCR
 {
-    class OCRSpaceLine
+    public class OCRSpaceLine
     {
         public List<OCRSpaceWord> Words{ get; set; }
         public int MaxHeight { get; set; }

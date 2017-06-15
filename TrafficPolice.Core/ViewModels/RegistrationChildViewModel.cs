@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
@@ -118,77 +119,6 @@ namespace TrafficPolice.Core.ViewModels
             startLoading();
         }
 
-        //private async void scanRegistration(String base64Image)
-        //{
-        //    clearInfoMessage();
-
-
-        //    using (var client = new RestClient(new Uri(Constants.OCR_API_ENDPOINT)))
-        //    {
-        //        try
-        //        {
-        //            var request = new RestRequest(Method.POST);
-
-        //            request.AddHeader("apikey", Constants.OCR_API_KEY);
-        //            request.AddParameter("base64Image", base64Image, ParameterType.GetOrPost);
-        //            request.AddParameter("language", "bul", ParameterType.GetOrPost);
-
-
-        //            //IRestResponse response = await client.Execute(request);
-        //            startLoading();
-
-        //            IRestResponse<OCRSpaceResponse> response2 = await client.Execute<OCRSpaceResponse>(request);
-
-        //            if (response2.Data.IsErroredOnProcessing == true)
-        //            {
-        //                WarningType = "Внимание";
-        //                WarningMessage = "Възникнаха грешки при обработката на изображението.";
-        //                stopLoading();
-        //                return;
-        //            }
-
-        //            if (response2.Data.ParsedResults.Count > 0)
-        //            {
-        //                switch (response2.Data.ParsedResults.ElementAt(0).FileParseExitCode)
-        //                {
-        //                    case 0:
-        //                        WarningType = "Внимание";
-        //                        WarningMessage = "Файлът не беше открит.";
-        //                        stopLoading();
-        //                        return;
-        //                    case -10:
-        //                    case -20:
-        //                    case -30:
-        //                    case -99:
-        //                        WarningType = "Внимание";
-        //                        WarningMessage = "Възникна проблем при анализирането на изображението.";
-        //                        stopLoading();
-        //                        return;
-        //                }
-
-        //                //Parsed text
-        //                string numText = response2.Data.ParsedResults.ElementAt(0).ParsedText;
-        //                RegNumOCRValidator.validate(ref numText);
-        //                RegNum = numText;
-
-
-        //            }
-        //        }
-        //        catch (Exception e)
-        //        {
-
-        //            WarningType = "Внимание";
-        //            WarningMessage = "Възникна проблем с OCR услугата.";
-        //        }
-
-
-        //    }
-        //    stopLoading();
-
-        //}
-
-
-
         private async void scanRegistration(String base64Image)
         {
             clearInfoMessage();
@@ -208,10 +138,7 @@ namespace TrafficPolice.Core.ViewModels
                     //IRestResponse response = await client.Execute(request);
                     startLoading();
 
-                    //IRestResponse<OCRSpaceResponse> response2 =   client.Execute<OCRSpaceResponse>(request);
-
                     IRestResponse<OCRSpaceResponse> response2 = await client.Execute<OCRSpaceResponse>(request);
-
 
                     if (response2.Data.IsErroredOnProcessing == true)
                     {
@@ -252,7 +179,7 @@ namespace TrafficPolice.Core.ViewModels
                 {
 
                     WarningType = "Внимание";
-                    WarningMessage = "Възникна проблем при с OCR услугата.";
+                    WarningMessage = "Възникна проблем с OCR услугата.";
                 }
 
 
@@ -260,6 +187,9 @@ namespace TrafficPolice.Core.ViewModels
             stopLoading();
 
         }
+
+
+
 
 
 
@@ -469,6 +399,7 @@ namespace TrafficPolice.Core.ViewModels
 
             stopLoading();
         }
+
 
 
 

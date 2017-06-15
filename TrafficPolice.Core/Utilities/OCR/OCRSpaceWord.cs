@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrafficPolice.Core.Utilities.OCR
 {
-    class OCRSpaceWord
+    public class OCRSpaceWord
     {
         public string WordText { get; set; }
         public int Left{ get; set; }

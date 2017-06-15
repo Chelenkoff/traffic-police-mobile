@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrafficPolice.Core.Utilities.OCR
 {
-    class OCRSpaceParsedResult
+    public class OCRSpaceParsedResult
     {
         public OCRSpaceTextOverlay TextOverlay { get; set; }
         public int FileParseExitCode { get; set; }
