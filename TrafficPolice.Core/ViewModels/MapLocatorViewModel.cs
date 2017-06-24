@@ -8,26 +8,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrafficPolice.Core.Utilities;
-using Windows.Devices.Geolocation;
+//using Windows.Devices.Geolocation;
 
 namespace TrafficPolice.Core.ViewModels
 {
-    class MapLocatorViewModel : MvxViewModel
+    public class MapLocatorViewModel : MvxViewModel
     {
-        //private readonly IMvxLocationWatcher _watcher;
+        private readonly IMvxLocationWatcher _watcher;
         public MapLocatorViewModel(IMvxLocationWatcher watcher)
         {
 
-            //_watcher = watcher;
-            //watcher.Start(new MvxLocationOptions(), OnLocation, OnError);
+            _watcher = watcher;
+            watcher.Start(new MvxLocationOptions(), OnLocation, OnError);
         }
+
+        //public MapLocatorViewModel()
+        //{
+
+        //    //_watcher = watcher;
+        //    //watcher.Start(new MvxLocationOptions(), OnLocation, OnError);
+        //}
 
         public void Init(CoordinatesParameters coordinates)
         {
-            //Latitude = coordinates.Latitude;
-            //Longtitude = coordinates.Longtitude;
+            Latitude = coordinates.Latitude;
+            Longtitude = coordinates.Longtitude;
 
-            Location = new GeoCoordinate(coordinates.Latitude,coordinates.Longtitude);
+
+            Location = new GeoCoordinate(coordinates.Latitude, coordinates.Longtitude);
 
         }
 

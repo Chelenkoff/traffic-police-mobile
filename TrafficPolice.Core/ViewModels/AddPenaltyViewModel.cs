@@ -165,6 +165,23 @@ namespace TrafficPolice.Core.ViewModels
 
         }
 
+        public ICommand ShowAndroidLocationCommand
+        {
+            get { return new DelegateCommand(showAndroidLocation); }
+        }
+
+        private void showAndroidLocation()
+        {
+            ShowViewModel<MapLocatorAndroidViewModel>(new CoordinatesParameters
+            {
+                Latitude = _latitude,
+                Longtitude = _longtitude
+
+            });
+
+
+        }
+
         public ICommand RelocateCommand
         {
             get { return new DelegateCommand(Relocate); }

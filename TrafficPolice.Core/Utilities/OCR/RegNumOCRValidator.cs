@@ -12,6 +12,7 @@ namespace TrafficPolice.Core.Utilities.OCR
         {
             try
             {
+                regNumText = regNumText.ToUpper();
                 regNumText = regNumText.Replace(" ", "");
                 regNumText = regNumText.Replace("\r\n", "");
                 regNumText = regNumText.Replace("!", "");

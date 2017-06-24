@@ -15,6 +15,13 @@ using Android.App;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
+[assembly: MetaData("com.google.android.maps.v2.API_KEY", Value = "AIzaSyBGimYfUiqEq1Orxm7n_v1Aaj5PSYx5Azw")]
+[assembly: UsesPermission(Android.Manifest.Permission.Internet)]
+[assembly: UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
+[assembly: UsesPermission(Android.Manifest.Permission.AccessCoarseLocation)]
+[assembly: UsesPermission(Android.Manifest.Permission.AccessFineLocation)]
+[assembly: UsesPermission(Android.Manifest.Permission.AccessMockLocation)]
+[assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
 
 // Version information for an assembly consists of the following four values:
 //

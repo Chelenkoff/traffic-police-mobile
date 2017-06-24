@@ -11,7 +11,7 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Views;
 using TrafficPolice.Core.ViewModels;
-using Android.Icu.Text;
+//using Android.Icu.Text;
 using Java.Sql;
 using Android.Content.PM;
 

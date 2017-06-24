@@ -74,10 +74,24 @@ namespace TrafficPolice.UI.Droid.Views
                 case Resource.Id.save:
                     AddPenaltyViewModel.AddPenaltyCommand.Execute(null);
                     return true;
+                case Resource.Id.map:
+                    AddPenaltyViewModel.ShowAndroidLocationCommand.Execute(null);
+                    return true;
 
                 default:
                     return false;
             }
+        }
+
+
+        public void loadMap()
+        {
+            var geoUri = Android.Net.Uri.Parse("geo:42.374260,-71.120824");
+            var mapIntent = new Intent(Intent.ActionView, geoUri);
+            StartActivity(mapIntent);
+
+            
+
         }
 
     }

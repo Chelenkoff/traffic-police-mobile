@@ -190,9 +190,6 @@ namespace TrafficPolice.Core.ViewModels
 
 
 
-
-
-
         private bool uiDataValidation(string regNum)
         {
             //Name validation
